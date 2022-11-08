@@ -91,7 +91,6 @@
     </div>
     <header class="bg-[#F5F5F5] relative w-full min-h-min">
         <!-- slider -->
-
         <!-- header -->
         <div id="menu1" class="w-full h-40 <?php
                                             if ($_GET['act'] == 'trangchu') {
@@ -120,14 +119,29 @@
                     </div>
                     <div class=" flex items-center justify-end">
                         <div class="mx-2">
-                            <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=dangnhap">
+                            <?php
+                            if (empty($_SESSION['user'])) {
+                                echo '<a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=dangnhap">
+                                    <span class="">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                                        </svg>
+                                    </span>
+                                    <span>Tài Khoản</span>
+                                </a>';
+                            } else {
+                                echo '<a href="../customer/logout_user.php">
                                 <span class="">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
                                     </svg>
                                 </span>
-                                <span>Tài Khoản</span>
-                            </a>
+                                <span>Đăng Xuất</span>
+                            </a>';
+                            }
+                            ?>
+
+                            
                         </div>
                         <div class="mx-2">
                             <a href="#">
