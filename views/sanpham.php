@@ -155,7 +155,6 @@
     #parent:hover #child2 {
         display: block;
     }
-
     #child2 {
         display: none;
     }
