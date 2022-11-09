@@ -1,15 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-
-<body class="font-['Quicksand']">
     <!-- thanhtoan -->
     <div class="md:flex md:flex-row flex-col-reverse mx-auto container">
         <div class="md:text-left text-center box_1">
@@ -49,12 +37,8 @@
                 <h3 class="text-lg">Tạm phí</h3>
                 <p class=" pl-[100px]">1,890,000₫</p>
             </div>
-            
         </div>
-
     </div>
-
-</body>
 <style>
     .box_1{
         border: 1px solid;
@@ -68,4 +52,3 @@
         
     }
 </style>
-</html>

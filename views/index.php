@@ -19,6 +19,9 @@ if (isset($_GET['act'])) {
         case "chitietsanpham":
             include "./chitietsanpham.php";
             break;
+        case "thanhtoan":
+            include "./thanh_toan.php";
+            break;
         case "dangki":
             include "./dangki.php";
             break;
