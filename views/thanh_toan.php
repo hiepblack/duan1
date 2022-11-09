@@ -10,6 +10,7 @@
 </head>
 
 <body class="font-['Quicksand']">
+    <!-- thanhtoan -->
     <div class="md:flex md:flex-row flex-col-reverse mx-auto container">
         <div class="md:text-left text-center box_1">
             <h1 class="text-3xl mt-5">Sport Bicycle</h1>
