@@ -84,20 +84,23 @@
                 <button class="bg-slate-700 px-5 py-2 text-white text-base">XEM THÊM</button>
             </div>
             <?php foreach ($products as $value) : ?>
-                <div class="p-4">
-                    <img class="sm:h-64 md:h-96" src="../img/<?php
-                                                                $arr = explode(",", $value['productImage']);
-                                                                echo $arr[0];
-                                                                ?>" alt="">
-                    <div class="">
-                        <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=chitietsanpham&id=<?php echo $value['productId'] ?>" class="text-base font-semibold"><?php echo $value['productName']?></a>
-                        <div class="flex-col py-2 justify-center">
-                            <span class="text-red-600 px-2 font-semibold">$<?php echo $value['productPrice']?></span>
-                            
+                <div class="p-4 border">
+                    <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=chitietsanpham&id=<?php echo $value['productId'] ?>">
+                        <div class="flex justify-center items-center">
+                            <img class="sm:h-64 md:h-96 border" src="../img/<?php
+                                                                            $arr = explode(",", $value['productImage']);
+                                                                            echo $arr[0];
+                                                                            ?>" alt="">
                         </div>
-                    </div>
+                        <div class="flex flex-col justify-center items-start">
+                            <p class="text-base text-black">
+                                <?php echo $value['productName'] ?>
+                            </p>
+                            <span class="text-red-600 font-semibold">$<?php echo $value['productPrice'] ?></span>
+                        </div>
+                    </a>
                 </div>
-                
+
             <?php endforeach ?>
         </div>
         <!-- kết thúc lưới sp nổi bật -->
@@ -120,21 +123,24 @@
                 <p class="text-slate-500 text-sm my-4">Thiết kế cho tốc độ và sự mạnh mẽ</p>
                 <button class="bg-slate-700 px-5 py-2 text-white text-base">MUA NGAY</button>
             </div>
-            <?php foreach($product as $value):?>
-            <div class="p-4">
-                <img class="sm:h-64 md:h-96" src="../img/<?php
-                                                                $arr = explode(",", $value['productImage']);
-                                                                echo $arr[0];
-                                                                ?>" alt="">
-                <div class="">
-                    <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=chitietsanpham&id=<?php echo $value['productId'] ?>" class="text-base font-semibold"><?php echo $value['productName']?></a>
-                    <div class="flex-col py-2 justify-center">
-                        <span class="text-red-600 px-2 font-semibold">$<?php echo $value['productPrice']?></span>
-                        
-                    </div>
+            <?php foreach ($product as $value) : ?>
+                <div class="p-4 border">
+                    <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=chitietsanpham&id=<?php echo $value['productId'] ?>">
+                        <div class="flex justify-center items-center">
+                            <img class="sm:h-64 md:h-96 border" src="../img/<?php
+                                                                        $arr = explode(",", $value['productImage']);
+                                                                        echo $arr[0];
+                                                                        ?>" alt="">
+                        </div>
+                        <div class="flex flex-col justify-center items-start">
+                            <p class="text-base text-black">
+                                <?php echo $value['productName'] ?>
+                            </p>
+                            <span class="text-red-600 px-2 font-semibold">$<?php echo $value['productPrice'] ?></span>
+                        </div>
+                    </a>
                 </div>
-            </div>
-            <?php endforeach?>
+            <?php endforeach ?>
         </div>
         <!-- hết lưới sp -->
         <!-- LINKS -->
