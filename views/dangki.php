@@ -1,16 +1,19 @@
 <div class="text-center mx-auto w-[500px] my-4">
         <h3 class="text-4xl font-bold my-5">Tạo tài khoản</h3>
-        <form action="">
-            <input type="text" name="" id="" placeholder="Họ" class="px-5 bg-[#f5f5f5] h-[50px] w-[500px] my-3 outline-none">
-            <input type="text" name="" id="" placeholder="Tên" class="px-5 bg-[#f5f5f5] h-[50px] w-[500px] my-3 outline-none">
+        <form action="../customer/dang_ki.php" method="POST" enctype="multipart/form-data">
+            <input type="text" name="lastName" id="" placeholder="Họ" class="px-5 bg-[#f5f5f5] h-[50px] w-[500px] my-3 outline-none">
+            <?php echo isset($_GET['error']) ?"Email đã đăng kí":"";?>
+            <input type="text" name="fristName" id="" placeholder="Tên" class="px-5 bg-[#f5f5f5] h-[50px] w-[500px] my-3 outline-none">
             <div class="text-left">
-                <input type="radio" class="mr-3" name="sex" value="nam">nam
-                <input type="radio" name="sex" value="nữ"> nữ
+                <input type="radio" class="mr-3" name="sex" value="1">nam
+                <input type="radio" name="sex" value="0"> nữ
             </div>
-            <input type="date" name="" id="" placeholder="dd/mm/yyyy" class="px-5 bg-[#f5f5f5] h-[50px] w-[500px] my-3 outline-none">
-            <input type="email" name="" id="" placeholder="Email" class="px-5 bg-[#f5f5f5] h-[50px] w-[500px] my-3 outline-none">
-            <input type="password" name="" id="" placeholder="Password" class="px-5 bg-[#f5f5f5] h-[50px] w-[500px] my-3 outline-none">
-            <div class="text-left my-5"><button class="px-5 bg-black text-white py-2 button_slide slide_right outline-none">Đăng kí</button></div>
+            <input type="file" name="image" id="" class="px-5 bg-[#f5f5f5] h-[50px] w-[500px] my-3 outline-none">
+            <input type="text" value="2" name="roleId" hidden>
+            <input type="date" name="date" id="" placeholder="dd/mm/yyyy" class="px-5 bg-[#f5f5f5] h-[50px] w-[500px] my-3 outline-none">
+            <input type="email" name="email" id="" placeholder="Email" class="px-5 bg-[#f5f5f5] h-[50px] w-[500px] my-3 outline-none">
+            <input type="password" name="password" id="" placeholder="Password" class="px-5 bg-[#f5f5f5] h-[50px] w-[500px] my-3 outline-none">
+            <div class="text-left my-5"><button class="px-5 bg-black text-white py-2 button_slide slide_right outline-none" type="submit" name="submit">Đăng kí</button></div>
         </form>
         <div>
 
@@ -20,7 +23,6 @@
                 </svg></div>
                 <p>Quay lại trang chủ</p>
             </a>
-
         </div>
     </div>
     <style>
