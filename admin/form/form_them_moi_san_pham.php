@@ -1,8 +1,3 @@
-
-
-
-
-
 <div class="page-wrapper">
     <!-- ============================================================== -->
     <!-- Bread crumb and right sidebar toggle -->

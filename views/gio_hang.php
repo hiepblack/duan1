@@ -17,22 +17,11 @@
                             <button> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg></button>
-
                         </div>
                         <div><span>1,750,000₫</span> <s> (1,950,000₫)</s></div>
                         <div><span>Đen</span></div>
                         <div class="flex justify-between">
-                            <div class="flex">
-                                <button onclick="cong()" class="w-[25px] h-[25px] border"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                                    </svg>
-                                </button>
-                                <input type="number" value="1" class="border w-[35px] h-[25px]" id="number">
-                                <button onclick="tru()" class="w-[25px] h-[25px] border"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" />
-                                    </svg>
-                                </button>
-                            </div>
+                            <input type="number" value="1" class="border w-[35px] h-[25px]" id="number" min=0>
                             <div>
                                 <strong>1,750,000₫</strong>
                             </div>

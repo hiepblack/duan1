@@ -17,117 +17,30 @@
                 </span>
                 <p class="text-xl font-bold uppercase">Bộ Lọc</p>
             </div>
-            <div class="grid grid-cols-4 w-4/5 gap-4 h-10 ">
-                <div class="mb-3 text-base text-black bg-white">
-                    <div class="w-full " id="parent">
-                        <div id="child1" class="w-full flex justify-between items-center p-2 border border-black border-2">
-                            <span class="font-bold">Thương Hiệu</span>
-                            <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                                </svg>
-                            </span>
-                        </div>
-                        <div id="child2" class="relative ">
-                            <ul class="p-2 absolute w-full border border-2 border-black bg-white">
-
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="mb-3 text-base text-black">
-                    <div class="w-full " id="parent">
-                        <div id="child1" class="w-full flex justify-between items-center p-2 border border-black border-2">
-                            <span class="font-bold">Thương Hiệu</span>
-                            <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                                </svg>
-                            </span>
-                        </div>
-                        <div id="child2" class="relative ">
-                            <ul class="p-2 absolute w-full border border-2 border-black ">
-                                <li class="w-full">
-                                    <input type="checkbox" name="" id="">
-                                    <span>Dưới 500</span>
-                                </li>
-                                <li class="w-5/6">
-                                    <input type="checkbox" name="" id="">
-                                    <span>Dưới 500</span>
-                                </li>
-                                <li class="w-5/6">
-                                    <input type="checkbox" name="" id="">
-                                    <span>Dưới 500</span>
-                                </li>
-                                <li class="w-5/6">
-                                    <input type="checkbox" name="" id="">
-                                    <span>Dưới 500</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="mb-3 text-base text-black">
-                    <div class="w-full " id="parent">
-                        <div id="child1" class="w-full flex justify-between items-center p-2 border border-black border-2">
-                            <span class="font-bold">Thương Hiệu</span>
-                            <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                                </svg>
-                            </span>
-                        </div>
-                        <div id="child2" class="relative ">
-                            <ul class="p-2 absolute w-full border border-2 border-black ">
-                                <li class="w-full">
-                                    <input type="checkbox" name="" id="">
-                                    <span>Dưới 500</span>
-                                </li>
-                                <li class="w-5/6">
-                                    <input type="checkbox" name="" id="">
-                                    <span>Dưới 500</span>
-                                </li>
-                                <li class="w-5/6">
-                                    <input type="checkbox" name="" id="">
-                                    <span>Dưới 500</span>
-                                </li>
-                                <li class="w-5/6">
-                                    <input type="checkbox" name="" id="">
-                                    <span>Dưới 500</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="mb-3 text-base text-black">
-                    <div class="w-full " id="parent">
-                        <div id="child1" class="w-full flex justify-between items-center p-2 border border-black border-2">
-                            <span class="font-bold">Thương Hiệu</span>
-                            <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                                </svg>
-                            </span>
-                        </div>
-                        <div id="child2" class="relative ">
-                            <ul class="p-2 absolute w-full border border-2 border-black ">
-                                <li class="w-full">
-                                    <input type="checkbox" name="" id="">
-                                    <span>Dưới 500</span>
-                                </li>
-                                <li class="w-5/6">
-                                    <input type="checkbox" name="" id="">
-                                    <span>Dưới 500</span>
-                                </li>
-                                <li class="w-5/6">
-                                    <input type="checkbox" name="" id="">
-                                    <span>Dưới 500</span>
-                                </li>
-                                <li class="w-5/6">
-                                    <input type="checkbox" name="" id="">
-                                    <span>Dưới 500</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <form class="grid grid-cols-4 w-4/5 gap-4 h-10" action="http://localhost/WEB17301/Du_an_1/views/index.php?act=sanpham" method="post">
+                <select class="form-control" name="danhmuc">
+                    <option value="">Danh Mục</option>
+                    <option value="1">Xe đạp địa hình</option>
+                    <option value="2">Xe đạp Thời Trang</option>
+                    <option value="3">Xe đạp thể thao</option>
+                </select>
+                <select class="form-control" name="gia">
+                    <option value="">Giá Sản Phẩm</option>
+                    <option value="1">Từ 500.000 - 1.000.000</option>
+                    <option value="2">Từ 1.000.000 - 1.500.000</option>
+                    <option value="3">Từ 1.500.000 - 2.000.000</option>
+                    <option value="4">Trên 2.000.000</option>
+                </select>
+                <select class="form-control" name="size">
+                    <option value="">Size</option>
+                    <option value="49">Size :49cm</option>
+                    <option value="50">Size :50cm</option>
+                    <option value="51">Size :51cm</option>
+                </select>
+                <button type="submit" class=" w-full py-1 text-center bg-black text-white button_slide slide_right" name ="search">
+                    Tìm Kiếm
+                        </button>
+            </form>
         </div>
         <!-- sản phẩm -->
         <div class="grid grid-cols-4 gap-4 my-8 border filter_data">
@@ -155,7 +68,21 @@
     #parent:hover #child2 {
         display: block;
     }
+
     #child2 {
         display: none;
     }
+    .button_slide {
+            color: #FFF;
+            display: inline-block;
+            cursor: pointer;
+            box-shadow: inset 0 0 0 0 #faf5f8;
+            -webkit-transition: ease-out 0.4s;
+            -moz-transition: ease-out 0.4s;
+            transition: ease-out 0.4s;
+        }
+        .slide_right:hover {
+            box-shadow: inset 800px 0 0 0 #faf5f8;
+            color: black;
+        }
 </style>
