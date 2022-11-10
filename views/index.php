@@ -76,7 +76,6 @@ if (isset($_GET['act'])) {
             if(isset($_SESSION['user'])){
                 $userName = $_SESSION['user']['userName'];
                 $emailUser = $_SESSION['user']['userEmail'];
-
             }
             $productOder = $_SESSION['gio_hang'];
             
@@ -86,6 +85,11 @@ if (isset($_GET['act'])) {
             include "./dangki.php";
             break;
         case "giohang":
+            if (empty($_SESSION['gio_hang'])) {
+                $result = [];
+            } else {
+                $result = $_SESSION['gio_hang'];
+            }
             include "./gio_hang.php";
             break;
         case "dangnhap":
