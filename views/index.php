@@ -73,6 +73,13 @@ if (isset($_GET['act'])) {
             include "./chitietsanpham.php";
             break;
         case "thanhtoan":
+            if(isset($_SESSION['user'])){
+                $userName = $_SESSION['user']['userName'];
+                $emailUser = $_SESSION['user']['userEmail'];
+
+            }
+            $productOder = $_SESSION['gio_hang'];
+            
             include "./thanh_toan.php";
             break;
         case "dangki":

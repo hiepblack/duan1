@@ -9,17 +9,17 @@
                 <img src="../img/<?php
                                     $arr = explode(",", $one_product['productImage']);
                                     echo $arr[0];
-                                    ?>" class="md:w-20 border" alt="">
-                <img src="../img/<?php echo $arr[1]; ?>" class="md:w-20 border" alt="">
-                <img src="../img/<?php echo $arr[2]; ?>" class="md:w-20 border" alt="">
-                <img src="../img/<?php echo $arr[3]; ?>" class="md:w-20 border" alt="">
-                <img src="../img/<?php echo $arr[4]; ?>" class="md:w-20 border" alt="">
+                                    ?>" class="md:w-20 border img" alt="" >
+                <img src="../img/<?php echo $arr[2]; ?>" class="md:w-20 border img" alt="">
+                <img src="../img/<?php echo $arr[1]; ?>" class="md:w-20 border img" alt="">
+                <img src="../img/<?php echo $arr[3]; ?>" class="md:w-20 border img" alt="">
+                <img src="../img/<?php echo $arr[2]; ?>" class="md:w-20 border img" alt="">
             </div>
             <div class="w-5/6 mx-4">
                 <img src="../img/<?php
                                     $arr = explode(",", $one_product['productImage']);
                                     echo $arr[0];
-                                    ?>" class="sm:w-full border" alt="">
+                                    ?>" class="sm:w-full border" alt="" id ="imgProduct">
             </div>
         </div>
         <div class="w-full md:w-6/12 p-2 mx-4">
@@ -31,55 +31,48 @@
             </p>
             <hr>
             <!-- form de dat hang -->
-            <form class="py-3" action="" method="">
-                <span class="px-2">MÀU SẮC</span> <br>
+            <form class="p-2" action="../customer/add_cart.php" method="post">
+                <input type="text" name = "productName" value = "<?php echo $one_product['productName']?>" hidden>
+                <input type="text" name = "productId" value = "<?php echo $one_product['productId']?>" hidden>
+                <input type="text" name = "productPrice" value = "<?php echo $one_product['productPrice']?>" hidden>
+                <input type="text" name = "productImage" value = "<?php echo $arr[0]?>" hidden>
+                <span class="text-black">MÀU SẮC</span> <br>
                 <div class="flex py-2 items-center">
                     <?php
                     $arrcolor = explode(",", $one_product['productColor']);
                     ?>
-                   
-                    <input type="checkbox" id="" name="color" value="<?php echo  $arrcolor[0] ?>">
+                    <input type="radio" id="" name="productColor" value="<?php echo  $arrcolor[0] ?>" checked>
                     <label class="font-bold text-green-500 pr-4 pl-1 text-sm" for="<?php echo $arrcolor[0] ?>"><?php echo  $arrcolor[0] ?></label><br>
-                    <input type="checkbox" id="" name="color" value="<?php echo  $arrcolor[1] ?>">
+                    <input type="radio" id="" name="productColor" value="<?php echo  $arrcolor[1] ?>">
                     <label class="font-bold text-red-500 pr-4 pl-1 text-sm" for="<?php echo $arrcolor[1] ?>"><?php echo  $arrcolor[1] ?></label><br>
                 </div>
                 <hr class="mb-3">
-                <span class="px-2">KÍCH CỠ</span> <br>
+                <span class="">KÍCH CỠ</span> <br>
                 <div class="flex py-2 items-center">
-                    <input type="checkbox" id="48" name="size" value="48">
-                    <label class="font-bold text-slate-900 pr-4 pl-1 text-sm" for="48">48cm</label><br>
+                    <input type="radio" id="48" name="productSize" value="<?php echo $one_product['productSize']; ?>" checked>
+                    <label class="font-bold text-slate-900 pr-4 pl-1 text-sm" for="48">
+                        <?php echo $one_product['productSize']; ?> cm
+                    </label><br>
                 </div>
                 <hr>
                 <div class="my-3 flex">
-                    <button class="h-8 w-8 bg-slate-200 font-bold">-</button>
-                    <span id="counting" class="border text-center w-[70px] font-bold"></span>
-                    <button class="h-8 w-8 bg-slate-200 font-bold">+</button>
+                    <button type="button" class="h-8 w-8 bg-slate-200 font-bold" onclick="tru();">-</button>
+                    <span id="counting" class="border text-center w-[70px] font-bold flex justify-center items-center">
+                        <input type="text" name="productSl" class="w-1/3 h-full " value = "1" id="count">
+                    </span>
+                    <button type="button" class="h-8 w-8 bg-slate-200 font-bold" onclick="cong()">+</button>
                 </div>
-                <button type="submit" class="my-3 w-full py-4 text-center bg-red-600 text-white ">THÊM VÀO GIỎ
+                <button type="submit" class="my-3 w-full py-4 text-center bg-red-600 text-white button_slide slide_right" name="submit">THÊM VÀO GIỎ
                     HÀNG</button>
             </form>
             <!-- mo ta sp -->
-            <div class="">
+            <div class="p-2">
                 <h3 class="font-bold text-xl my-2">Mô tả</h3>
-                <p class="text-slate-700">
-                    Màu xanh dương nhã nhặn
-                    <br> Xuất xứ từ Nhật Bản
-                    <br> Dòng xe đạp mini cao cấp
-                    <br> Chất liệu cao cấp, bền đẹp
-                    <br> Phù hợp để đi học, đi làm
-                    <br> Khung xe bằng hợp kim đồng bền bỉ
-                    <br> Sản phẩm chưa được lắp hoàn chỉnh (Khách hàng cần lắp bánh trước, ghi đông, bàn đạp và giỏ xe)
-                </p>
                 <h3 class="font-bold text-xl my-2">Cấu tạo chiếc xe gồm:</h3>
-                <p class="text-slate-700">
-                    Màu xanh dương nhã nhặn
-                    <br> Xuất xứ từ Nhật Bản
-                    <br> Dòng xe đạp mini cao cấp
-                    <br> Chất liệu cao cấp, bền đẹp
-                    <br> Phù hợp để đi học, đi làm
-                    <br> Khung xe bằng hợp kim đồng bền bỉ
-                    <br> Sản phẩm chưa được lắp hoàn chỉnh (Khách hàng cần lắp bánh trước, ghi đông, bàn đạp và giỏ xe)
+                <p class="text-slate-700 w-full text-justify">
+                    <?php echo $one_product['productDesc']?>
                 </p>
+                
             </div>
         </div>
     </div>
@@ -87,10 +80,11 @@
     <!-- san pham lien quan -->
     <div class="my-10">
         <h2 class="text-3xl font-bold text-center">SẢN PHẨM LIÊN QUAN</h2>
-        <div class="grid grid-cols-2 md:grid-cols-5 gap-2">
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-2 ">
             <?php foreach ($products as $value) : ?>
-                <div class="p-4">
-                    <img class="" src="../img/<?php
+                <div class="p-4 border my-2">
+                    <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=chitietsanpham&id=<?php echo $value['productId'] ?>">
+                        <img class="" src="../img/<?php
                                                 $arr = explode(",", $value['productImage']);
                                                 echo $arr[0];
                                                 ?>" alt="">
@@ -98,9 +92,9 @@
                         <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=chitietsanpham&id=<?php echo $value['productId'] ?>" class="text-base font-semibold"><?php echo $value['productName'] ?></a>
                         <div class="flex-col py-2 justify-center">
                             <span class="text-red-600  font-semibold">$<?php echo $value['productPrice'] ?></span>
-
                         </div>
                     </div>
+                </a>
                 </div>
             <?php endforeach; ?>
 
@@ -123,3 +117,29 @@
         color: black;
     }
 </style>
+<script>
+var i=1;
+function cong(){
+   i++;
+   if(i>10){
+    i=10;
+   };
+   document.querySelector('#count').value = i;
+}
+function tru(){
+   i--;
+   if(i<1) {
+    i=1;
+   };
+   document.querySelector('#count').value = i;
+}
+
+var img = document.querySelectorAll('.img');
+var imgProduct = document.querySelector('#imgProduct');
+console.log(imgProduct.src);
+img.forEach(function(image){
+    image.addEventListener('click',function(e){
+        imgProduct.src = image.src;
+    })
+})
+</script>
