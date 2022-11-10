@@ -114,6 +114,7 @@
             Hãy chọn thiết kế xe bên dưới và tìm cho mình chiếc xe phù hợp nhất.</p>
         <button class="text-slate-700 px-6 py-2 bg-white text-sm">MUA NGAY</button>
     </div>
+    <!-- sp -->
     <!-- lưới sp  -->
     <div class="container mx-auto">
         <h2 class="text-center font-bold my-20 text-3xl"> PRODUCTS</h2>
