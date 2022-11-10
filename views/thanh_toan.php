@@ -51,7 +51,6 @@
                 <hr>
                 <h3 class="text-lg">Tạm phí</h3>
                 <p class=" pl-[100px]"><?php echo number_format($tongtien) ?>₫</p>
-                
             </div>
         </div>
     </div>
