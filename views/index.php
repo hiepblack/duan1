@@ -17,6 +17,12 @@ if (isset($_GET['act'])) {
             include "./sanpham.php";
             break;
         case "chitietsanpham":
+            $id =$_GET['id'];
+            $query= "SELECT * FROM product WHERE productId=$id";
+            $one_product =getOne($query);
+            $brandId=$one_product['brandId'];
+            $query1 = "SELECT * FROM product WHERE brandId=$brandId";
+            $products=getAll($query1);
             include "./chitietsanpham.php";
             break;
         case "thanhtoan":
@@ -32,6 +38,8 @@ if (isset($_GET['act'])) {
             include "./dangnhap.php";
             break;
         default:
+            $products = top10();
+            $product = product();
             include "./trangchu.php";
             break;
     }
