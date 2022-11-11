@@ -10,6 +10,7 @@ if (isset($_GET['act'])) {
             include "./lienhe.php";
             break;
         case "blog":
+            $blog = blog();
             include "./blog.php";
             break;
         case "sanpham":
@@ -96,8 +97,11 @@ if (isset($_GET['act'])) {
             include "./dangnhap.php";
             break;
         default:
-            $products = top10();
-            $product = product();
+            $blog = blog();
+            $query = "SELECT * FROM product WHERE brandId=1";
+            $products = getAll($query);
+            $query1 = "SELECT * FROM product WHERE brandId=3";
+            $product = getAll($query1);
             include "./trangchu.php";
             break;
     }

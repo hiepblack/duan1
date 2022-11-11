@@ -67,4 +67,9 @@ function comments(){
     $result = getAll($query);
     return $result;
 }
+function blog(){
+    $query2 ="SELECT * FROM blog";
+    $result=getAll($query2);
+    return $result;
+}
 
