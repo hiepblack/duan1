@@ -7,6 +7,13 @@ function connect($query)
     $status->execute();
     return $status;
 }
+function getOrderId($query){
+    $connection = new PDO("mysql:host=localhost;dbname=du_an_1;charset=utf8", "root", "");
+    $status = $connection->prepare($query);
+    $status->execute();
+    $orderId =  $connection -> lastInsertId();
+    return $orderId;
+}
 function getAll($query)
 {
     $result = connect($query)->fetchAll();

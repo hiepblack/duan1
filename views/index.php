@@ -77,6 +77,8 @@ if (isset($_GET['act'])) {
             if(isset($_SESSION['user'])){
                 $userName = $_SESSION['user']['userName'];
                 $emailUser = $_SESSION['user']['userEmail'];
+                $sdt = $_SESSION['user']['sdt'];
+                $location = $_SESSION['user']['location'];
             }
             $productOder = $_SESSION['gio_hang'];
             
@@ -86,10 +88,14 @@ if (isset($_GET['act'])) {
             include "./dangki.php";
             break;
         case "giohang":
+            $success = false;
             if (empty($_SESSION['gio_hang'])) {
                 $result = [];
             } else {
                 $result = $_SESSION['gio_hang'];
+            }
+            if(isset($_GET['success'])){
+                $success  = "Bạn đã đặt hàng thành công";
             }
             include "./gio_hang.php";
             break;

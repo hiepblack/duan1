@@ -1,6 +1,14 @@
 <div class="container mx-auto text-center">
     <h1 class="text-3xl">Giỏ hàng của bạn</h1>
-    <p class="">Có <?php echo count($result); ?> sản phẩm trong giỏ hàng</p>
+    <p class="">
+    <?php 
+        if($success){
+            echo $success;
+        }else{
+            echo "Có ".count($result)." sản phẩm trong giỏ hàng";
+        }
+    ?>
+    </p>
     <div class="">
         <form action="../customer/add_cart.php?update" class="flex justify-between items-center p-2" method="post">
             <table>

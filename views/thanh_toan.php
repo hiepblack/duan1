@@ -3,19 +3,19 @@
         <div class="md:text-left text-center box_1">
             <h1 class="text-3xl mt-5">Sport Bicycle</h1>
             <p class="text-xl py-5">Thông tin giao hàng</p>
-            <form action="">
+            <form action="../customer/thanhtoan.php" method="post">
                     <div>
                         <input type="text" name="userName" value="<?php echo isset($_SESSION['user'])? $userName:"";?>" placeholder="Họ và tên" class="py-3 border md:w-[500px] w-full my-5 pl-1 rounded outline-none shadow-sm">
                     </div>
                     <div>
                         <input type="email" name="userEmail" value="<?php echo isset($_SESSION['user'])?$emailUser:"";?>" placeholder="Email" class="py-3 border md:w-[300px] w-full my-5 pl-1 rounded outline-none shadow-sm">
-                        <input type="text" name="orderSdt" placeholder="SDT" class="py-3 border md:w-[196px] w-full my-5 pl-1 rounded outline-none shadow-sm">
+                        <input type="text" name="orderSdt" placeholder="SDT" value="<?php echo isset($_SESSION['user'])?$sdt:"";?>" class="py-3 border md:w-[196px] w-full my-5 pl-1 rounded outline-none shadow-sm">
                     </div>
                     <div>
-                        <input type="text" name="orderLocation" placeholder="Địa Chỉ" class="py-3 border md:w-[500px] w-full my-5 pl-1 rounded outline-none shadow-sm">
+                        <input type="text" name="orderLocation" placeholder="Địa Chỉ" value="<?php echo isset($_SESSION['user'])?$location:"";?>" class="py-3 border md:w-[500px] w-full my-5 pl-1 rounded outline-none shadow-sm">
                     </div>
                     <div>
-                    <textarea class="w-[500px] bg-[#ededed] h-[130px] p-2 outline-none" cols="30" rows="10" placeholder="Ghi Chú" name="orderDetailNote"></textarea>
+                    <textarea class="w-[500px] bg-[#ededed] h-[130px] p-2 outline-none" cols="30" rows="10" placeholder="Ghi Chú" name="orderNote"></textarea>
                     </div>
                     <button class="bg-blue-500 text-white hover:bg-blue-300 py-5 px-3 rounded" type="submit">Tiếp Tục Thanh Toán</button>
                 </form>
