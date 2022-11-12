@@ -19,20 +19,20 @@
             </div>
             <form class="grid grid-cols-4 w-4/5 gap-4 h-10" action="http://localhost/WEB17301/Du_an_1/views/index.php?act=sanpham" method="post">
                 <select class="form-control" name="danhmuc">
-                    <option value="">Danh Mục</option>
-                    <option value="1">Xe đạp địa hình</option>
-                    <option value="2">Xe đạp Thời Trang</option>
-                    <option value="3">Xe đạp thể thao</option>
+                    <option value="0">Danh Mục</option>
+                    <option value="1" <?php echo isset($_POST['danhmuc'])&&$_POST['danhmuc']==1 ?"selected":"";?>>Xe đạp địa hình</option>
+                    <option value="2" <?php echo isset($_POST['danhmuc'])&&$_POST['danhmuc']==2 ?"selected":"";?>>Xe đạp Thời Trang</option>
+                    <option value="3" <?php echo isset($_POST['danhmuc'])&&$_POST['danhmuc']==3 ?"selected":"";?>>Xe đạp thể thao</option>
                 </select>
                 <select class="form-control" name="gia">
-                    <option value="">Giá Sản Phẩm</option>
-                    <option value="1">Từ 500.000 - 1.000.000</option>
-                    <option value="2">Từ 1.000.000 - 1.500.000</option>
-                    <option value="3">Từ 1.500.000 - 2.000.000</option>
-                    <option value="4">Trên 2.000.000</option>
+                    <option value="0">Giá Sản Phẩm</option>
+                    <option value="500000-1000000" >Từ 500.000 - 1.000.000</option>
+                    <option value="1000000-1500000">Từ 1.000.000 - 1.500.000</option>
+                    <option value="1500000-2000000">Từ 1.500.000 - 2.000.000</option>
+                    <option value="2000000">Trên 2.000.000</option>
                 </select>
                 <select class="form-control" name="size">
-                    <option value="">Size</option>
+                    <option value="0">Size</option>
                     <option value="49">Size :49cm</option>
                     <option value="50">Size :50cm</option>
                     <option value="51">Size :51cm</option>
