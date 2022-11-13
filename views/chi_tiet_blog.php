@@ -55,6 +55,7 @@
         <section class="w-9/12 px-4">
 
             <div class="">
+                <!-- tieude -->
                 <h1 class="text-center text-2xl font-medium my-5"><?php echo $blog_one['blogContent']?></h1>
                 <div class="flex justify-center">
                     <p class=" text-center">Người viết:<?php echo $tacgia['userName']?>        lúc          <?php echo $blog_one['blogDate']?></p>
