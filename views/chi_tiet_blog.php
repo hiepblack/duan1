@@ -2,7 +2,7 @@
     <!-- nav links -->
     <div class="flex px-10">
         <div class="py-2">
-            <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=trangchu" class="text-sm px-1 text-slate-600">Trang chủ</a> / <a class="text-sm px-1 text-slate-400" href="http://localhost/WEB17301/Du_an_1/views/index.php?act=blog">Blog</a>
+            <a href="" class="text-sm px-1 text-slate-600">Trang chủ</a> / <a class="text-sm px-1 text-slate-400" href="">Blog</a>
         </div>
     </div>
     <!-- main -->
@@ -53,23 +53,31 @@
             </div>
         </aside>
         <section class="w-9/12 px-4">
-            <h1 class="text-slate-800 text-3xl font-bold my-2">TIN TỨC</h1>
-            <?php foreach ($blog as $value) : ?>
-                <a href="">
-                    <div class="flex py-4 w-10/12 ">
-                        <div class="overflow-hidden">
-                            <img class="w-[235px] h-[180px] transition hover:duration-650 hover:ease-in-out hover:scale-[1.2]" src="../img/<?php echo $value['imageBlog'] ?>" alt="">
-                        </div>
-                        <div class="pl-5 ">
 
-                            <h4 class="text-base font-bold mb-2"><?php echo $value['blogContent'] ?></h4>
+            <div class="">
+            <!-- title   -->
+                <h1 class="text-center text-2xl font-medium my-5"><?php echo $blog_one['blogContent']?></h1>
+                <div class="flex justify-center">
+                    <p class=" text-center">Người viết:<?php echo $tacgia['userName']?>        lúc          <?php echo $blog_one['blogDate']?></p>
+                    <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=blog" class="flex pl-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
+                        </svg>
 
-                            <span class="text-sm "><?php echo $value['blogDate'] ?></span>
-                            <p class="text-sm text-black mt-4">Blog's content</p>
-                        </div>
-                    </div>
-                </a>
-            <?php endforeach; ?>
+                        <p class=" text-center ">Tin tức</p>
+                    </a>
+                </div>
+                <!-- image -->
+                <div class="flex justify-center my-5">
+                    <img src="../img/<?php echo $blog_one['imageBlog']?>" alt="">
+                </div>
+                <!-- content_blog -->
+                <div class="text-left">
+                    <p>
+                    <?php echo $blog_one['content']?>
+                    </p>
+                </div>
+            </div>
         </section>
     </main>
 </div>
