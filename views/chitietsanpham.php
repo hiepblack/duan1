@@ -96,9 +96,11 @@
                 </form>
                 <!-- list comment -->
                 <div class="w-2/3">
+                    <h2 class="text-lg lg:text-2xl font-bold text-gray-900 dark:text-white pl-2 my-2">
+                    Recent Comments
+                    </h2>
                     <?php foreach ($comments as $comment) : ?>
-                        
-                        <article class="pl-4 mb-6 text-base bg-white rounded-lg dark:bg-gray-900 w-full">
+                        <article class="pl-4 ml-4 text-base bg-white rounded-lg dark:bg-gray-900 w-full border">
                             <footer class="flex justify-between items-center mb-2">
                                 <div class="flex items-center">
                                     <p class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white"><img class="mr-2 w-6 h-6 rounded-full" src="../img/<?php echo $comment['userImage']?>"><?php echo $comment['userName']?></p>
