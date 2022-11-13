@@ -14,7 +14,7 @@
             <div class="element text-center">
                 <h5 class="text-4xl uppercase my-4">Xe đạp gấp performance</h5>
                 <p class="text-xl  my-4">Thiết kế cho tốc độ và sự mạnh mẽ</p>
-                <a href="">
+                <a href=" http://localhost/WEB17301/Du_an_1/views/index.php?act=sanpham">
                     <button class="border border-white py-2 px-3 bg-white text-black hover:bg-transparent hover:text-white">
                         Xem Ngay
                     </button>
@@ -30,7 +30,7 @@
             <div class="element2">
                 <h5 class="text-4xl uppercase my-4">sport bicycle</h5>
                 <p class="text-xl  my-4">Đồng hành trên mọi hành trình</p>
-                <a href="">
+                <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=sanpham">
                     <button class="border border-white py-2 px-3 bg-white text-black hover:bg-transparent hover:text-white">
                         Xem Ngay
                     </button>
@@ -45,7 +45,7 @@
             <div class="element3">
                 <h5 class="text-4xl uppercase my-4">Xe gấp cực nhanh</h5>
                 <p class="text-xl  my-4">Gấp gọn một cách nhanh chóng chỉ trong 3 bước</p>
-                <a href="">
+                <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=sanpham">
                     <button class="border border-white py-2 px-3 bg-white text-black hover:bg-transparent hover:text-white">
                         Mua Ngay
                     </button>
@@ -81,7 +81,9 @@
             <div class="py-10 md:py-20 text-center">
                 <h3 class="text-2xl font-semibold my-2">XE ĐẠP ĐỊA HÌNH</h3>
                 <p class="text-slate-500 text-sm my-4">Xem những sản phẩm hot nhất của chúng tôi</p>
-                <button class="bg-slate-700 px-5 py-2 text-white text-base">XEM THÊM</button>
+                <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=sanpham">
+                    <button class="bg-slate-700 px-5 py-2 text-white text-base">XEM THÊM</button>
+                </a>
             </div>
             <?php foreach ($products as $value) : ?>
                 <div class="p-4 border">
@@ -122,7 +124,9 @@
             <div class="py-10 md:py-20 text-center">
                 <h3 class="text-2xl font-semibold my-2">XE ĐẠP THÔNG DỤNG</h3>
                 <p class="text-slate-500 text-sm my-4">Thiết kế cho tốc độ và sự mạnh mẽ</p>
-                <button class="bg-slate-700 px-5 py-2 text-white text-base">MUA NGAY</button>
+                <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=sanpham">
+                    <button class="bg-slate-700 px-5 py-2 text-white text-base">MUA NGAY</button>
+                </a>
             </div>
             <?php foreach ($product as $value) : ?>
                 <div class="p-4 border">

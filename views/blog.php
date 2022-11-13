@@ -55,7 +55,7 @@
         <section class="w-9/12 px-4">
             <h1 class="text-slate-800 text-3xl font-bold my-2">TIN TỨC</h1>
             <?php foreach ($blog as $value) : ?>
-                <a href="">
+                <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=chitiet_blog&id=<?php echo $value['blogId']?>&userid=<?php echo $value['userId']?>">
                     <div class="flex py-4 w-10/12 ">
                         <div class="overflow-hidden">
                             <img class="w-[235px] h-[180px] transition hover:duration-650 hover:ease-in-out hover:scale-[1.2]" src="../img/<?php echo $value['imageBlog'] ?>" alt="">
