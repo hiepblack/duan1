@@ -129,9 +129,9 @@
                     <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=chitietsanpham&id=<?php echo $value['productId'] ?>">
                         <div class="flex justify-center items-center">
                             <img class="sm:h-64 md:h-96 border" src="../img/<?php
-                                                                        $arr = explode(",", $value['productImage']);
-                                                                        echo $arr[0];
-                                                                        ?>" alt="">
+                                                                            $arr = explode(",", $value['productImage']);
+                                                                            echo $arr[0];
+                                                                            ?>" alt="">
                         </div>
                         <div class="flex flex-col justify-center items-start">
                             <p class="text-base text-black">
@@ -158,28 +158,30 @@
             <h3 class="text-center font-bold my-10 text-3xl">TIN TỨC</h3>
             <div class="grid grid-cols-3 gap-5 px-">
                 <!-- bai viet -->
-                <?php foreach($blog as $value):?>
-                <div class="border p-2">
-                    <div class="overflow-hidden relative">
-                        <div class="">
-                            <img class="transition hover:duration-650 hover:ease-in-out hover:scale-[1.2]" src="../img/<?php echo $value['imageBlog']?>" alt="">
-                        </div>
-                        <div class="absolute bottom-0 left-3   ">
-                            <p class="text-slate-800 font-bold text-2xl bg-white px-6 py-2"><?php echo $value['blogDate']?></p>
-                        </div>
-                    </div>
-                    <div class="py-2">
-                        <a href="">
-                            <h4 class="text-xl font-bold my-2"><?php echo $value['blogContent']?></h4>
+                <?php foreach ($blog as $value) : ?>
+                    <div class="border p-2">
+                        <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=chitiet_blog&id=<?php echo $value['blogId']?>&userid=<?php echo $value['userId']?>">
+                            <div class="overflow-hidden relative">
+                                <div class="">
+                                    <img class="transition hover:duration-650 hover:ease-in-out hover:scale-[1.2]" src="../img/<?php echo $value['imageBlog'] ?>" alt="">
+                                </div>
+                                <div class="absolute bottom-0 left-3   ">
+                                    <p class="text-slate-800 font-bold text-2xl bg-white px-6 py-2"><?php echo $value['blogDate'] ?></p>
+                                </div>
+                            </div>
+                            <div class="py-2">
+
+                                <h4 class="text-xl font-bold my-2"><?php echo $value['blogContent'] ?></h4>
+
+                                <p class="text-slate-600 ">Đây là trang blog của cửa hàng. Bạn có thể dùng blog để quảng bá sản phẩm mới, chia sẻ trải nghiệm của khách hàng,...
+                                </p>
+                                <div class="relative py-5">
+                                    <a href="" class="absolute underline text-sm font-bold text-slate-700 right-0"> XEM THÊM</a>
+                                </div>
+                            </div>
                         </a>
-                        <p class="text-slate-600 ">Đây là trang blog của cửa hàng. Bạn có thể dùng blog để quảng bá sản phẩm mới, chia sẻ trải nghiệm của khách hàng,...
-                        </p>
-                        <div class="relative py-5">
-                            <a href="" class="absolute underline text-sm font-bold text-slate-700 right-0"> XEM THÊM</a>
-                        </div>
                     </div>
-                </div>
-                <?php endforeach;?>
+                <?php endforeach; ?>
                 <!-- <div class="border p-2">
                     <div class="overflow-hidden relative">
                         <div class="">

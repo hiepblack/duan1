@@ -79,4 +79,10 @@ function blog(){
     $result=getAll($query2);
     return $result;
 }
+function tacgia(){
+    $query = "select user.userName from user join blog on user.userid=blog.userId where userId =";
+    $result = getAll($query);
+    return $result;
+}
+
 

@@ -10,17 +10,17 @@
             <div class="p-5 border">
                 <h3 class="text-lg">DANH MỤC TRANG</h3>
                 <hr class="text-bold">
-                <a class="block text-left pt-2 pb-2" href=""><span>Trang Chủ</span></a>
+                <a class="block text-left pt-2 pb-2" href="http://localhost/WEB17301/Du_an_1/views/index.php?act=trangchu"><span>Trang Chủ</span></a>
                 <hr>
-                <a class="block text-left pt-2 pb-2" href=""><span>Bộ Sưu Tập</span></a>
+                <a class="block text-left pt-2 pb-2" href="http://localhost/WEB17301/Du_an_1/views/index.php?act=sanpham"><span>Bộ Sưu Tập</span></a>
                 <hr>
-                <a class="block text-left pt-2 pb-2" href=""><span>Product View</span></a>
+                <a class="block text-left pt-2 pb-2" href="http://localhost/WEB17301/Du_an_1/views/index.php?act=sanpham"><span>Product View</span></a>
                 <hr>
-                <a class="block text-left pt-2 pb-2" href=""><span>Blog</span></a>
+                <a class="block text-left pt-2 pb-2" href="http://localhost/WEB17301/Du_an_1/views/index.php?act=blog"><span>Blog</span></a>
                 <hr>
-                <a class="block text-left pt-2 pb-2" href=""><span>Giới Thiệu</span></a>
+                <a class="block text-left pt-2 pb-2" href="http://localhost/WEB17301/Du_an_1/views/index.php?act=gioithieu"><span>Giới Thiệu</span></a>
                 <hr>
-                <a class="block text-left pt-2 pb-2" href=""><span>Liên Hệ</span></a>
+                <a class="block text-left pt-2 pb-2" href="http://localhost/WEB17301/Du_an_1/views/index.php?act=lienhe"><span>Liên Hệ</span></a>
             </div>
             <div class="my-5">
                 <img src="https://theme.hstatic.net/1000406173/1000655524/14/page_banner.jpg?v=133" alt="">
