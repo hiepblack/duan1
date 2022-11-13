@@ -24,7 +24,7 @@ if (isset($_GET['act'])) {
                     $query .="and brandId = $cate";
                 }
                 if($_POST['gia']){
-                    $string = explode("-",$price);
+                $string = explode("-",$price);
                    if(count($string) > 1){
                     $query .=" and productPrice between $string[0] and $string[1]";
                    }else{
@@ -46,6 +46,8 @@ if (isset($_GET['act'])) {
             $brandId=$one_product['brandId'];
             $query1 = "SELECT * FROM product WHERE brandId=$brandId";
             $products=getAll($query1);
+            $queryComment = "SELECT * FROM comment join user on comment.userId = user.userId WHERE productId ='$id'";
+            $comments = getAll($queryComment);
             include "./chitietsanpham.php";
             break;
         case "thanhtoan":
