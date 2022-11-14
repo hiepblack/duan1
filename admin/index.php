@@ -146,19 +146,44 @@ if (isset($_GET['act'])) {
                 break;
             // chức năng Loại Hàng
         case "loaihang":
-            $category = getCategory();
-            if (isset($_POST['search']) && $_POST['search']) {
-                $search = $_POST['search'];
-                $query = "select * from loai_hang where  ten_loai like '%$search%' or ten_loai = '$search'";
-                $category = getAll($query);
-            }
             include "./loai_hang.php";
             break;
         case "updatelh":
+            // var_dump($_POST);die;
+            if(isset($_POST["submit"])){
+                $id = $_POST['brandId'];
+                $brandName = $_POST["brandName"];
+                updateBrand($id,$brandName);
+                // header('Location:http://localhost/WEB17301/du_an_1/admin/index.php?act=loaihang');
+            }
+            
             include "./form/form_sua_loai_hang.php";
             break;
         case "addlh":
+            $error= array();
+            if(isset($_POST["submit"])){
+                if($_POST["brandName"]!=""){
+                    $brandName = $_POST["brandName"];
+                    $query = "select * from brand where brandName = '$brandName'";
+                    $check = getOne($query);
+                    if(empty($check)){
+                        addBrand($brandName);
+                        // header('Location:http://localhost/WEB17301/du_an_1/admin/index.php?act=loaihang');
+                    }else{
+                        $error['brand']="Vui lòng chọn tên khác!";
+                    }
+                }else{
+                    $error['brand']="Vui lòng nhập tên loại!";
+                }
+            }
             include "./form/form_them_moi_loai_hang.php";
+            break;
+        case "deletelh":
+            if(isset($_GET['id'])){
+                $id = $_GET["id"];
+                deleteBrand($id);
+            }
+            include "./loai_hang.php"; 
             break;
             // Chức năng khách hàng
         case "khachhang":

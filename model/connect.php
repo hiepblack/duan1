@@ -79,6 +79,20 @@ function updateProduct($productId,$productName,$productPrice,$productColor,$prod
     connect($query);
     // header("Location:http://localhost/WEB17301/du_an_1/admin/index.php?act=sanpham");
 }
+function addBrand($brandName){
+    $query ="insert into brand(brandName) values('$brandName')";
+    connect($query);
+}
+function updateBrand($id,$brandName){
+    $query = "update brand set brandName = '$brandName' where brandId = $id";
+    connect($query);
+}
+function deleteBrand($id){
+    $query0 = "update product set brandId = 0 where brandId = $id";
+    connect($query0);
+    $query = "delete from brand where brandId = $id";
+    connect($query);
+}
 function users(){
     $query = "select * from user";
     $result = getAll($query);
