@@ -88,7 +88,7 @@
             <?php foreach ($products as $value) : ?>
                 <div class="p-4 border">
                     <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=chitietsanpham&id=<?php echo $value['productId'] ?>">
-                        <div class="flex justify-center items-center">
+                        <div class="flex justify-center items-center rounded-md">
                             <img class="sm:h-64 md:h-96 border" src="../img/<?php
                                                                             $arr = explode(",", $value['productImage']);
                                                                             echo $arr[0];
@@ -129,7 +129,7 @@
                 </a>
             </div>
             <?php foreach ($product as $value) : ?>
-                <div class="p-4 border">
+                <div class="p-4 border rounded-md">
                     <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=chitietsanpham&id=<?php echo $value['productId'] ?>">
                         <div class="flex justify-center items-center">
                             <img class="sm:h-64 md:h-96 border" src="../img/<?php

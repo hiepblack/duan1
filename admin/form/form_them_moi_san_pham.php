@@ -1,3 +1,7 @@
+<?php //if(isset($error)){
+       // var_dump($error);
+        //}
+ ?>
 <div class="page-wrapper">
     <!-- ============================================================== -->
     <!-- Bread crumb and right sidebar toggle -->
@@ -19,9 +23,6 @@
         <!-- /.col-lg-12 -->
     </div>
     <!-- ============================================================== -->
-    <!-- End Bread crumb and right sidebar toggle -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
     <!-- Container fluid  -->
     <!-- ============================================================== -->
     <div class="container-fluid">
@@ -40,56 +41,66 @@
             <div class="col-lg-8 col-xlg-9 col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <form class="form-horizontal form-material" method="post" enctype="multipart/form-data" action="../customer/add_product.php">
-                           
+                        <form class="form-horizontal form-material" method="post" enctype="multipart/form-data" action="./index.php?act=addsp">
                             <div class="form-group mb-4">
-                                <label class="col-md-12 p-0">Tên Sản Phẩm</label>
+                                <label class="col-md-12 p-0">Tên Sản Phẩm</label><br>
+                                <p class="alert alert-warning" <?php echo isset($error['name'])?"":"hidden"?>><?php echo isset($error['name'])?$error['name']:""?></p>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <input type="text"  class="form-control p-0 border-0" name="ten_hh">
+                                    <input type="text"  class="form-control p-0 border-0" name="productName" value="<?php echo isset($_POST['productName'])?$_POST['productName']:""?>" >
                                 </div>
                             </div>
                             <div class="form-group mb-4">
                                 <label for="dongia" class="col-md-12 p-0">Đơn Giá</label>
+                                <p class="alert alert-warning" <?php echo isset($error['price'])?"":"hidden"?>><?php echo isset($error['price'])?$error['price']:""?></p>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <input type="number"  class="form-control p-0 border-0" name="don_gia" id="example-email">
+                                    <input type="number"  class="form-control p-0 border-0" name="productPrice" value="<?php echo isset($_POST['productPrice'])?$_POST['productPrice']:""?>" id="example-email">
                                 </div>
                             </div>
                             <div class="form-group mb-4">
                                 <label for="giamgia" class="col-md-12 p-0">Giảm giá</label>
+                                <p class="alert alert-warning" <?php echo isset($error['discount'])?"":"hidden"?>><?php echo isset($error['discount'])?$error['discount']:""?></p>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <input type="number"  class="form-control p-0 border-0" name="giam_gia" id="example-email">
+                                    <input type="number"  class="form-control p-0 border-0" name="productDiscount" id="example-email" value="0">
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="giamgia" class="col-md-12 p-0">Kích cỡ</label>
+                                <p class="alert alert-warning" <?php echo isset($error['size'])?"":"hidden"?>><?php echo isset($error['size'])?$error['size']:""?></p>
+                                <div class="col-md-12 border-bottom p-0">
+                                    <input type="number"  class="form-control p-0 border-0" name="productSize" id="example-email" value="<?php echo isset($_POST['productSize'])?$_POST['productSize']:""?>">
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="giamgia" class="col-md-12 p-0">Màu sắc</label>
+                                <p class="alert alert-warning" <?php echo isset($error['color'])?"":"hidden"?>><?php echo isset($error['color'])?$error['color']:""?></p>
+                                <div class="col-md-12 border-bottom p-0">
+                                    <input type="text"  class="form-control p-0 border-0" name="productColor" id="example-email" value="<?php echo isset($_POST['productColor'])?$_POST['productColor']:""?>">
                                 </div>
                             </div>
                             <div class="form-group mb-4">
                                 <label class="col-md-12 p-0">Hình Ảnh</label>
+                                <p class="alert alert-warning" <?php echo isset($error['image'])?"":"hidden"?>><?php echo isset($error['image'])?$error['image']:""?></p>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <input type="file" name="hinh_anh" class="form-control p-0 border-0">
-                                    
-                                </div>
-                            </div>
-                            <div class="form-group mb-4">
-                                <label class="col-md-12 p-0">Ngày Nhập</label>
-                                <div class="col-md-12 border-bottom p-0">
-                                    <input type="date"  class="form-control p-0 border-0" name="ngay_nhap">
+                                    <input type="file" name="productImage" class="form-control p-0 border-0">
                                 </div>
                             </div>
                             <div class="form-group mb-4">
                                 <label class="col-md-12 p-0">Mô Tả</label>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <textarea rows="5" class="form-control pl-4 border-0" name="mo_ta">
-                                    
+                                    <textarea rows="5" class="form-control pl-4 border-0" name="productDesc">
+                                        <?php echo isset($_POST['productDesc'])?$_POST['productDesc']:""?>
                                     </textarea>
                                 </div>
                             </div>
                             <div class="form-group mb-4">
-                                <label class="col-sm-12">Loại Hàng</label>
-
+                                <label class="col-sm-12">Danh mục</label>
                                 <div class="col-sm-12 border-bottom">
-                                    <select class="form-select shadow-none p-0 border-0 form-control-line" name="ma_loai">
+                                    <select class="form-select shadow-none p-0 border-0 form-control-line" name="brandId">
                                         <?php
+                                        $category = getAll("select * from brand");
                                         foreach ($category as $cate) :
                                         ?>
-                                            <option  value="<?php echo $cate['ma_loai'] ?>"> <?php echo $cate['ten_loai'] ?></option>
+                                            <option  value="<?php echo $cate['brandId'] ?>"> <?php echo $cate['brandName'] ?></option>
                                         <?php endforeach ?>
                                     </select>
                                 </div>
@@ -111,9 +122,17 @@
     
     <!-- footer -->
     <!-- ============================================================== -->
-    <footer class="footer text-center"> 2021 © Ample Admin brought to you by <a href="https://www.wrappixel.com/">wrappixel.com</a>
+    <footer class="footer text-center"> 2022 © Admin brought to you by <a href="https://facebook.com/ducduc.1002">Group 8</a>
     </footer>
     <!-- ============================================================== -->
     <!-- End footer -->
     <!-- ============================================================== -->
 </div>
+<!-- xu li them moi san pham -->
+<?php
+// echo "<pre>";
+// var_dump($_POST) ;
+
+// var_dump($error['name']);
+ ?>
+<?php ?>
