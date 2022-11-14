@@ -3,28 +3,20 @@
     <!-- Bread crumb and right sidebar toggle -->
     <!-- ============================================================== -->
     <div class="page-breadcrumb bg-white d-flex justify-content-between align-items-center">
-                <p class="fs-6 fw-bold">Sản Phẩm</p>
-            <div class="d-flex form-group">
-                <form action="" class="mx-2 border" method="post">
-                    <input type="text" class="p-1" placeholder="tìm kiếm" name="search">
-                    <button class="btn btn-primary">TÌm kiếm</button>
-                </form>
-                <a href="http://localhost/WEB17301/xshop2/admin/index.php?act=addsp">
-                    <button class="btn btn-primary">Thêm mới+</button>
-                </a>
-            </div>
+        <p class="fs-6 fw-bold">Sản Phẩm</p>
+        <div class="d-flex form-group">
+            <form action="" class="mx-2 border" method="post">
+                <input type="text" class="p-1" placeholder="tìm kiếm" name="search">
+                <button class="btn btn-primary">TÌm kiếm</button>
+            </form>
+            <a href="http://localhost/WEB17301/Du_an_1/admin/index.php?act=addsp">
+                <button class="btn btn-success text-white">Thêm mới+</button>
+            </a>
+        </div>
         <!-- /.col-lg-12 -->
     </div>
-    <!-- ============================================================== -->
-    <!-- End Bread crumb and right sidebar toggle -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- Container fluid  -->
-    <!-- ============================================================== -->
     <div class="container-fluid">
-        <!-- ============================================================== -->
         <!-- Start Page Content -->
-        <!-- ============================================================== -->
         <div class="row">
             <div class="col-sm-12">
                 <div class="white-box">
@@ -33,6 +25,7 @@
                         <table class="table text-nowrap">
                             <thead>
                                 <tr>
+                                    <th class="border-top-0">Hành động</th>
                                     <th class="border-top-0">#</th>
                                     <th class="border-top-0">Tên Sản Phẩm</th>
                                     <th class="border-top-0">Hình ảnh</th>
@@ -40,51 +33,65 @@
                                     <th class="border-top-0">Màu Sắc</th>
                                     <th class="border-top-0">Thương hiệu</th>
                                     <th class="border-top-0">Trạng thái</th>
-                                    <th class="border-top-0">Hành động</th>
+
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($products as $product): ?>
-                                <tr>
-                                    <td>
-                                        <?php echo $product['productId']?>
-                                    </td>
-                                    <td>
-                                    <?php echo $product['productName']?>
-                                    </td>
-                                    <td>
-                                        <img src="../img/<?php echo $product['productImage']?>" alt="" width="50" height="50">
-                                    </td>
-                                    <td><?php echo $product['productPrice']?></td>
-                                    <td>
-                                    <?php echo $product['productColor']?>
-                                    </td>
-                                    <td>
-                                    <?php  
-                                    if($product['brandId']==1){
-                                        echo "Xe đạp địa hình";
-                                    }else if($product['brandId']==2){
-                                        echo "Xe đạp thời trang";
-                                    }else if($product['brandId']==3){
-                                        echo "Xe đạp thông dụng";
-                                    }else{
-                                        echo "dm không biết";
+                                <?php $products = product();
+                                    if (isset($_POST['search']) && $_POST['search']) {
+                                        $search = $_POST['search'];
+                                        $query = "select * from product where productName like '%$search%' or productName = '$search'";
+                                        $products = getAll($query);
+                                    } else {
+                                        $query = "select * from product where 1";
+                                        $products = getAll($query);
                                     }
-                                    ?>
-                                    </td>
-                                    <td>
-                                    <?php echo $product['productStatus']?>
-                                    </td>
-                                    <td>
-                                        <a href="http://localhost/WEB17301/du_an_1/admin/index.php?act=updatesp&id=<?php echo $product['productId']?>">
-                                            <button type="button" class="btn btn-primary">Sửa sp</button>
-                                        </a>
-                                        <a onclick="return confirm_product('<?php echo $product['productName'];?>')" href="../customer/delete_san_pham.php?id=<?php echo $product['productId']?>">
-                                            <button type="button" class="btn btn-danger">Xoá sp</button>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <?php endforeach;?>
+                                ?>
+                                <?php foreach ($products as $product) : ?>
+                                    <tr>
+                                        <td>
+                                            <a href="http://localhost/WEB17301/du_an_1/admin/index.php?act=updatesp&id=<?php echo $product['productId'] ?>">
+                                                <button type="button" class="btn btn-primary">Sửa sp</button>
+                                            </a>
+                                            <a onclick="return confirm_product('<?php echo $product['productName']; ?>')" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=deletesp&id=<?php echo $product['productId'] ?>">
+                                                <button type="button" class="btn btn-danger text-white">Xoá sp</button>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <?php echo $product['productId'] ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $product['productName'] ?>
+                                        </td>
+                                        <td>
+                                            <img src="../img/<?php
+                                                                $arr = explode(",", $product['productImage']);
+                                                                echo $arr[0];
+                                                                ?>" alt="" width="50" height="50">
+                                        </td>
+                                        <td><?php echo $product['productPrice'] ?></td>
+                                        <td>
+                                            <?php echo $product['productColor'] ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                            if ($product['brandId'] == 1) {
+                                                echo "Xe đạp địa hình";
+                                            } else if ($product['brandId'] == 2) {
+                                                echo "Xe đạp thời trang";
+                                            } else if ($product['brandId'] == 3) {
+                                                echo "Xe đạp thông dụng";
+                                            } else {
+                                                echo "Chưa xác định";
+                                            }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $product['productStatus'] ?>
+                                        </td>
+
+                                    </tr>
+                                <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>

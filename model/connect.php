@@ -63,6 +63,22 @@ function product(){
     $result = getAll($query);
     return $result;
 }
+function deleteProduct($id){
+    $query="delete from product where productId = $id";
+    connect($query);
+}
+function addProduct($productName,$productPrice,$productColor,$productSize,$brandId,$productImage,$productDesc,$productDiscount){
+    $query="INSERT INTO product( productName, productPrice, productColor, productSize, brandId, productImage, productDesc, productDiscount) 
+    VALUES('$productName',$productPrice,'$productColor',$productSize,$brandId,'$productImage','$productDesc',$productDiscount)";
+    connect($query);
+}
+function updateProduct($productId,$productName,$productPrice,$productColor,$productSize,$brandId,$productImage,$productDesc,$productDiscount){
+    $query="UPDATE product SET 
+    productName='$productName',productPrice=$productPrice,productColor='$productColor',productSize=$productSize,brandId=$brandId,
+    productImage='$productImage',productDesc='$productDesc',productDiscount=$productDiscount WHERE productId=$productId";
+    connect($query);
+    // header("Location:http://localhost/WEB17301/du_an_1/admin/index.php?act=sanpham");
+}
 function users(){
     $query = "select * from user";
     $result = getAll($query);

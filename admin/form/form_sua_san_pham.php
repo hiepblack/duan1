@@ -1,10 +1,4 @@
-<?php
-$id = $_GET['id'];
-$query = "select * from hang_hoa where ma_hh =$id";
-$product_update = getOne($query);
-$queryCate = "select * from loai_hang";
-$category = getAll($queryCate);
-?>
+
 
 
 
@@ -44,70 +38,82 @@ $category = getAll($queryCate);
             <!-- Column -->
             <div class="col-lg-4 col-xlg-3 col-md-12">
                 <div class="white-box">
-                    <img width="100%" alt="user" src="../image/<?php echo $product_update['hinh_anh'] ?>">
+                    <img width="100%" alt="user" src="../img/<?php echo $product['productImage'] ?>">
                 </div>
             </div>
             <!-- Column -->
             <div class="col-lg-8 col-xlg-9 col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <form class="form-horizontal form-material" method="post" enctype="multipart/form-data" action="../customer/update_product.php">
-                            <input type="text" name="ma_hh" value="<?php echo $product_update['ma_hh'] ?>" hidden>
+                    <form class="form-horizontal form-material" method="post" enctype="multipart/form-data" action="./index.php?act=updatesp">
+                            <input type="hidden" name="oldImage" value="<?php echo $product['productImage'];?>">
+                            <input type="hidden" name="productId" value="<?php echo $product['productId'];?>">
                             <div class="form-group mb-4">
-                                <label class="col-md-12 p-0">Tên Sản Phẩm</label>
+                                <label class="col-md-12 p-0">Tên Sản Phẩm</label><br>
+                                <p class="alert alert-warning" <?php echo isset($error['name'])?"":"hidden"?>><?php echo isset($error['name'])?$error['name']:""?></p>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <input type="text" value="<?php echo $product_update['ten_hh'] ?>" class="form-control p-0 border-0" name="ten_hh">
+                                    <input type="text"  class="form-control p-0 border-0" name="productName" value="<?php echo isset($_POST['productName'])?$_POST['productName']:$product['productName']?>" >
                                 </div>
                             </div>
                             <div class="form-group mb-4">
                                 <label for="dongia" class="col-md-12 p-0">Đơn Giá</label>
+                                <p class="alert alert-warning" <?php echo isset($error['price'])?"":"hidden"?>><?php echo isset($error['price'])?$error['price']:""?></p>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <input type="number" value="<?php echo $product_update['don_gia'] ?>" class="form-control p-0 border-0" name="don_gia" id="example-email">
+                                    <input type="number"  class="form-control p-0 border-0" name="productPrice" value="<?php echo isset($_POST['productPrice'])?$_POST['productPrice']:$product['productPrice']?>" id="example-email">
                                 </div>
                             </div>
                             <div class="form-group mb-4">
                                 <label for="giamgia" class="col-md-12 p-0">Giảm giá</label>
+                                <p class="alert alert-warning" <?php echo isset($error['discount'])?"":"hidden"?>><?php echo isset($error['discount'])?$error['discount']:""?></p>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <input type="number" value="<?php echo $product_update['giam_gia'] ?>" class="form-control p-0 border-0" name="giam_gia" id="example-email">
+                                    <input type="number"  class="form-control p-0 border-0" name="productDiscount" id="example-email" value="0">
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="giamgia" class="col-md-12 p-0">Kích cỡ</label>
+                                <p class="alert alert-warning" <?php echo isset($error['size'])?"":"hidden"?>><?php echo isset($error['size'])?$error['size']:""?></p>
+                                <div class="col-md-12 border-bottom p-0">
+                                    <input type="number"  class="form-control p-0 border-0" name="productSize" id="example-email" value="<?php echo isset($_POST['productSize'])?$_POST['productSize']:$product['productSize']?>">
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="giamgia" class="col-md-12 p-0">Màu sắc</label>
+                                <p class="alert alert-warning" <?php echo isset($error['color'])?"":"hidden"?>><?php echo isset($error['color'])?$error['color']:""?></p>
+                                <div class="col-md-12 border-bottom p-0">
+                                    <input type="text"  class="form-control p-0 border-0" name="productColor" id="example-email" value="<?php echo isset($_POST['productColor'])?$_POST['productColor']:$product['productColor']?>">
                                 </div>
                             </div>
                             <div class="form-group mb-4">
                                 <label class="col-md-12 p-0">Hình Ảnh</label>
+                                <p class="alert alert-warning" <?php echo isset($error['image'])?"":"hidden"?>><?php echo isset($error['image'])?$error['image']:""?></p>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <input type="file" name="hinh_anh" class="form-control p-0 border-0">
-                                    <input type="text" name="oldImage" value="<?php echo $product_update['hinh_anh'] ?>" hidden>
-                                </div>
-                            </div>
-                            <div class="form-group mb-4">
-                                <label class="col-md-12 p-0">Ngày Nhập</label>
-                                <div class="col-md-12 border-bottom p-0">
-                                    <input type="date" value="<?php echo $product_update['ngay_nhap'] ?>" class="form-control p-0 border-0" name="ngay_nhap">
+                                    <input type="file" name="productImage" class="form-control p-0 border-0">
                                 </div>
                             </div>
                             <div class="form-group mb-4">
                                 <label class="col-md-12 p-0">Mô Tả</label>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <textarea rows="5" class="form-control pl-4 border-0" name="mo_ta">
-                                    <?php echo $product_update['mo_ta'] ?>
+                                    <textarea rows="5" class="form-control pl-4 border-0" name="productDesc">
+                                        <?php echo isset($_POST['productDesc'])?$_POST['productDesc']:$product['productDesc']?>
                                     </textarea>
                                 </div>
                             </div>
                             <div class="form-group mb-4">
-                                <label class="col-sm-12">Loại Hàng</label>
-
+                                <label class="col-sm-12">Danh mục</label>
                                 <div class="col-sm-12 border-bottom">
-                                    <select class="form-select shadow-none p-0 border-0 form-control-line" name="ma_loai">
+                                    <select class="form-select shadow-none p-0 border-0 form-control-line" name="brandId">
                                         <?php
+                                        $category = getAll("select * from brand");
                                         foreach ($category as $cate) :
                                         ?>
-                                            <option <?php echo $cate['ma_loai'] == $product_update['ma_loai'] ? "selected" : ""; ?> value="<?php echo $cate['ma_loai'] ?>"> <?php echo $cate['ten_loai'] ?></option>
+                                            <option <?php echo $cate['brandId']==$product['brandId']?"checked":"" ?> value="<?php echo $cate['brandId'] ?>"> <?php echo $cate['brandName'] ?></option>
                                         <?php endforeach ?>
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group mb-4">
                                 <div class="col-sm-12">
-                                    <button class="btn btn-success" type="submit">Update Sản Phẩm</button>
+                                    <button class="btn btn-success" type="submit" name="submit">Update Sản Phẩm</button>
                                 </div>
                             </div>
                         </form>
