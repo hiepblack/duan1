@@ -14,7 +14,7 @@
             <div class="element text-center">
                 <h5 class="text-4xl uppercase my-4">Xe đạp gấp performance</h5>
                 <p class="text-xl  my-4">Thiết kế cho tốc độ và sự mạnh mẽ</p>
-                <a href="">
+                <a href=" http://localhost/WEB17301/Du_an_1/views/index.php?act=sanpham">
                     <button class="border border-white py-2 px-3 bg-white text-black hover:bg-transparent hover:text-white">
                         Xem Ngay
                     </button>
@@ -30,7 +30,7 @@
             <div class="element2">
                 <h5 class="text-4xl uppercase my-4">sport bicycle</h5>
                 <p class="text-xl  my-4">Đồng hành trên mọi hành trình</p>
-                <a href="">
+                <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=sanpham">
                     <button class="border border-white py-2 px-3 bg-white text-black hover:bg-transparent hover:text-white">
                         Xem Ngay
                     </button>
@@ -45,7 +45,7 @@
             <div class="element3">
                 <h5 class="text-4xl uppercase my-4">Xe gấp cực nhanh</h5>
                 <p class="text-xl  my-4">Gấp gọn một cách nhanh chóng chỉ trong 3 bước</p>
-                <a href="">
+                <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=sanpham">
                     <button class="border border-white py-2 px-3 bg-white text-black hover:bg-transparent hover:text-white">
                         Mua Ngay
                     </button>
@@ -81,7 +81,9 @@
             <div class="py-10 md:py-20 text-center">
                 <h3 class="text-2xl font-semibold my-2">XE ĐẠP ĐỊA HÌNH</h3>
                 <p class="text-slate-500 text-sm my-4">Xem những sản phẩm hot nhất của chúng tôi</p>
-                <button class="bg-slate-700 px-5 py-2 text-white text-base">XEM THÊM</button>
+                <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=sanpham">
+                    <button class="bg-slate-700 px-5 py-2 text-white text-base">XEM THÊM</button>
+                </a>
             </div>
             <?php foreach ($products as $value) : ?>
                 <div class="p-4 border">
@@ -122,16 +124,18 @@
             <div class="py-10 md:py-20 text-center">
                 <h3 class="text-2xl font-semibold my-2">XE ĐẠP THÔNG DỤNG</h3>
                 <p class="text-slate-500 text-sm my-4">Thiết kế cho tốc độ và sự mạnh mẽ</p>
-                <button class="bg-slate-700 px-5 py-2 text-white text-base">MUA NGAY</button>
+                <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=sanpham">
+                    <button class="bg-slate-700 px-5 py-2 text-white text-base">MUA NGAY</button>
+                </a>
             </div>
             <?php foreach ($product as $value) : ?>
                 <div class="p-4 border">
                     <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=chitietsanpham&id=<?php echo $value['productId'] ?>">
                         <div class="flex justify-center items-center">
                             <img class="sm:h-64 md:h-96 border" src="../img/<?php
-                                                                        $arr = explode(",", $value['productImage']);
-                                                                        echo $arr[0];
-                                                                        ?>" alt="">
+                                                                            $arr = explode(",", $value['productImage']);
+                                                                            echo $arr[0];
+                                                                            ?>" alt="">
                         </div>
                         <div class="flex flex-col justify-center items-start">
                             <p class="text-base text-black">
@@ -158,68 +162,31 @@
             <h3 class="text-center font-bold my-10 text-3xl">TIN TỨC</h3>
             <div class="grid grid-cols-3 gap-5 px-">
                 <!-- bai viet -->
-                <?php foreach($blog as $value):?>
-                <div class="border p-2">
-                    <div class="overflow-hidden relative">
-                        <div class="">
-                            <img class="transition hover:duration-650 hover:ease-in-out hover:scale-[1.2]" src="../img/<?php echo $value['imageBlog']?>" alt="">
-                        </div>
-                        <div class="absolute bottom-0 left-3   ">
-                            <p class="text-slate-800 font-bold text-2xl bg-white px-6 py-2"><?php echo $value['blogDate']?></p>
-                        </div>
-                    </div>
-                    <div class="py-2">
-                        <a href="">
-                            <h4 class="text-xl font-bold my-2"><?php echo $value['blogContent']?></h4>
+                <?php foreach ($blog as $value) : ?>
+                    <div class="border p-2">
+                        <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=chitiet_blog&id=<?php echo $value['blogId'] ?>&userid=<?php echo $value['userId'] ?>">
+                            <div class="overflow-hidden relative">
+                                <div class="">
+                                    <img class="transition hover:duration-650 hover:ease-in-out hover:scale-[1.2]" src="../img/<?php echo $value['imageBlog'] ?>" alt="">
+                                </div>
+                                <div class="absolute bottom-0 left-3   ">
+                                    <p class="text-slate-800 font-bold text-2xl bg-white px-6 py-2"><?php echo $value['blogDate'] ?></p>
+                                </div>
+                            </div>
+                            <div class="py-2">
+
+                                <h4 class="text-xl font-bold my-2"><?php echo $value['blogContent'] ?></h4>
+
+                                <p class="text-slate-600 ">Đây là trang blog của cửa hàng. Bạn có thể dùng blog để quảng bá sản phẩm mới, chia sẻ trải nghiệm của khách hàng,...
+                                </p>
+                                <div class="relative py-5">
+                                    <a href="" class="absolute underline text-sm font-bold text-slate-700 right-0"> XEM THÊM</a>
+                                </div>
+                            </div>
                         </a>
-                        <p class="text-slate-600 ">Đây là trang blog của cửa hàng. Bạn có thể dùng blog để quảng bá sản phẩm mới, chia sẻ trải nghiệm của khách hàng,...
-                        </p>
-                        <div class="relative py-5">
-                            <a href="" class="absolute underline text-sm font-bold text-slate-700 right-0"> XEM THÊM</a>
-                        </div>
                     </div>
-                </div>
-                <?php endforeach;?>
-                <!-- <div class="border p-2">
-                    <div class="overflow-hidden relative">
-                        <div class="">
-                            <img class="transition hover:duration-650 hover:ease-in-out hover:scale-[1.2]" src="../img/content_banner.webp" alt="">
-                        </div>
-                        <div class="absolute bottom-0 left-3   ">
-                            <p class="text-slate-800 font-bold text-2xl bg-white px-6 py-2">01/01</p>
-                        </div>
-                    </div>
-                    <div class="py-2">
-                        <a href="">
-                            <h4 class="text-xl font-bold my-2">Bài viết mẫu</h4>
-                        </a>
-                        <p class="text-slate-600 ">Đây là trang blog của cửa hàng. Bạn có thể dùng blog để quảng bá sản phẩm mới, chia sẻ trải nghiệm của khách hàng,...
-                        </p>
-                        <div class="relative py-5">
-                            <a href="" class="absolute underline text-sm font-bold text-slate-700 right-0"> XEM THÊM</a>
-                        </div>
-                    </div>
-                </div> -->
-                <!-- <div class="border p-2">
-                    <div class="overflow-hidden relative">
-                        <div class="">
-                            <img class="transition hover:duration-650 hover:ease-in-out hover:scale-[1.2]" src="../img/content_banner.webp" alt="">
-                        </div>
-                        <div class="absolute bottom-0 left-3   ">
-                            <p class="text-slate-800 font-bold text-2xl bg-white px-6 py-2">01/01</p>
-                        </div>
-                    </div>
-                    <div class="py-2">
-                        <a href="">
-                            <h4 class="text-xl font-bold my-2">Bài viết mẫu</h4>
-                        </a>
-                        <p class="text-slate-600 ">Đây là trang blog của cửa hàng. Bạn có thể dùng blog để quảng bá sản phẩm mới, chia sẻ trải nghiệm của khách hàng,...
-                        </p>
-                        <div class="relative py-5">
-                            <a href="" class="absolute underline text-sm font-bold text-slate-700 right-0"> XEM THÊM</a>
-                        </div>
-                    </div>
-                </div> -->
+                <?php endforeach; ?>
+                
             </div>
         </div>
     </div>

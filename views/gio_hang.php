@@ -22,7 +22,7 @@
                             $tongtien += $thanh_tien;
                             $so_luong += $row['so_luong'];
                         ?>
-                            <input type="hidden" name="productId" value="<?php echo $row['productId'] ?>">
+                            <input type="hidden" name="productId[]" value="<?php echo $row['productId']; ?>">
                             <td class="py-5">
                                 <img class="w-[100px] h-[100px]" src="../img/<?php echo $row['productImage'] ?>" alt="">
                             </td>
@@ -41,7 +41,7 @@
                                 <div class="flex justify-between">
                                     <div class="my-3 flex">
                                         <span id="counting" class="border text-center w-[70px] font-bold flex justify-center items-center">
-                                            <input type="number" name="productSlUpdate" class="w-full h-full text-center py-2 outline-none" value="<?php echo $row['so_luong'] ?>" min="1">
+                                            <input type="number" name="productSlUpdate[]" class="w-full h-full text-center py-2 outline-none" value="<?php echo $row['so_luong'] ?>" min="1">
                                         </span>
                                     </div>
                                     <div>

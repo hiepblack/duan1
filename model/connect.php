@@ -37,7 +37,6 @@ function checkUser($result){
             $_SESSION['message'] = "bạn không có quyền truy cập vào trang";
             return false;
         }
-        
     }else{
         $_SESSION['message'] = "Thông tin chưa chính xác";
         return false;
