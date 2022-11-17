@@ -19,7 +19,7 @@ if (isset($_GET['act'])) {
             include "./san_pham.php";
             break;
         case "addsp":
-            if (isset($_POST["submit"])) {
+            if (isset($_POST["submit"])) {               
                 $productName = $_POST['productName'];
                 $productPrice = $_POST['productPrice'];
                 $productDiscount = $_POST['productDiscount'];
