@@ -1,8 +1,3 @@
-
-
-
-
-
 <div class="page-wrapper">
     <!-- ============================================================== -->
     <!-- Bread crumb and right sidebar toggle -->
@@ -37,64 +32,63 @@
         <div class="row">
             <!-- Column -->
             <div class="col-lg-4 col-xlg-3 col-md-12">
-                <div class="white-box">
-                    <img width="100%" alt="user" src="../img/<?php echo $product['productImage'][0] ?>">
+                <div class="white-box row">
+                    <?php
+                        $arr = explode(",", $product['productImage']);
+                        foreach ($arr as $key => $value){
+                        echo'<img width="100%" alt="user" src="../img/'.$value.'" class="border col-6">';
+                        }
+                    ?>
                 </div>
             </div>
             <!-- Column -->
             <div class="col-lg-8 col-xlg-9 col-md-12">
                 <div class="card">
                     <div class="card-body">
-                    <form class="form-horizontal form-material" method="post" enctype="multipart/form-data" action="./index.php?act=updatesp">
-                            <input type="hidden" name="oldImage" value="<?php echo $product['productImage'];?>">
-                            <input type="hidden" name="productId" value="<?php echo $product['productId'];?>">
+                        <form class="form-horizontal form-material" method="post" enctype="multipart/form-data" action="" onsubmit="return validate();">
+                            <input type="hidden" name="productId" value="<?php echo $product['productId']; ?>">
                             <div class="form-group mb-4">
                                 <label class="col-md-12 p-0">Tên Sản Phẩm</label><br>
-                                <p class="alert alert-warning" <?php echo isset($error['name'])?"":"hidden"?>><?php echo isset($error['name'])?$error['name']:""?></p>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <input type="text"  class="form-control p-0 border-0" name="productName" value="<?php echo isset($_POST['productName'])?$_POST['productName']:$product['productName']?>" >
+                                    <input type="text" class="form-control p-0 border-0" name="productName" value="<?php echo $product['productName']?>" id="productName">
                                 </div>
                             </div>
                             <div class="form-group mb-4">
                                 <label for="dongia" class="col-md-12 p-0">Đơn Giá</label>
-                                <p class="alert alert-warning" <?php echo isset($error['price'])?"":"hidden"?>><?php echo isset($error['price'])?$error['price']:""?></p>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <input type="number"  class="form-control p-0 border-0" name="productPrice" value="<?php echo isset($_POST['productPrice'])?$_POST['productPrice']:$product['productPrice']?>" id="example-email">
+                                    <input type="number" class="form-control p-0 border-0" name="productPrice" value="<?php echo $product['productPrice']?>" id="productPrice">
                                 </div>
                             </div>
                             <div class="form-group mb-4">
                                 <label for="giamgia" class="col-md-12 p-0">Giảm giá</label>
-                                <p class="alert alert-warning" <?php echo isset($error['discount'])?"":"hidden"?>><?php echo isset($error['discount'])?$error['discount']:""?></p>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <input type="number"  class="form-control p-0 border-0" name="productDiscount" id="example-email" value="0">
+                                    <input type="number" class="form-control p-0 border-0" name="productDiscount" id="productDiscount" value="0">
                                 </div>
                             </div>
                             <div class="form-group mb-4">
                                 <label for="giamgia" class="col-md-12 p-0">Kích cỡ</label>
-                                <p class="alert alert-warning" <?php echo isset($error['size'])?"":"hidden"?>><?php echo isset($error['size'])?$error['size']:""?></p>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <input type="number"  class="form-control p-0 border-0" name="productSize" id="example-email" value="<?php echo isset($_POST['productSize'])?$_POST['productSize']:$product['productSize']?>">
+                                    <input type="number" class="form-control p-0 border-0" name="productSize" id="productSize" value="<?php echo $product['productSize']  ?>">
                                 </div>
                             </div>
                             <div class="form-group mb-4">
                                 <label for="giamgia" class="col-md-12 p-0">Màu sắc</label>
-                                <p class="alert alert-warning" <?php echo isset($error['color'])?"":"hidden"?>><?php echo isset($error['color'])?$error['color']:""?></p>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <input type="text"  class="form-control p-0 border-0" name="productColor" id="example-email" value="<?php echo isset($_POST['productColor'])?$_POST['productColor']:$product['productColor']?>">
+                                    <input type="text" class="form-control p-0 border-0" name="productColor" id="productColor" value="<?php echo $product['productColor']  ?>">
                                 </div>
                             </div>
                             <div class="form-group mb-4">
                                 <label class="col-md-12 p-0">Hình Ảnh</label>
-                                <p class="alert alert-warning" <?php echo isset($error['image'])?"":"hidden"?>><?php echo isset($error['image'])?$error['image']:""?></p>
                                 <div class="col-md-12 border-bottom p-0">
                                     <input type="file" name="productImage" class="form-control p-0 border-0">
+                                    <input type="hidden" name="oldImage" value="<?php echo $product['productImage']; ?>">
                                 </div>
                             </div>
                             <div class="form-group mb-4">
                                 <label class="col-md-12 p-0">Mô Tả</label>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <textarea rows="5" class="form-control pl-4 border-0" name="productDesc">
-                                        <?php echo isset($_POST['productDesc'])?$_POST['productDesc']:$product['productDesc']?>
+                                    <textarea rows="5" class="form-control pl-4 border-0" name="productDesc" id="productDesc">
+                                        <?php echo $product['productDesc']?>
                                     </textarea>
                                 </div>
                             </div>
@@ -106,7 +100,7 @@
                                         $category = getAll("select * from brand");
                                         foreach ($category as $cate) :
                                         ?>
-                                            <option <?php echo $cate['brandId']==$product['brandId']?"checked":"" ?> value="<?php echo $cate['brandId'] ?>"> <?php echo $cate['brandName'] ?></option>
+                                            <option <?php echo $cate['brandId'] == $product['brandId'] ? "checked" : "" ?> value="<?php echo $cate['brandId'] ?>"> <?php echo $cate['brandName'] ?></option>
                                         <?php endforeach ?>
                                     </select>
                                 </div>
@@ -123,9 +117,9 @@
             <!-- Column -->
         </div>
         <!-- Row -->
-        
+
     </div>
-    
+
     <!-- footer -->
     <!-- ============================================================== -->
     <footer class="footer text-center"> 2021 © Ample Admin brought to you by <a href="https://www.wrappixel.com/">wrappixel.com</a>
@@ -134,3 +128,4 @@
     <!-- End footer -->
     <!-- ============================================================== -->
 </div>
+<script src="../js/validate.js"></script>

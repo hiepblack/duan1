@@ -1,11 +1,5 @@
 <?php
-if(isset($_GET['id'])){
     $id = $_GET['id'];
-    
-}
-if(isset($_POST['brandId'])){
-    $id = $_POST['brandId'];
-}
     $query = "select * from brand where brandId = $id";
     $category = getOne($query);
 ?>

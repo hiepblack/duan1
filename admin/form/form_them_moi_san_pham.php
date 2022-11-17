@@ -131,44 +131,5 @@
             boxImg.appendChild(div);
         }
     })
-    function validate() {
-        var name = document.querySelector("#productName");
-        if(name.value == ""){
-            alert(" nhập tên vào");
-            name.style.backgroundColor = "yellow";
-            name.focus();
-            return false;
-        }else{
-            name.style.backgroundColor = "white";
-        }
-        var price = document.querySelector("#productPrice");
-        if(price.value <=0){
-            alert("k có giá à dm");
-            price.style.backgroundColor = "yellow";
-            price.focus();
-            return false;
-        }
-        else{
-            price.style.backgroundColor = "white";
-        }
-        var size = document.querySelector("#productSize");
-        if(size.value <=0){
-            alert("k có size à dm");
-            size.style.backgroundColor = "yellow";
-            size.focus();
-            return false;
-        }
-        else{
-            size.style.backgroundColor = "white";
-        }
-        var color = document.querySelector("#productColor");
-        if(color.value == ""){
-            alert(" nhập màu vào dm");
-            color.style.backgroundColor = "yellow";
-            color.focus();
-            return false;
-        }else{
-            color.style.backgroundColor = "white";
-        }
-    }
 </script>
+<script src="../js/validate.js"></script>

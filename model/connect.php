@@ -77,7 +77,6 @@ function updateProduct($productId,$productName,$productPrice,$productColor,$prod
     productName='$productName',productPrice=$productPrice,productColor='$productColor',productSize=$productSize,brandId=$brandId,
     productImage='$productImage',productDesc='$productDesc',productDiscount=$productDiscount WHERE productId=$productId";
     connect($query);
-    // header("Location:http://localhost/WEB17301/du_an_1/admin/index.php?act=sanpham");
 }
 function addBrand($brandName){
     $query ="insert into brand(brandName) values('$brandName')";
