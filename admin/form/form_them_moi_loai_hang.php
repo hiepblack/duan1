@@ -1,8 +1,3 @@
-
-
-
-
-
 <div class="page-wrapper">
     <!-- ============================================================== -->
     <!-- Bread crumb and right sidebar toggle -->
@@ -44,17 +39,14 @@
             <div class="col-lg-8 col-xlg-9 col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <form class="form-horizontal form-material" method="post" enctype="multipart/form-data" action="../customer/add_cate.php">
+                        <form class="form-horizontal form-material" method="post"  action="./index.php?act=addlh">
                             <div class="form-group mb-4">
                                 <label class="col-md-12 p-0">Tên Loại Hàng</label>
+                                <p <?php echo isset($error['brand'])?"":"hidden" ?> class="alert alert-warning"><?php  if(isset($error['brand'])){
+                                    echo $error['brand'];
+                                } ?></p>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <input type="text"  class="form-control p-0 border-0" name="ten_loai">
-                                </div>
-                            </div>
-                            <div class="form-group mb-4">
-                                <label class="col-md-12 p-0">Hình Ảnh</label>
-                                <div class="col-md-12 border-bottom p-0">
-                                    <input type="file" name="hinh_anh" class="form-control p-0 border-0">
+                                    <input type="text"  class="form-control p-0 border-0" name="brandName" value="<?php echo isset($_POST['brandName'])?$_POST['brandName']:"" ?>" >
                                 </div>
                             </div>
                             <div class="form-group mb-4">
