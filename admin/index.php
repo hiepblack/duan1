@@ -57,9 +57,26 @@ if (isset($_GET['act'])) {
                 $productDesc = $_POST['productDesc'];
                 $productSize = $_POST['productSize'];
                 $productColor = $_POST['productColor'];
-                var_dump($_POST);exit();
-                // move_uploaded_file($_FILES['productImage']['tmp_name'], "../img/" . $productImage);
-                updateProduct($productId, $productName, $productPrice, $productColor, $productSize, $brandId, $productImage, $productDesc, $productDiscount);
+                $brandId = $_POST['brandId'];
+                $productImage = $_FILES['productImage']['name'];
+                $stringImage = '';
+                $oldImage = $_POST['oldImage'];
+                $numberArrayImage = count($productImage);
+                if (strlen($productImage[0]) > 0) {
+                    foreach ($productImage as $key => $value) {
+                        $stringImage .= $value;
+                        $stringImage .= "";
+                        if ($key !== $numberArrayImage - 1) {
+                            $stringImage .= ",";
+                        }
+                        move_uploaded_file($_FILES['productImage']['tmp_name'][$key], "../img/" . $value);
+                    }
+                } else {
+                    $stringImage = $oldImage;
+                }
+                updateProduct($productId, $productName, $productPrice, $productColor, $productSize, $brandId, $stringImage, $productDesc, $productDiscount);
+                $yourURL = "http://localhost/WEB17301/Du_an_1/admin/index.php?act=sanpham";
+                echo ("<script>location.href='$yourURL'</script>");
             }
             include "./form/form_sua_san_pham.php";
             break;
@@ -82,7 +99,6 @@ if (isset($_GET['act'])) {
                 updateBrand($id, $brandName);
                 // header('Location:http://localhost/WEB17301/du_an_1/admin/index.php?act=loaihang');
             }
-
             include "./form/form_sua_loai_hang.php";
             break;
         case "addlh":
@@ -94,7 +110,8 @@ if (isset($_GET['act'])) {
                     $check = getOne($query);
                     if (empty($check)) {
                         addBrand($brandName);
-                        // header('Location:http://localhost/WEB17301/du_an_1/admin/index.php?act=loaihang');
+                        $yourURL = "http://localhost/WEB17301/Du_an_1/admin/index.php?act=loaihang";
+                        echo ("<script>location.href='$yourURL'</script>");
                     } else {
                         $error['brand'] = "Vui lòng chọn tên khác!";
                     }
@@ -122,6 +139,28 @@ if (isset($_GET['act'])) {
             include "./khach_hang.php";
             break;
         case "updatekh":
+            if (isset($_POST['update'])) {
+                $id = $_POST['ma_kh'];
+                $userName = $_POST['ten_kh'];
+                $password = $_POST['mat_khau'];
+                $email = $_POST['email'];
+                $sdt = $_POST['sdt'];
+                $date = $_POST['date'];
+                $location = $_POST['location'];
+                $vai_tro = $_POST['vai_tro'];
+                $sex = $_POST['sex'];
+                $oldImage = $_POST['oldImage'];
+                $userImage = $_FILES['userImage']['name'];
+                if (strlen($userImage) > 0) {
+                    move_uploaded_file($_FILES['userImage']['tmp_name'], '../img/' . $userImage);
+                } else {
+                    $userImage = $oldImage;
+                }
+                $sql = "UPDATE user SET userName='$userName',userEmail='$email',userPassword='$password',userGender='$sex',roleId=$vai_tro,userBirthday='$date',userImage='$userImage',sdt='$sdt',location='$location' where userId = $id";
+                connect($sql);
+                $yourURL = "http://localhost/WEB17301/Du_an_1/admin/index.php?act=khachhang";
+                        echo ("<script>location.href='$yourURL'</script>");
+            }
             include "./form/form_sua_user.php";
             break;
         case "addkh":

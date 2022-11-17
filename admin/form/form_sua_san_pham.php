@@ -80,7 +80,7 @@
                             <div class="form-group mb-4">
                                 <label class="col-md-12 p-0">Hình Ảnh</label>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <input type="file" name="productImage" class="form-control p-0 border-0">
+                                    <input type="file" name="productImage[]" class="form-control p-0 border-0" multiple>
                                     <input type="hidden" name="oldImage" value="<?php echo $product['productImage']; ?>">
                                 </div>
                             </div>

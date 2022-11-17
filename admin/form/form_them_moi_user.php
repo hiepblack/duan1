@@ -33,18 +33,18 @@
             <!-- Column -->
             <div class="col-lg-4 col-xlg-3 col-md-12">
                 <div class="white-box">
-                    <img width="100%" alt="user" src="../image/avartar.jpg">
+                    <img width="100%" alt="user" src="../img/avartar.jpg">
                 </div>
             </div>
             <!-- Column -->
             <div class="col-lg-8 col-xlg-9 col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <form class="form-horizontal form-material" method="post" action="../customer/add_user.php" enctype="multipart/form-data">
+                        <form class="form-horizontal form-material" method="post" action="../customer/dang_ki.php" enctype="multipart/form-data">
                             <div class="form-group mb-4">
                                 <label class="col-md-12 p-0">Tên User</label>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <input type="text" class="form-control p-0 border-0" name="ten_kh">
+                                    <input type="text" class="form-control p-0 border-0" name="userName">
                                 </div>
                             </div>
                             <div class="form-group mb-4">
@@ -56,25 +56,50 @@
                             <div class="form-group mb-4">
                                 <label class="col-md-12 p-0">Mật Khẩu</label>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <input type="text" class="form-control p-0 border-0" name="mat_khau">
+                                    <input type="text" class="form-control p-0 border-0" name="password">
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label class="col-md-12 p-0">Giới Tính</label>
+                                <div class="col-md-12 border-bottom p-0">
+                                    <input type="radio" class="" name="sex" value="1"><span>Nam</span>
+                                    <input type="radio" class="" name="sex" value="0"><span>Nữ</span>
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label class="col-md-12 p-0">Ngày tháng năm sinh</label>
+                                <div class="col-md-12 border-bottom p-0">
+                                    <input type="date" class="form-control p-0 border-0" name="date">
                                 </div>
                             </div>
                             <div class="form-group mb-4">
                                 <label class="col-md-12 p-0">Hình Ảnh</label>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <input type="file" name="hinh_anh" class="form-control p-0 border-0">
+                                    <input type="file" name="image" class="form-control p-0 border-0">
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label class="col-md-12 p-0">SDT</label>
+                                <div class="col-md-12 border-bottom p-0">
+                                    <input type="number" class="form-control p-0 border-0" name="sdt">
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label class="col-md-12 p-0">Địa chỉ</label>
+                                <div class="col-md-12 border-bottom p-0">
+                                    <input type="text" class="form-control p-0 border-0" name="location">
                                 </div>
                             </div>
                             <div class="form-group mb-4">
                                 <label for="vai_tro" class="col-md-12 p-0">Chọn vai trò của bạn:</label>
-                                <select name="vai_tro" id="vai_tro" class="form-select shadow-none p-0 border-0 form-control-line">
+                                <select name="roleId" id="vai_tro" class="form-select shadow-none p-0 border-0 form-control-line">
                                     <option value="1">Khách hàng</option>
                                     <option value="0">Quản trị viên</option>
                                 </select>
                             </div>
                             <div class="form-group mb-4">
                                 <div class="col-sm-12">
-                                    <button class="btn btn-success" type="submit">Add</button>
+                                    <button class="btn btn-success" type="submit" name="submit">Add</button>
                                 </div>
                             </div>
                         </form>

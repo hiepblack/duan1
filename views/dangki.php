@@ -13,7 +13,7 @@
             <input type="date" name="date" id="" placeholder="dd/mm/yyyy" class="px-5 bg-[#f5f5f5] h-[50px] w-[500px] my-3 outline-none">
             <input type="email" name="email" id="" placeholder="Email" class="px-5 bg-[#f5f5f5] h-[50px] w-[500px] my-3 outline-none">
             <input type="password" name="password" id="" placeholder="Password" class="px-5 bg-[#f5f5f5] h-[50px] w-[500px] my-3 outline-none">
-            <div class="text-left my-5"><button class="px-5 bg-black text-white py-2 button_slide slide_right outline-none" type="submit" name="submit">Đăng kí</button></div>
+            <div class="text-left my-5"><button class="px-5 bg-black text-white py-2 button_slide slide_right outline-none" type="submit" name="submit1">Đăng kí</button></div>
         </form>
         <div>
 

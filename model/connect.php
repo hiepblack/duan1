@@ -72,10 +72,10 @@ function addProduct($productName,$productPrice,$productColor,$productSize,$brand
     VALUES('$productName',$productPrice,'$productColor',$productSize,$brandId,'$productImage','$productDesc',$productDiscount,1)";
     connect($query);
 }
-function updateProduct($productId,$productName,$productPrice,$productColor,$productSize,$brandId,$productImage,$productDesc,$productDiscount){
+function updateProduct($productId,$productName,$productPrice,$productColor,$productSize,$brandId,$stringImage,$productDesc,$productDiscount){
     $query="UPDATE product SET 
     productName='$productName',productPrice=$productPrice,productColor='$productColor',productSize=$productSize,brandId=$brandId,
-    productImage='$productImage',productDesc='$productDesc',productDiscount=$productDiscount WHERE productId=$productId";
+    productImage='$stringImage',productDesc='$productDesc',productDiscount=$productDiscount WHERE productId=$productId";
     connect($query);
 }
 function addBrand($brandName){

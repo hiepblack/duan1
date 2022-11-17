@@ -8,7 +8,7 @@
 ?>
 <div class="page-wrapper">
     <div class="page-breadcrumb bg-white d-flex justify-content-between align-items-center">
-        <p class="fs-6 fw-bold">Loại Hàng</p>
+        <p class="fs-6 fw-bold">Danh Mục</p>
         <div class="d-flex form-group">
             <form action="" class="mx-2 border" method="post">
                 <input type="text" class="p-1 " placeholder="tìm kiếm" name="search">
@@ -27,13 +27,13 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="white-box">
-                    <h3 class="box-title">Bảng thống kê Loại hàng</h3>
+                    <h3 class="box-title">Bảng thống kê Danh Mục</h3>
                     <div class="table-responsive">
                         <table class="table text-nowrap">
                             <thead>
                                 <tr>
                                     <th class="border-top-0">#</th>
-                                    <th class="border-top-0">Tên Loại Hàng</th>
+                                    <th class="border-top-0">Tên Danh Mục</th>
                                     <th class="border-top-0">Hành động</th>
                                 </tr>
                             </thead>

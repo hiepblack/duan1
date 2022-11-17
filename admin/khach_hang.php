@@ -1,12 +1,12 @@
 <div class="page-wrapper">
     <div class="page-breadcrumb bg-white d-flex justify-content-between align-items-center">
-        <p class="fs-6 fw-bold">Khách Hàng</p>
+        <p class="fs-6 fw-bold">Tài Khoản</p>
         <div class="d-flex form-group">
             <form action="" class="mx-2 border" method="post">
                 <input type="text" class="p-1" placeholder="tìm kiếm" name="search">
-                <button class="btn btn-primary" type="submit">TÌm kiếm</button>
+                <button class="btn btn-primary" type="submit">Tìm kiếm</button>
             </form>
-            <a href="http://localhost/WEB17301/xshop2/admin/index.php?act=addkh">
+            <a href="http://localhost/WEB17301/Du_an_1/admin/index.php?act=addkh">
                 <button class="btn btn-primary">Thêm mới+</button>
             </a>
         </div>
@@ -65,7 +65,7 @@
                                         ?>
                                     </td>
                                     <td>
-                                        <a href="http://localhost/WEB17301/xshop2/admin/index.php?act=updatekh&id=<?php echo $user['userId'];?>">
+                                        <a href="http://localhost/WEB17301/Du_an_1/admin/index.php?act=updatekh&id=<?php echo $user['userId'];?>">
                                             <button type="button" class="btn btn-primary">Sửa Kh</button>
                                         </a>
                                         <a onclick="return confirm_product('<?php echo $user['userName'];?>')" href="../customer/delete_user.php?id=<?php echo $user['userId'];?>">

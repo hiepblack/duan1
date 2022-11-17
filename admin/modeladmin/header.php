@@ -92,8 +92,6 @@
         </header>
         <!-- ============================================================== -->
         <!-- End Topbar header -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
         <aside class="left-sidebar" data-sidebarbg="skin6">
@@ -111,7 +109,7 @@
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=khachhang"
                                 aria-expanded="false">
                                 <i class="fa fa-user" aria-hidden="true"></i>
-                                <span class="hide-menu">Khách Hàng</span>
+                                <span class="hide-menu">Tài Khoản</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
@@ -125,7 +123,7 @@
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=loaihang"
                                 aria-expanded="false">
                                 <i class="fa fa-font" aria-hidden="true"></i>
-                                <span class="hide-menu">Loại Hàng</span>
+                                <span class="hide-menu">Danh Mục</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
