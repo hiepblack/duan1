@@ -18,132 +18,104 @@ if (isset($_GET['act'])) {
             }
             include "./san_pham.php";
             break;
-            case "addsp":
-                if(isset($_POST["submit"])){
-                    $error = array();
-                    if(isset($_POST['productName'],$_POST['productPrice'],$_POST['productDiscount'],$_POST['productDesc'],$_POST['brandId'],$_POST['productColor'],$_POST['productSize'],$_FILES['productImage'])){
-                        $productName = "";
-                        $productPrice = "";
-                        $productDiscount = "";
-                        $productDesc = $_POST['productDesc'];
-                        $productSize = "";
+        case "addsp":
+            if (isset($_POST["submit"])) {
+                $productName = $_POST['productName'];
+                $productPrice = $_POST['productPrice'];
+                $productDiscount = $_POST['productDiscount'];
+                $productDesc = $_POST['productDesc'];
+                $productSize = $_POST['productSize'];
+                $productColor = $_POST['productColor'];
+                $productImage = $_FILES['productImage']['name'];
+                $stringImage = '';
+                $numberArrayImage = count($productImage);
+                foreach ($productImage as $key => $value) {
+                    $stringImage .= $value;
+                    $stringImage .= "";
+                    if ($key !== $numberArrayImage - 1) {
+                        $stringImage .= ",";
+                    }
+                    move_uploaded_file($_FILES['productImage']['tmp_name'][$key], "../img/" . $value);
+                }
+                $brandId = $_POST['brandId'];
+                addProduct($productName, $productPrice, $productColor, $productSize, $brandId, $stringImage, $productDesc, $productDiscount);
+                $yourURL="http://localhost/WEB17301/Du_an_1/admin/index.php?act=sanpham";
+                echo ("<script>location.href='$yourURL'</script>");
+            }
+            include "./form/form_them_moi_san_pham.php";
+            break;
+        case "updatesp":
+            if (isset($_GET['id'])) {
+                $productId = $_GET['id'];
+            } else {
+                $productId = $_POST['productId'];
+            }
+            $query = "select * from product where productId = $productId";
+            $product = getOne($query);
+            $queryCate = "select * from brand";
+            $category = getAll($queryCate);
+            if (isset($_POST["submit"])) {
+                $error = array();
+                if (isset($_POST['productName'], $_POST['productPrice'], $_POST['productDiscount'], $_POST['productDesc'], $_POST['brandId'], $_POST['productColor'], $_POST['productSize'])) {
+                    $productName = "";
+                    $productPrice = "";
+                    $productDiscount = "";
+                    $productDesc = $_POST['productDesc'];
+                    $productSize = "";
+                    $productColor = $_POST['productColor'];
+                    $productImage = "";
+                    $brandId = $_POST['brandId'];
+                    if ($_POST['productName'] == "" || strlen($_POST['productName']) < 5) {
+                        $error['name'] = "Vui lòng nhập tên sản phẩm trên 5 kí tự!";
+                    } else {
+                        $productName = $_POST['productName'];
+                    }
+                    //
+                    if ($_POST['productPrice'] < 0) {
+                        $error['price'] = "Vui lòng nhập giá là số dương!";
+                    } else {
+                        $productPrice = $_POST['productPrice'];
+                    }
+                    //
+                    if ($_POST['productDiscount'] < 0 || $_POST['productDiscount'] > 100) {
+                        $error['discount'] = "Vui lòng nhập số dương và bé hơn 100!";
+                    } else {
+                        $productDiscount = $_POST['productDiscount'];
+                    }
+                    //
+                    if ($_POST['productSize'] < 0 || $_POST['productSize'] > 75) {
+                        $error['size'] = "Vui lòng nhập số dương và bé hơn 75!";
+                    } else {
+                        $productSize = $_POST['productSize'];
+                    }
+                    //
+                    if ($_POST['productColor'] == "") {
+                        $error['color'] = "Vui lòng chọn màu sắc!";
+                    } else {
                         $productColor = $_POST['productColor'];
-                        $productImage = "";
-                        $brandId = $_POST['brandId'];
-                        if($_POST['productName']==""||strlen($_POST['productName'])<5){
-                            $error['name']="Vui lòng nhập tên sản phẩm trên 5 kí tự!";}
-                        else{
-                            $productName = $_POST['productName'];
-                        }
-                        if($_POST['productPrice']<0){
-                            $error['price']="Vui lòng nhập giá là số dương!";
-                        }else{
-                            $productPrice = $_POST['productPrice'];
-                        }
-                        if($_POST['productDiscount']<0||$_POST['productDiscount']>100){
-                            $error['discount']="Vui lòng nhập số dương và bé hơn 100!";
-                        }else{
-                            $productDiscount = $_POST['productDiscount'];
-                        }
-                        if($_POST['productSize']<0||$_POST['productSize']>75){
-                            $error['size']="Vui lòng nhập số dương và bé hơn 75!";
-                        }else{
-                            $productSize = $_POST['productSize'];
-                        }
-                        if($_POST['productColor']==""){
-                            $error['color']="Vui lòng chọn màu sắc!";
-                        }else{
-                            $productColor = $_POST['productColor'];
-                        }
-                        if($_FILES['productImage']['name']==""){
-                            $error['image']="Vui lòng tải ảnh lên!";
-                        }else{
-                            $productImage = $_FILES['productImage'];
-                        }
-                        if(empty($error)){
-                            move_uploaded_file($productImage['tmp_name'],"../img/".$productImage['name']);
-                            addProduct($productName,$productPrice,$productColor,$productSize,$brandId,$productImage['name'],$productDesc,$productDiscount);
-                        }else{
-                            //  header("location:https://localhost/WEB17301/Du_an_1/admin/index.php?act=sanpham");
-                        }
-                        
+                    }
+                    //
+                    if (!isset($_FILES['productImage']) || $_FILES['productImage']['name'] == "") {
+                        $productImage = $_POST['oldImage'];
+                    } else {
+                        $productImage = $_FILES['productImage']['name'];
+                        move_uploaded_file($_FILES['productImage']['tmp_name'], "../img/" . $productImage);
                     }
                 }
-                include "./form/form_them_moi_san_pham.php";
-                break;
-            case "updatesp":
-                if(isset($_GET['id'])){
-                    $productId = $_GET['id'];
-                }else{
-                    $productId = $_POST['productId'];
-                }    
-                $query = "select * from product where productId = $productId";
-                $product = getOne($query);
-                $queryCate = "select * from brand";
-                $category = getAll($queryCate);
-                if(isset($_POST["submit"])){
-                    $error = array();
-                    if(isset($_POST['productName'],$_POST['productPrice'],$_POST['productDiscount'],$_POST['productDesc'],$_POST['brandId'],$_POST['productColor'],$_POST['productSize'])){
-                        $productName = "";
-                        $productPrice = "";
-                        $productDiscount = "";
-                        $productDesc = $_POST['productDesc'];
-                        $productSize = "";
-                        $productColor = $_POST['productColor'];
-                        $productImage = "";
-                        $brandId = $_POST['brandId'];
-                        if($_POST['productName']==""||strlen($_POST['productName'])<5){
-                            $error['name']="Vui lòng nhập tên sản phẩm trên 5 kí tự!";}
-                        else{
-                            $productName = $_POST['productName'];
-                        }
-                        //
-                        if($_POST['productPrice']<0){
-                            $error['price']="Vui lòng nhập giá là số dương!";
-                        }else{
-                            $productPrice = $_POST['productPrice'];
-                        }
-                        //
-                        if($_POST['productDiscount']<0||$_POST['productDiscount']>100){
-                            $error['discount']="Vui lòng nhập số dương và bé hơn 100!";
-                        }else{
-                            $productDiscount = $_POST['productDiscount'];
-                        }
-                        //
-                        if($_POST['productSize']<0||$_POST['productSize']>75){
-                            $error['size']="Vui lòng nhập số dương và bé hơn 75!";
-                        }else{
-                            $productSize = $_POST['productSize'];
-                        }
-                        //
-                        if($_POST['productColor']==""){
-                            $error['color']="Vui lòng chọn màu sắc!";
-                        }else{
-                            $productColor = $_POST['productColor'];
-                        }
-                        //
-                        if(!isset($_FILES['productImage'])||$_FILES['productImage']['name']==""){
-                            $productImage = $_POST['oldImage'];
-                        }else{
-                            $productImage = $_FILES['productImage']['name'];
-                            move_uploaded_file($_FILES['productImage']['tmp_name'],"../img/".$productImage);
-                        }
-                       
-                    }
-                    if(empty($error)){
-                        updateProduct($productId,$productName,$productPrice,$productColor,$productSize,$brandId,$productImage,$productDesc,$productDiscount);
-                        //header("location:http://localhost/WEB17301/du_an_1/admin/index.php?act=sanpham");
-                    }
+                if (empty($error)) {
+                    updateProduct($productId, $productName, $productPrice, $productColor, $productSize, $brandId, $productImage, $productDesc, $productDiscount);
+                    //header("location:http://localhost/WEB17301/du_an_1/admin/index.php?act=sanpham");
                 }
-                include "./form/form_sua_san_pham.php";
-                break;
-            case "deletesp":
-                if(isset($_GET["id"])&&$_GET["id"]){
-                    $id = $_GET["id"];
-                    deleteProduct($id);
-                }
-                include "./san_pham.php";
-                break;
+            }
+            include "./form/form_sua_san_pham.php";
+            break;
+        case "deletesp":
+            if (isset($_GET["id"]) && $_GET["id"]) {
+                $id = $_GET["id"];
+                deleteProduct($id);
+            }
+            include "./san_pham.php";
+            break;
             // chức năng Loại Hàng
         case "loaihang":
             $category = getCategory();

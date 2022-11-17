@@ -174,9 +174,7 @@
                                 </div>
                             </div>
                             <div class="py-2">
-
                                 <h4 class="text-xl font-bold my-2"><?php echo $value['blogContent'] ?></h4>
-
                                 <p class="text-slate-600 ">Đây là trang blog của cửa hàng. Bạn có thể dùng blog để quảng bá sản phẩm mới, chia sẻ trải nghiệm của khách hàng,...
                                 </p>
                                 <div class="relative py-5">

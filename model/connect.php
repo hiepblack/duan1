@@ -68,8 +68,8 @@ function deleteProduct($id){
     connect($query);
 }
 function addProduct($productName,$productPrice,$productColor,$productSize,$brandId,$productImage,$productDesc,$productDiscount){
-    $query="INSERT INTO product( productName, productPrice, productColor, productSize, brandId, productImage, productDesc, productDiscount) 
-    VALUES('$productName',$productPrice,'$productColor',$productSize,$brandId,'$productImage','$productDesc',$productDiscount)";
+    $query="INSERT INTO product( productName, productPrice, productColor, productSize, brandId, productImage, productDesc, productDiscount,productStatus) 
+    VALUES('$productName',$productPrice,'$productColor',$productSize,$brandId,'$productImage','$productDesc',$productDiscount,1)";
     connect($query);
 }
 function updateProduct($productId,$productName,$productPrice,$productColor,$productSize,$brandId,$productImage,$productDesc,$productDiscount){

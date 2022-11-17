@@ -38,7 +38,7 @@
             <!-- Column -->
             <div class="col-lg-4 col-xlg-3 col-md-12">
                 <div class="white-box">
-                    <img width="100%" alt="user" src="../img/<?php echo $product['productImage'] ?>">
+                    <img width="100%" alt="user" src="../img/<?php echo $product['productImage'][0] ?>">
                 </div>
             </div>
             <!-- Column -->
