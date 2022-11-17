@@ -80,14 +80,15 @@ if (isset($_GET['act'])) {
             include "./dangnhap.php";
             break;
         case "chitiet_blog":
-            $userid = $_GET['userid'];
-            
+            $userid = $_GET['userid'];         
             $query2 = "SELECT * FROM user WHERE userId=$userid";
             $tacgia = getOne($query2);
             $blog = blog();
             $id = $_GET['id'];
             $query = "SELECT * FROM blog WHERE blogId=$id";
             $blog_one = getOne($query);
+            $queryComment = "SELECT * FROM comment_blog join user on comment_blog.userId = user.userId WHERE blogId ='$id'";
+            $comment_blog = getAll($queryComment);
             include "./chi_tiet_blog.php";
             break;
         default:

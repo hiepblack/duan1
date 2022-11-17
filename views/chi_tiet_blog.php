@@ -15,6 +15,7 @@
                     <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=chitiet_blog&id=<?php echo $value['blogId']?>&userid=<?php echo $value['userId']?>" class="flex py-4 items-center">
                         <img class="w-[60px] h-[40px] " src="../img/<?php echo $value['imageBlog'] ?>" alt="">
                         <div class="pl-5">
+                        <?php $userid= $value['userId'];?>
                             <h4 class="text-sm font-bold mb-2"><?php echo $value['blogContent'] ?></h4>
                             <span class="text-sm"><?php echo $value['blogDate'] ?></span>
                         </div>
@@ -79,5 +80,53 @@
                 </div>
             </div>
         </section>
+        
     </main>
+     <!-- comment -->
+     <div class="min-h-min">
+        <section class="bg-white container">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-lg lg:text-2xl font-bold text-gray-900 dark:text-white">Comments</h2>
+            </div>
+            <div class="w-full mx-auto px-2 flex">
+                <!-- form comment -->
+                <form class="mb-6 w-1/3" method="post" action="../customer/comment_blog.php?id=<?php echo $id; ?>">
+                    <div class="py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+                        <label for="comment" class="sr-only">Your comment</label>
+                        <textarea id="comment" <?php echo !isset($_SESSION['user']) ? "disabled" : ""; ?> name="comment" rows="6" class="px-0 w-full text-sm text-gray-900 border-0  focus:outline-none " placeholder="Write a comment..." required></textarea>
+                    </div>
+                    <input type="text" name="tacgia" value="<?php echo $userid?>" hidden>;
+                    <button type="submit" <?php echo !isset($_SESSION['user']) ? "disabled" : ""; ?> class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-black">
+                        Post comment
+                    </button>
+                </form>
+                <!-- list comment -->
+                <div class="w-2/3">
+                    <h2 class="text-lg lg:text-2xl font-bold text-gray-900 dark:text-white pl-2 my-2">
+                    Recent Comments
+                    </h2>
+                    <?php foreach ($comment_blog as $comment) : ?>
+                        <article class="pl-4 ml-4 text-base bg-white rounded-lg dark:bg-gray-900 w-full border">
+                            <footer class="flex justify-between items-center mb-2">
+                                <div class="flex items-center">
+                                    <p class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white"><img class="mr-2 w-6 h-6 rounded-full" src="../img/<?php echo $comment['userImage']?>"><?php echo $comment['userName']?></p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-02-08" title="February 8th, 2022"><?php echo $comment['comment_date']?></time></p>
+                                </div>
+                                <button id="dropdownComment1Button" data-dropdown-toggle="dropdownComment1" class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-400 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600" type="button">
+                                    <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z">
+                                        </path>
+                                    </svg>
+                                </button>
+                            </footer>
+                            <p class="text-gray-500 dark:text-gray-400">
+                                <?php echo $comment['comment_contenblog']?>
+                            </p>
+                        </article>
+                    <?php endforeach; ?>
+                </div>
+
+            </div>
+        </section>
+    </div>
 </div>
