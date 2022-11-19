@@ -19,7 +19,7 @@ if (isset($_GET['act'])) {
             include "./san_pham.php";
             break;
         case "addsp":
-            if (isset($_POST["submit"])) {               
+            if (isset($_POST["submit"])) {
                 $productName = $_POST['productName'];
                 $productPrice = $_POST['productPrice'];
                 $productDiscount = $_POST['productDiscount'];
@@ -100,7 +100,7 @@ if (isset($_GET['act'])) {
                 // header('Location:http://localhost/WEB17301/du_an_1/admin/index.php?act=loaihang');
             }
             include "./form/form_sua_loai_hang.php";
-            
+
             break;
         case "addlh":
             $error = array();
@@ -160,7 +160,7 @@ if (isset($_GET['act'])) {
                 $sql = "UPDATE user SET userName='$userName',userEmail='$email',userPassword='$password',userGender='$sex',roleId=$vai_tro,userBirthday='$date',userImage='$userImage',sdt='$sdt',location='$location' where userId = $id";
                 connect($sql);
                 $yourURL = "http://localhost/WEB17301/Du_an_1/admin/index.php?act=khachhang";
-                        echo ("<script>location.href='$yourURL'</script>");
+                echo ("<script>location.href='$yourURL'</script>");
             }
             include "./form/form_sua_user.php";
             break;
@@ -180,6 +180,23 @@ if (isset($_GET['act'])) {
             break;
         case "diachi":
             include "./dia_chi.php";
+            break;
+        case "donhang":
+            $orders = orders();
+            include "./don_hang.php";
+            break;
+        case "chitietdonhang":
+            $num = 0;
+            $id=$_GET['id'];
+            $query = "select orders.tenKh, orders.orderDate, orders.orderNote, orders.totalMoney as money, orderdetail.*,product.productName as productName from orders
+            inner join  orderdetail on orders.orderId = orderdetail.orderId
+            inner join product on product.productId = orderdetail.productId
+            where orders.orderId = $id
+            ";
+            $results = getAll($query);
+            // echo "<pre>";
+            // var_dump($results);
+            include "./chitietdonhang.php";
             break;
         default:
             include "./trang_chu.php";

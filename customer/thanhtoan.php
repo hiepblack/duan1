@@ -8,12 +8,10 @@ $email ="";
 $sdt = "";
 $location = "";
 $note = $_POST['orderNote'];
-$userid='';
 $ngay_nhap = date("Y-m-d");
 if(!empty($_SESSION['user'])){
     $name = $_SESSION['user']['userName'];
     $email = $_SESSION['user']['userEmail'];
-    $userid=$_SESSION['user']['userId'];
     $sdt = $_POST['orderSdt'];
     $location = $_POST['orderLocation'];
 }else{
@@ -21,7 +19,6 @@ $name =$_POST['userName'];
 $email =$_POST['userEmail'];
 $sdt = $_POST['orderSdt'];
 $location = $_POST['orderLocation'];
-$userid= 0;
 }
 //tính tổng tiền
 $total = 0;
@@ -30,7 +27,7 @@ foreach ($_SESSION['gio_hang'] as $key => $value){
     $arrayProduct[] = $value;
     $total += $value['productPrice'] * $value['so_luong'];
 }
-$query = "INSERT INTO `orders`(`orderId`, `userId`, `orderDate`, `totalMoney`, `orderNote`, `location`, `sdt`) VALUES (null,'$userid','$ngay_nhap','$total','$note','$location','$sdt')";
+$query = "INSERT INTO `orders`(`orderId`, `tenkh`, `orderDate`, `totalMoney`, `orderNote`, `location`, `sdt`) VALUES (null,'$name','$ngay_nhap','$total','$note','$location','$sdt')";
 // lấy id order và thêm dữ liệu vào bảng order
 $last_id = getOrderId($query);
 $queryString="";

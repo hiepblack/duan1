@@ -97,6 +97,11 @@ function users(){
     $result = getAll($query);
     return $result;
 }
+function orders(){
+    $query = "select * from orders";
+    $result = getAll($query);
+    return $result;
+}
 function comments(){
     $query = "select * from (comment inner join user on comment.userId = user.userId) inner join product on comment.productId = product.productId";
     $result = getAll($query);
