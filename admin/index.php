@@ -3,7 +3,7 @@ include "../model/connect.php";
 include "../admin/modeladmin/header.php";
 if (isset($_GET['act'])) {
     switch ($_GET['act']) {
-
+        
         case "trangchu":
             $topTenProducts = top10();
             include "./trang_chu.php";
