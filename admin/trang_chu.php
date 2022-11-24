@@ -12,7 +12,7 @@
     foreach($result1 as $row){
         array_push($dataPoints1,array(
             "label"=>$row['brandName'],
-            "y"=>33
+            "y"=>25
          ));
      }
 ?>

@@ -22,8 +22,7 @@ if(isset($_GET['success'])){
             <p>Điện thoại</p>
             <strong>113</strong>
         </div>
-        <form action="../customer/lienhe.php" method="POST" onsubmit="return validate_lienhe()">
-            <input type="text" name="thongbao" id="thongbao" hidden>
+
             <h3 class="text-4xl font-bold mt-9 mb-9">Gửi thắc mắc cho chúng tôi</h3>
             <p class="w-20 h-1 bg-black my-4"></p>
             <input type="text" placeholder="Nhập tên của bạn" id="name" name="name" class="border w-full pl-2 pt-2 pb-2 mb-4 bg-[#F5F5F5]" require>

@@ -25,9 +25,18 @@
             <!-- Column -->
             <div class="col-lg-4 col-xlg-3 col-md-12 " id="boxImg">
                 <p>Preview Image</p>
-                <!-- <div class="white-box">
-                    <img width="100%" alt="user" src="" id="prev">
-                </div> -->
+                <div class="white-box">
+                    <img width="100%" alt="user" src="" class="prev">
+                </div>
+                <div class="white-box">
+                    <img width="100%" alt="user" src="" class="prev">
+                </div>
+                <div class="white-box">
+                    <img width="100%" alt="user" src="" class="prev">
+                </div>
+                <div class="white-box">
+                    <img width="100%" alt="user" src="" class="prev">
+                </div>
             </div>
             <!-- Column -->
             <div class="col-lg-8 col-xlg-9 col-md-12">
@@ -43,25 +52,25 @@
                             <div class="form-group mb-4">
                                 <label for="dongia" class="col-md-12 p-0">Đơn Giá</label>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <input type="number" class="form-control p-0 border-0" name="productPrice"  id="productPrice">
+                                    <input type="number" class="form-control p-0 border-0" name="productPrice" id="productPrice">
                                 </div>
                             </div>
                             <div class="form-group mb-4">
                                 <label for="giamgia" class="col-md-12 p-0">Giảm giá</label>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <input type="number" class="form-control p-0 border-0" name="productDiscount"  id="productDiscount">
+                                    <input type="number" class="form-control p-0 border-0" name="productDiscount" id="productDiscount">
                                 </div>
                             </div>
                             <div class="form-group mb-4">
                                 <label for="giamgia" class="col-md-12 p-0">Kích cỡ</label>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <input type="number" class="form-control p-0 border-0" name="productSize"  id="productSize">
+                                    <input type="number" class="form-control p-0 border-0" name="productSize" id="productSize">
                                 </div>
                             </div>
                             <div class="form-group mb-4">
                                 <label for="giamgia" class="col-md-12 p-0">Màu sắc</label>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <input type="text" class="form-control p-0 border-0" name="productColor"  id="productColor">
+                                    <input type="text" class="form-control p-0 border-0" name="productColor" id="productColor">
                                 </div>
                             </div>
                             <div class="form-group mb-4">
@@ -118,17 +127,14 @@
     var boxImg = document.querySelector("#boxImg");
     picture.addEventListener("change", function(e) {
         var arrayImg = picture.files;
-        for (var i = 0; i < arrayImg.length; i++) {
-            var div = document.createElement("div");
-            var img = document.createElement("img");
-            div.setAttribute('class', 'white-box');
-            img.setAttribute('width', "100%");
-            img.setAttribute('src', ' ');
-            img.setAttribute('class', 'prev');
-            img.setAttribute('alt', 'user');
-            img.src = URL.createObjectURL(picture.files[i]);
-            div.appendChild(img);
-            boxImg.appendChild(div);
+        if(arrayImg.length <=4){
+            var img = document.querySelectorAll(".prev");
+            for (var i = 0; i < img.length; i++) {
+                img[i].src = URL.createObjectURL(picture.files[i]);
+            }
+        }else{
+            alert("dcm");
+            return;
         }
     })
 </script>
