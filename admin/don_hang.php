@@ -60,7 +60,7 @@
                                         </td>
                                         <td>
                                             <a href="http://localhost/WEB17301/du_an_1/admin/index.php?act=chitietdonhang&id=<?php echo $order['orderId'] ?>">
-                                                <button type="button" class="btn btn-danger text-white">Chi tiết</button>
+                                                <button type="button" class="btn btn-primary text-white">Chi tiết</button>
                                             </a>
                                             <a onclick="return confirm_product('<?php echo $order['orderId'] ?>')" href="../customer/delete_don_hang.php?id=<?php echo $order['orderId'] ?>">
                                                 <button type="button" class="btn btn-danger text-white">Xoá</button>

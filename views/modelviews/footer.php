@@ -82,6 +82,7 @@
         </div>
     </footer>
 </body>
+<script type="text/javascript" src="../js/validate.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
 <script>
     window.addEventListener('scroll', ()=>{

@@ -1,8 +1,8 @@
 <div class=" mx-auto text-center w-[500px] my-4">
     <h3 class="text-4xl font-bold my-5">Đăng nhập</h3>
-    <form action="../customer/login_user.php" method="post">
-        <div><input type="email" name="email" placeholder="Email" class="px-5 bg-[#f5f5f5] h-[50px] w-[500px] my-3 outline-none"></div>
-        <div><input type="password" name = "password" placeholder="Mật khẩu" class="px-5  bg-[#f5f5f5] h-[50px] w-[500px] my-3 outline-none"></div>
+    <form action="../customer/login_user.php" method="post" onsubmit="return  validateDangNhap()">
+        <div><input type="email" name="email" placeholder="Email" id="email" class="px-5 bg-[#f5f5f5] h-[50px] w-[500px] my-3 outline-none"></div>
+        <div><input type="password" id="password" name = "password" placeholder="Mật khẩu" class="px-5  bg-[#f5f5f5] h-[50px] w-[500px] my-3 outline-none"></div>
         <div class="flex items-center justify-between">
             <div class="text-left">
                 <button class="px-5 bg-black text-white py-2 button_slide slide_right outline-none" type="submit">Đăng nhập</button>
