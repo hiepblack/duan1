@@ -7,6 +7,7 @@
             <img class="w-full h-full" src="https://theme.hstatic.net/1000406173/1000655524/14/instagram_img5.jpg?v=133" alt="">
             <img class="w-full h-full" src="https://theme.hstatic.net/1000406173/1000655524/14/instagram_img6.jpg?v=133" alt="">
         </div>
+        
         <div class=" bg-[#F3F3F3]">
             <div class="flex pt-3 pb-3 container mx-auto justify-center items-center">
                 <div class="flex mr-5 items-center">
