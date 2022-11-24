@@ -42,6 +42,8 @@ if (isset($_GET['act'])) {
                 $query = "SELECT * FROM product where productName like '%$nameProduct%'";
                 $products = getAll($query); 
             }
+
+
             
             else{
                 echo("");
