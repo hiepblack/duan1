@@ -37,6 +37,12 @@ if (isset($_GET['act'])) {
                 }
                 $products = getAll($query);
             }
+            if(isset($_GET['sr'])){
+                $name = $_GET['sr'];
+                $query = "SELECT * FROM product where productName like $name";
+                $products = getAll($query);
+            }
+            
             include "./sanpham.php";
             break;
         case "chitietsanpham":

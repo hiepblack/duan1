@@ -17,7 +17,7 @@
             <p>Điện thoại</p>
             <strong>113</strong>
         </div>
-        <form action="">
+        <form>
             <h3 class="text-4xl font-bold mt-9 mb-9">Gửi thắc mắc cho chúng tôi</h3>
             <p class="w-20 h-1 bg-black my-4"></p>
             <input type="text" placeholder="Nhập tên của bạn" class="border w-full pl-2 pt-2 pb-2 mb-4 bg-[#F5F5F5]">
