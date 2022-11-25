@@ -26,6 +26,14 @@
         <div class="row">
             <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                 <div class="white-box ">
+                    <h3 class="box-title">Thống kê doanh thu </h3>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                <div class="white-box ">
                     <h3 class="box-title">Thống kê danh mục</h3>
                     <div class="d-flex">
                         <div id="chartContainer1" style="height:450px; width: 100%;"></div>

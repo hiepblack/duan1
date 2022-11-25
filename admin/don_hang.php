@@ -32,6 +32,7 @@
                                     <th class="border-top-0">Ghi chú</th>
                                     <th class="border-top-0">Địa Chỉ</th>
                                     <th class="border-top-0">Số Điện Thoại</th>
+                                    <th class="border-top-0">Trạng thái</th>
                                     <th class="border-top-0">Hành động</th>
 
                                 </tr>
@@ -57,6 +58,9 @@
                                         </td>
                                         <td>
                                         <?php echo $order['sdt'] ?>
+                                        </td>
+                                        <td>
+                                        <?php echo $order['status']==0?"chưa thanh toán":"đã thanh toán";?>
                                         </td>
                                         <td>
                                             <a href="http://localhost/WEB17301/du_an_1/admin/index.php?act=chitietdonhang&id=<?php echo $order['orderId'] ?>">

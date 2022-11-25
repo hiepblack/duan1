@@ -32,6 +32,7 @@
             <hr>
             <!-- form de dat hang -->
             <form class="p-2" action="../customer/add_cart.php" method="post">
+                <input type="text" name="importPrice" value="<?php echo $one_product['importPrice'] ?>" hidden>
                 <input type="text" name="productName" value="<?php echo $one_product['productName'] ?>" hidden>
                 <input type="text" name="productId" value="<?php echo $one_product['productId'] ?>" hidden>
                 <input type="text" name="productPrice" value="<?php echo $one_product['productPrice'] ?>" hidden>

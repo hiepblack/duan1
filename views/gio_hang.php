@@ -9,6 +9,7 @@
         }
     ?>
     </p>
+    <?php //var_dump($_SESSION["gio_hang"]); die; ?>
     <div class="">
         <form action="../customer/add_cart.php?update" class="flex justify-between items-center p-2" method="post">
             <table>
