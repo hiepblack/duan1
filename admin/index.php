@@ -3,7 +3,7 @@ include "../model/connect.php";
 include "../admin/modeladmin/header.php";
 if (isset($_GET['act'])) {
     switch ($_GET['act']) {
-        
+
         case "trangchu":
             $topTenProducts = top10();
             include "./trang_chu.php";
@@ -182,12 +182,29 @@ if (isset($_GET['act'])) {
             include "./dia_chi.php";
             break;
         case "donhang":
+            if (isset($_POST["submit"])) {
+                $id = $_POST["id"];
+                $orderId = $_POST["orderId"];
+                $query = "UPDATE `orders` SET statusId = $id WHERE orderId = $orderId";
+                connect($query);
+            }
             $orders = orders();
+            $query = "select * from statusorder";
+            $statusOrder = getAll($query);
             include "./don_hang.php";
+            break;
+        case "capnhattrangthai":
+            $id = $_GET['id'];
+            $query1 = "SELECT * FROM `statusorder`";
+            $category = getAll($query1);
+            var_dump($id);
+            // echo "<pre>";
+            // var_dump($category);
+            include "./form/form_sua_trang_thai.php";
             break;
         case "chitietdonhang":
             $num = 0;
-            $id=$_GET['id'];
+            $id = $_GET['id'];
             $query = "select orders.tenKh,orders.location,orders.sdt,orders.orderDate, orders.orderNote, orders.totalMoney as money, orderdetail.*,product.productName as productName from orders
             inner join  orderdetail on orders.orderId = orderdetail.orderId
             inner join product on product.productId = orderdetail.productId

@@ -32,42 +32,50 @@
                                     <th class="border-top-0">Ghi chú</th>
                                     <th class="border-top-0">Địa Chỉ</th>
                                     <th class="border-top-0">Số Điện Thoại</th>
+                                    <th class="border-top-0">Trạng thái</th>
                                     <th class="border-top-0">Hành động</th>
-
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php foreach ($orders as $order) : ?>
                                     <tr>
-                                    <td>
+                                        <td>
                                             <?php echo $order['orderId'] ?>
                                         </td>
                                         <td>
                                             <?php echo $order['tenKh'] ?>
                                         </td>
                                         <td>
-                                        <?php echo $order['orderDate'] ?>
+                                            <?php echo $order['orderDate'] ?>
                                         </td>
                                         <td>
-                                        <?php echo $order['totalMoney'] ?>
+                                            <?php echo $order['totalMoney'] ?>
                                         </td>
                                         <td><?php echo $order['orderNote'] ?></td>
                                         <td>
                                             <?php echo $order['location'] ?>
                                         </td>
                                         <td>
-                                        <?php echo $order['sdt'] ?>
+                                            <?php echo $order['sdt'] ?>
+                                        </td>
+                                        <td>
+                                            <?php checkStatus($order['statusId'])  ?>
                                         </td>
                                         <td>
                                             <a href="http://localhost/WEB17301/du_an_1/admin/index.php?act=chitietdonhang&id=<?php echo $order['orderId'] ?>">
                                                 <button type="button" class="btn btn-primary text-white">Chi tiết</button>
                                             </a>
+                                            <a href="http://localhost/WEB17301/du_an_1/admin/index.php?act=capnhattrangthai&id=<?php echo $order['statusId'] ?>&orderId=<?php echo $order['orderId'] ?>">
+                                                <button type="button" class="btn btn-primary text-white">Cập nhật Trạng Thái </button>
+                                            </a>
                                             <a onclick="return confirm_product('<?php echo $order['orderId'] ?>')" href="../customer/delete_don_hang.php?id=<?php echo $order['orderId'] ?>">
                                                 <button type="button" class="btn btn-danger text-white">Xoá</button>
                                             </a>
                                         </td>
+                                        
                                     </tr>
-                                <?php endforeach; ?>
+                                    <?php endforeach; ?>
+                                    
                             </tbody>
                         </table>
                     </div>

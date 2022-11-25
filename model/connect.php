@@ -113,3 +113,16 @@ function blog(){
     return $result;
 }
 
+function checkStatus($number){
+    if($number==1){
+        echo "Chưa Xác Nhận";
+    }elseif($number ==2){
+        echo "Đã Xác Nhận";
+    }elseif($number ==3){
+        echo "Đang Giao Hàng";
+    }elseif($number ==4){
+        echo "Đã Giao Hàng";
+    }else{
+        echo "Chưa xác đinh";
+    }
+}
