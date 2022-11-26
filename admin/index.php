@@ -178,6 +178,11 @@ if (isset($_GET['act'])) {
             }
             include "./binh_luan.php";
             break;
+            case "binhluan_blog":
+                $comment_blog=comment_blog();
+                
+                include "./binhluan_blog.php";
+                break;
         case "diachi":
             include "./dia_chi.php";
             break;

@@ -107,6 +107,11 @@ function comments(){
     $result = getAll($query);
     return $result;
 }
+function comment_blog(){
+    $query = "select * from (comment_blog inner join user on comment_blog.userId = user.userId) inner join blog on comment_blog.blogId = blog.blogId";
+    $result = getAll($query);
+    return $result;
+}
 function blog(){
     $query2 ="SELECT * FROM blog";
     $result=getAll($query2);
