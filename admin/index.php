@@ -13,7 +13,7 @@ if (isset($_GET['act'])) {
             $products = product();
             if (isset($_POST['search']) && $_POST['search']) {
                 $search = $_POST['search'];
-                $query = "select * from hang_hoa where  ten_hh like '%$search%' or ten_hh = '$search'";
+                $query = "select * from product where  productName like '%$search%' or productName = '$search'";
                 $products = getAll($query);
             }
             include "./san_pham.php";
@@ -100,7 +100,6 @@ if (isset($_GET['act'])) {
                 // header('Location:http://localhost/WEB17301/du_an_1/admin/index.php?act=loaihang');
             }
             include "./form/form_sua_loai_hang.php";
-
             break;
         case "addlh":
             $error = array();
