@@ -1,7 +1,8 @@
 <?php
 include "../model/connect.php";
-echo "<pre>";
-var_dump($_SESSION['gio_hang']);
+// echo "<pre>";
+// var_dump($_POST["lai"]); die;
+// var_dump($_SESSION['gio_hang']);
 // var_dump($_SESSION['user']);exit();
 $name ="";
 $email ="";
@@ -22,12 +23,14 @@ $location = $_POST['orderLocation'];
 }
 //tính tổng tiền
 $total = 0;
+$profit = 0;
 $arrayProduct = array();
 foreach ($_SESSION['gio_hang'] as $key => $value){
     $arrayProduct[] = $value;
     $total += $value['productPrice'] * $value['so_luong'];
+    $profit += ($value['productPrice']-$value['importPrice']) * $value['so_luong'];
 }
-$query = "INSERT INTO `orders`(`orderId`, `tenkh`, `orderDate`, `totalMoney`, `orderNote`, `location`, `sdt`) VALUES (null,'$name','$ngay_nhap','$total','$note','$location','$sdt')";
+$query = "INSERT INTO `orders`(`orderId`, `tenkh`, `orderDate`, `totalMoney`, `orderNote`, `location`, `sdt`, `profit`) VALUES (null,'$name','$ngay_nhap','$total','$note','$location','$sdt',$profit)";
 // lấy id order và thêm dữ liệu vào bảng order
 $last_id = getOrderId($query);
 $queryString="";

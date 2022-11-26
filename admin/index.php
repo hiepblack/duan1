@@ -13,7 +13,11 @@ if (isset($_GET['act'])) {
             $products = product();
             if (isset($_POST['search']) && $_POST['search']) {
                 $search = $_POST['search'];
+<<<<<<< HEAD
+                $query = "select * from product where productName like '%$search%' or productName = '$search'";
+=======
                 $query = "select * from product where  productName like '%$search%' or productName = '$search'";
+>>>>>>> de20d5792be1e05804793b8f2fd4bd91214b11aa
                 $products = getAll($query);
             }
             include "./san_pham.php";

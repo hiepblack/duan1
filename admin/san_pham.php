@@ -66,7 +66,7 @@
                                                                 echo $arr[0];
                                                                 ?>" alt="" width="50" height="50">
                                         </td>
-                                        <td><?php echo $product['productPrice'] ?></td>
+                                        <td><?php echo number_format($product['productPrice'])?>đ</td>
                                         <td>
                                             <?php echo $product['productColor'] ?>
                                         </td>
