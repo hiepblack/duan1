@@ -13,7 +13,11 @@ if (isset($_GET['act'])) {
             $products = product();
             if (isset($_POST['search']) && $_POST['search']) {
                 $search = $_POST['search'];
+<<<<<<< HEAD
                 $query = "select * from product where productName like '%$search%' or productName = '$search'";
+=======
+                $query = "select * from product where  productName like '%$search%' or productName = '$search'";
+>>>>>>> de20d5792be1e05804793b8f2fd4bd91214b11aa
                 $products = getAll($query);
             }
             include "./san_pham.php";
@@ -100,7 +104,6 @@ if (isset($_GET['act'])) {
                 // header('Location:http://localhost/WEB17301/du_an_1/admin/index.php?act=loaihang');
             }
             include "./form/form_sua_loai_hang.php";
-
             break;
         case "addlh":
             $error = array();
@@ -178,6 +181,11 @@ if (isset($_GET['act'])) {
             }
             include "./binh_luan.php";
             break;
+            case "binhluan_blog":
+                $comment_blog=comment_blog();
+                
+                include "./binhluan_blog.php";
+                break;
         case "diachi":
             include "./dia_chi.php";
             break;

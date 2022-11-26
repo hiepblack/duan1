@@ -79,7 +79,7 @@
                                                     ?>" alt="user-img" width="36" class="img-circle">
                                 <span class="text-white font-medium">Hi <?php echo $_SESSION["user"]['userName'] ?></span></a>
                         </li>
-                        
+
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
@@ -101,21 +101,30 @@
                                 <span class="hide-menu">Trang Chủ</span>
                             </a>
                         </li>
+                        
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=khachhang" aria-expanded="false">
+                            <a  class="sidebar-link waves-effect waves-dark sidebar-link" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=khachhang">
                                 <i class="fa fa-user" aria-hidden="true"></i>
                                 <span class="hide-menu">Tài Khoản</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=sanpham" aria-expanded="false">
+                            <a data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample" class="sidebar-link waves-effect waves-dark sidebar-link" href="#collapseExample" >
                                 <i class="fa fa-table" aria-hidden="true"></i>
                                 <span class="hide-menu">Sản Phẩm</span>
                             </a>
+                            <div class="collapse" id="collapseExample" style="margin-left:20px;">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=sanpham">
+                                <span class="hide-menu">Danh Sách Sản Phẩm</span>
+                                </a>
+                                <a href="http://localhost/WEB17301/Du_an_1/admin/index.php?act=addsp" class="sidebar-link waves-effect waves-dark sidebar-link">
+                                <span class="hide-menu">Thêm Mới Sản Phẩm</span>
+                                </a>
+                            </div>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=donhang" aria-expanded="false">
-                            <i class="fa-solid fa-cart-shopping"></i>
+                                <i class="fa-solid fa-cart-shopping"></i>
                                 <span class="hide-menu">Đơn Hàng</span>
                             </a>
                         </li>
@@ -137,7 +146,15 @@
                                 <span class="hide-menu">Bình Luận</span>
                             </a>
                         </li>
-
+<<<<<<< HEAD
+=======
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=binhluan_blog" aria-expanded="false">
+                                <i class="fa fa-columns" aria-hidden="true"></i>
+                                <span class="hide-menu">Bình Luận blog</span>
+                            </a>
+                        </li>
+>>>>>>> 1392dd69073162112027a0023ed146a2d2f95ab9
                     </ul>
 
                 </nav>
