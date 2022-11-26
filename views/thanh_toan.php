@@ -17,6 +17,7 @@
                     <div>
                     <textarea class="w-[500px] bg-[#ededed] h-[130px] p-2 outline-none" cols="30" rows="10" placeholder="Ghi Chú" name="orderNote"></textarea>
                     </div>
+                    <input type="hidden" name="lai" value="<?php $tongtien - $goc;?>">
                     <button class="bg-blue-500 text-white hover:bg-blue-300 py-5 px-3 rounded" type="submit">Tiếp Tục Thanh Toán</button>
                 </form>
             <div class="text-center mt-[250px]">
@@ -30,6 +31,8 @@
             <?php
             $tongtien = 0;
             $so_luong = 0;
+            $lai = 0;
+            $goc = 0;
             foreach ($productOder as $row) {
                 $thanh_tien = $row['productPrice'] * $row['so_luong'];
                 $tongtien += $thanh_tien;
@@ -46,11 +49,13 @@
                 </div>
             <?php
             }
+
             ?>
             <div class="pt-5 flex">
                 <hr>
                 <h3 class="text-lg">Tạm phí</h3>
                 <p class=" pl-[100px]"><?php echo number_format($tongtien) ?>₫</p>
+                <p class=" pl-[100px]"><?php echo number_format($goc) ?>₫</p>
             </div>
         </div>
     </div>

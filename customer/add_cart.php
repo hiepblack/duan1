@@ -7,6 +7,7 @@ if (isset($_POST['submit'])) {
     $productSize = $_POST['productSize'];
     $productPrice = $_POST['productPrice'];
     $productImage = $_POST['productImage'];
+    $importPrice = $_POST['importPrice'];
     $sl = $_POST['productSl'];
     if (!isset($_SESSION['gio_hang'][$productId])) {
         $_SESSION['gio_hang'][$productId] = array(
@@ -15,7 +16,8 @@ if (isset($_POST['submit'])) {
             'productPrice' => $productPrice,
             'productImage' => $productImage,
             'productColor' => $productColor,
-            'productId' => $productId
+            'productId' => $productId,
+            'importPrice' => $importPrice
         );
     } else {
         $_SESSION['gio_hang'][$productId]['so_luong'] += $sl;

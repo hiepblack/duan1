@@ -15,6 +15,16 @@
             "y"=>25
          ));
      }
+    //dem so don hang
+    $sql = "select count(orderId) from orders ";//where Month(orderDate)=Month(getDate());?
+    $qty = getOne($sql);
+    $sql1 = "select sum(totalMoney) from orders";
+    $total = getOne($sql1);
+    $sql2 = "select sum(profit) from orders";
+    $profit = getOne($sql2);
+    // var_dump( $qty, $total,$profit);
+
+
 ?>
 <div class="page-wrapper">
     <div class="page-breadcrumb bg-white d-flex justify-content-between align-items-center">
@@ -23,6 +33,16 @@
         <!-- /.col-lg-12 -->
     </div>
     <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                <div class="white-box ">
+                    <h3 class="box-title">Thống kê doanh thu </h3>
+                    Có tổng <b><?php echo $qty[0]; ?></b> đơn hàng
+                    <br> Tổng doanh thu đạt <b><?php echo number_format($total[0]);?>đ</b>  
+                    <br> Lợi nhuận đạt <b><?php echo number_format($profit[0]); ?>đ</b>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                 <div class="white-box ">
