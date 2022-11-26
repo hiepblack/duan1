@@ -101,6 +101,7 @@
                                 <span class="hide-menu">Trang Chủ</span>
                             </a>
                         </li>
+                        
                         <li class="sidebar-item">
                             <a  class="sidebar-link waves-effect waves-dark sidebar-link" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=khachhang">
                                 <i class="fa fa-user" aria-hidden="true"></i>
@@ -145,6 +146,15 @@
                                 <span class="hide-menu">Bình Luận</span>
                             </a>
                         </li>
+<<<<<<< HEAD
+=======
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=binhluan_blog" aria-expanded="false">
+                                <i class="fa fa-columns" aria-hidden="true"></i>
+                                <span class="hide-menu">Bình Luận blog</span>
+                            </a>
+                        </li>
+>>>>>>> 1392dd69073162112027a0023ed146a2d2f95ab9
                     </ul>
 
                 </nav>
