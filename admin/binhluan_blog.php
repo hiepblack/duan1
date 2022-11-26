@@ -26,34 +26,35 @@
                             <thead>
                                 <tr>
                                     <th class="border-top-0">#</th>
-                                    <th class="border-top-0">Tên khách hàng</th>
+                                    <th class="border-top-0">Tên người bình luận</th>
                                     <th class="border-top-0">Nội dung</th>
-                                    <th class="border-top-0">Sản Phẩm</th>
+                                    <th class="border-top-0">Bài Viết</th>
                                     <th class="border-top-0">Ngày Bình Luận</th>
                                     <th class="border-top-0">Hành động</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($comments as $comment): ?>
+                                <?php foreach ($comment_blog as $value): ?>
                                 <tr>
                                     <td>
-                                        <?php echo $comment['commentId']?>
+                                        <?php echo $value['comment_blogId']?>
                                     </td>
                                     <td>
-                                        <?php echo $comment['userName']?>
+                                        <?php echo $value['userId']?>
                                     </td>
                                     <td>
-                                        <?php echo $comment['commentContent']?>
+                                        <?php echo $value['comment_contenblog']?>
                                     </td>
                                     <td>
-                                        <?php echo $comment['productName']?>
+                                        <?php echo $value['blogId']?>
                                     </td>
                                     <td>
-                                        <?php echo $comment['commentDate']?>
+                                        <?php echo $value['comment_date']?>
                                     </td>
                                     <td>
-                                        <a href="../customer/delete_comment.php?id=<?php echo $comment['commentId']?>">
-                                            <button type="button" class="btn btn-danger">Xoá Bl</button>
+                                    
+                                        <a href="../customer/deletecomment_blog.php?id=<?php echo $value['comment_blogId']?>">
+                                            <button type="button" class="btn btn-danger">Xoá</button>
                                         </a>
                                     </td>
                                 </tr>
