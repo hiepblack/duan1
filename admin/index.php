@@ -13,7 +13,7 @@ if (isset($_GET['act'])) {
             $products = product();
             if (isset($_POST['search']) && $_POST['search']) {
                 $search = $_POST['search'];
-                $query = "select * from hang_hoa where  ten_hh like '%$search%' or ten_hh = '$search'";
+                $query = "select * from product where productName like '%$search%' or productName = '$search'";
                 $products = getAll($query);
             }
             include "./san_pham.php";

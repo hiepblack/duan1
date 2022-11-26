@@ -15,7 +15,7 @@
                 <h5 class="text-4xl uppercase my-4">Xe đạp gấp performance</h5>
                 <p class="text-xl  my-4">Thiết kế cho tốc độ và sự mạnh mẽ</p>
                 <a href=" http://localhost/WEB17301/Du_an_1/views/index.php?act=sanpham">
-                    <button class="border border-white py-2 px-3 bg-white text-black hover:bg-transparent hover:text-white">
+                    <button class=" border-white py-2 px-3 bg-white text-black hover:bg-transparent hover:text-white">
                         Xem Ngay
                     </button>
                 </a>
@@ -86,10 +86,10 @@
                 </a>
             </div>
             <?php foreach ($products as $value) : ?>
-                <div class="p-4 border">
+                <div class="p-4">
                     <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=chitietsanpham&id=<?php echo $value['productId'] ?>">
                         <div class="flex justify-center items-center rounded-md">
-                            <img class="sm:h-64 md:h-96 border" src="../img/<?php
+                            <img class="sm:h-64 md:h-96" src="../img/<?php
                                                                             $arr = explode(",", $value['productImage']);
                                                                             echo $arr[0];
                                                                             ?>" alt="">
@@ -98,7 +98,7 @@
                             <p class="text-base text-black">
                                 <?php echo $value['productName'] ?>
                             </p>
-                            <span class="text-red-600 font-semibold">$<?php echo $value['productPrice'] ?></span>
+                            <span class="text-red-600 font-semibold"><?php echo number_format($value['productPrice'])  ?> VND</span>
                         </div>
                     </a>
                 </div>
@@ -129,10 +129,10 @@
                 </a>
             </div>
             <?php foreach ($product as $value) : ?>
-                <div class="p-4 border rounded-md">
+                <div class="p-4  rounded-md">
                     <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=chitietsanpham&id=<?php echo $value['productId'] ?>">
                         <div class="flex justify-center items-center">
-                            <img class="sm:h-64 md:h-96 border" src="../img/<?php
+                            <img class="sm:h-64 md:h-96 " src="../img/<?php
                                                                             $arr = explode(",", $value['productImage']);
                                                                             echo $arr[0];
                                                                             ?>" alt="">
@@ -141,7 +141,7 @@
                             <p class="text-base text-black">
                                 <?php echo $value['productName'] ?>
                             </p>
-                            <span class="text-red-600 px-2 font-semibold">$<?php echo $value['productPrice'] ?></span>
+                            <span class="text-red-600 px-2 font-semibold"><?php echo number_format( $value['productPrice']) ?> VND</span>
                         </div>
                     </a>
                 </div>
@@ -163,7 +163,7 @@
             <div class="grid grid-cols-3 gap-5 px-">
                 <!-- bai viet -->
                 <?php foreach ($blog as $value) : ?>
-                    <div class="border p-2">
+                    <div class=" p-2">
                         <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=chitiet_blog&id=<?php echo $value['blogId'] ?>&userid=<?php echo $value['userId'] ?>">
                             <div class="overflow-hidden relative">
                                 <div class="">

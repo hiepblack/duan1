@@ -26,7 +26,7 @@
             <h1 class="px-2 font-bold text-xl py-3"><?php echo $one_product['productName'] ?></h1>
             <hr>
             <p class="py-3 flex items-center">
-                <span class="text-red-600 px-2 font-semibold">$<?php echo $one_product['productPrice'] ?></span>
+                <span class="text-red-600 px-2 font-semibold"><?php echo number_format($one_product['productPrice'])?> VND</span>
 
             </p>
             <hr>
@@ -139,7 +139,7 @@
                         <div class="">
                             <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=chitietsanpham&id=<?php echo $value['productId'] ?>" class="text-base font-semibold"><?php echo $value['productName'] ?></a>
                             <div class="flex-col py-2 justify-center">
-                                <span class="text-red-600  font-semibold">$<?php echo $value['productPrice'] ?></span>
+                                <span class="text-red-600  font-semibold"><?php echo number_format($value['productPrice']);  ?>VND</span>
                             </div>
                         </div>
                     </a>

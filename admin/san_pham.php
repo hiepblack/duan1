@@ -7,7 +7,7 @@
         <div class="d-flex form-group">
             <form action="" class="mx-2 border" method="post">
                 <input type="text" class="p-1" placeholder="tìm kiếm" name="search">
-                <button class="btn btn-primary">TÌm kiếm</button>
+                <button class="btn btn-primary">Tìm kiếm</button>
             </form>
             <a href="http://localhost/WEB17301/Du_an_1/admin/index.php?act=addsp">
                 <button class="btn btn-success text-white">Thêm mới+</button>
@@ -69,7 +69,7 @@
                                                                 echo $arr[0];
                                                                 ?>" alt="" width="50" height="50">
                                         </td>
-                                        <td><?php echo $product['productPrice'] ?></td>
+                                        <td><?php echo number_format($product['productPrice'])?>đ</td>
                                         <td>
                                             <?php echo $product['productColor'] ?>
                                         </td>
