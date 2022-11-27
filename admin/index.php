@@ -172,14 +172,19 @@ if (isset($_GET['act'])) {
             if (isset($_POST['search']) && $_POST['search']) {
                 $search = $_POST['search'];
                 var_dump($search);
-                $query = "select * from (binh_luan inner join khach_hang on binh_luan.ma_kh = khach_hang.ma_kh) inner join hang_hoa on binh_luan.ma_hh = hang_hoa.ma_hh where  ngay_bl = '$search'";
+                $query = "select * from (comment inner join user on comment.userId =user.userId) inner join product on comment.productId = product.productId where  commentDate = '$search'";
                 $comments = getAll($query);
             }
             include "./binh_luan.php";
             break;
             case "binhluan_blog":
                 $comment_blog=comment_blog();
-                
+                if (isset($_POST['search']) && $_POST['search']) {
+                    $search = $_POST['search'];
+                    var_dump($search);
+                    $query = "select * from (comment_blog inner join user on comment_blog.userId = user.userId) inner join blog on comment_blog.blogId = blog.blogId  where  comment_date = '$search'";
+                    $comments = getAll($query);
+                }
                 include "./binhluan_blog.php";
                 break;
         case "diachi":

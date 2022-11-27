@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <!-- Font Awesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <link rel="stylesheet" href="./style/accordion.css">
 </head>
 
 <body id="body">
@@ -94,13 +95,14 @@
         <aside class="left-sidebar" data-sidebarbg="skin6">
             <div class="scroll-sidebar">
                 <nav class="sidebar-nav">
-                    <ul id="sidebarnav">
+                    <ul id="sidebarnav accordionPanelsStayOpenExample" class="accordion">
                         <li class="sidebar-item pt-2">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=trangchu" aria-expanded="false">
                                 <i class="far fa-clock" aria-hidden="true"></i>
                                 <span class="hide-menu">Trang Chủ</span>
                             </a>
                         </li>
+<<<<<<< HEAD
 
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=khachhang">
@@ -116,44 +118,116 @@
                             <div class="collapse" id="collapseExample" style="margin-left:20px;">
                                 <a class="sidebar-link waves-effect waves-dark sidebar-link" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=sanpham">
                                 <span class="hide-menu">Danh Sách Sản Phẩm</span>
+=======
+                        <!-- quản lí tài khoản -->
+                        <li class="sidebar-item">
+                            <button class="accordion">
+                                <div class="title">
+                                    <i class="fa fa-user i" aria-hidden="true"></i>
+                                    <span class="hide-menu">Tài Khoản</span>
+                                </div>
+                            </button>
+                            <div class="panel">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link box-menu first" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=khachhang">
+
+                                    <span class="hide-menu">Quản lí Tài Khoản</span>
+>>>>>>> ffa35f7a27c5e5d226da52a1194840b5c15b8fa6
                                 </a>
-                                <a href="http://localhost/WEB17301/Du_an_1/admin/index.php?act=addsp" class="sidebar-link waves-effect waves-dark sidebar-link">
-                                <span class="hide-menu">Thêm Mới Sản Phẩm</span>
+
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link box-menu" href="http://localhost/WEB17301/Du_an_1/admin/index.php?act=addkh">
+
+                                    <span class="hide-menu">Thêm mới tài khoản</span>
                                 </a>
                             </div>
                         </li>
+                        <!-- quản lí sản phẩm -->
+                        <li class="sidebar-item">
+                            <button class="accordion">
+                                <div class="title">
+                                    <i class="fa fa-table i" aria-hidden="true"></i><span class="hide-menu">Sản Phẩm</span>
+                                </div>
+                            </button>
+                            <div class="panel">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link box-menu first " href="http://localhost/WEB17301/du_an_1/admin/index.php?act=khachhang">
+
+
+                                    <span class="hide-menu">Quản lí Sản Phẩm</span>
+                                </a>
+
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link box-menu" href="http://localhost/WEB17301/Du_an_1/admin/index.php?act=addsp">
+
+                                    <span class="hide-menu">Thêm mới sản phẩm</span>
+                                </a>
+                            </div>
+                        </li>
+
+                        <!-- quản lí đơn hàng -->
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=donhang" aria-expanded="false">
-                                <i class="fa-solid fa-cart-shopping"></i>
+                                <i class="fa-solid fa-cart-shopping "></i>
                                 <span class="hide-menu">Đơn Hàng</span>
                             </a>
                         </li>
+                        <!-- quản lí danh mục -->
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=loaihang" aria-expanded="false">
-                                <i class="fa fa-font" aria-hidden="true"></i>
-                                <span class="hide-menu">Danh Mục</span>
-                            </a>
-                        </li>
+                            <button class="accordion">
+                                <div class="title">
+                                    <i class="fa fa-font i" aria-hidden="true"></i>
+                                    <span class="hide-menu">Danh Mục</span>
+                                </div>
+                            </button>
+                            <div class="panel">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link box-menu first" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=loaihang">
+
+
+                                    <span class="hide-menu">Quản lí danh mục</span>
+                                </a>
+
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link box-menu" href="http://localhost/WEB17301/Du_an_1/admin/index.php?act=addlh">
+
+                                    <span class="hide-menu">Thêm mới danh mục</span>
+                                </a>
+                            </div>
+                            <!-- địa chỉ -->
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=diachi" aria-expanded="false">
                                 <i class="fa fa-globe" aria-hidden="true"></i>
                                 <span class="hide-menu">Địa Chỉ</span>
                             </a>
                         </li>
+                        <!-- quản lí bình luận -->
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=binhluan" aria-expanded="false">
-                                <i class="fa fa-columns" aria-hidden="true"></i>
-                                <span class="hide-menu">Bình Luận</span>
-                            </a>
+                            <button class="accordion">
+                                <div class="title">
+                                    <i class="fa fa-columns i" aria-hidden="true"></i>
+                                    <span class="hide-menu">Bình Luận</span>
+                                </div>
+                            </button>
+                            <div class="panel">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link box-menu first" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=binhluan">
+
+
+                                    <span class="hide-menu">Quản lí bình luật sản phẩm</span>
+                                </a>
+
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link box-menu" href="http://localhost/WEB17301/Du_an_1/admin/index.php?act=binhluan_blog">
+
+                                    <span class="hide-menu">Quản lí bình luật bài viết</span>
+                                </a>
+                            </div>
                         </li>
+<<<<<<< HEAD
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=binhluan_blog" aria-expanded="false">
                                 <i class="fa fa-columns" aria-hidden="true"></i>
                                 <span class="hide-menu">Bình Luận blog</span>
                             </a>
                         </li>
+=======
+
+
+>>>>>>> ffa35f7a27c5e5d226da52a1194840b5c15b8fa6
                     </ul>
 
                 </nav>
-            </div>
         </aside>

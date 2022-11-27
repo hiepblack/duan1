@@ -72,6 +72,9 @@ if (isset($_GET['act'])) {
         case "dangki":
             include "./dangki.php";
             break;
+            case "quenmk":
+                include "./quen_mk.php";
+                break;
         case "giohang":
             $success = false;
             if (empty($_SESSION['gio_hang'])) {

@@ -58,7 +58,7 @@
                         <div class="">
                             <a href="" class="text-base font-semibold"><?php echo $product['productName'] ?></a>
                             <div class="flex-col py-2 justify-center">
-                                <span class="text-red-600  font-semibold"><?php echo $product['productPrice'] ?></span>
+                                <span class="text-red-600  font-semibold"><?php echo number_format($product['productPrice'])  ?>  VNĐ</span>
                                 <span class="text-slate-400 line-through text-sm"><?php echo $product['productDiscount'] ?></span>
                             </div>
                         </div>

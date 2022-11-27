@@ -2,7 +2,7 @@
     <!-- nav links -->
     <div class="flex px-10">
         <div class="py-2">
-            <a href="" class="text-sm px-1 text-slate-600">Trang chủ</a> / <a class="text-sm px-1 text-slate-400" href="">Blog</a>
+            <a href="" class=" px-1 "><span class="text-base">Trang chủ</span></a> / <a class="text-base px-1" href="">Blog</a>
         </div>
     </div>
     <!-- main -->
