@@ -46,7 +46,7 @@
                                             <?php echo $order['orderDate'] ?>
                                         </td>
                                         <td>
-                                            <?php echo $order['totalMoney'] ?>
+                                            <?php echo number_format($order['totalMoney'])?> đ
                                         </td>
                                         <td><?php echo $order['orderNote'] ?></td>
                                         <td>
