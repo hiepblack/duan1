@@ -101,9 +101,9 @@
                                 <span class="hide-menu">Trang Chủ</span>
                             </a>
                         </li>
-                        
+
                         <li class="sidebar-item">
-                            <a  class="sidebar-link waves-effect waves-dark sidebar-link" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=khachhang">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=khachhang">
                                 <i class="fa fa-user" aria-hidden="true"></i>
                                 <span class="hide-menu">Tài Khoản</span>
                             </a>
