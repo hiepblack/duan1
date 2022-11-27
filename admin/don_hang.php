@@ -62,7 +62,7 @@
                                             <?php checkStatus($order['statusId'])  ?>
                                         </td>
                                         <td>
-                                        <?php echo $order['status']==0?"chưa thanh toán":"đã thanh toán";?>
+                                        <!-- <?php echo $order['status']==0?"chưa thanh toán":"đã thanh toán";?> -->
                                         </td>
                                         <td>
                                             <a href="http://localhost/WEB17301/du_an_1/admin/index.php?act=chitietdonhang&id=<?php echo $order['orderId'] ?>">

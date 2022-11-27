@@ -9,7 +9,7 @@
                 <input type="date" class="p-1" placeholder="tìm kiếm" name="search">
                 <button class="btn btn-primary" type="submit">TÌm kiếm</button>
             </form>
-            <button class="btn btn-primary">Thêm mới+</button>
+            
         </div>
         <!-- /.col-lg-12 -->
     </div>
