@@ -26,7 +26,8 @@
                                     <th class="border-top-0">#</th>
                                     <th class="border-top-0">Tên Sản Phẩm</th>
                                     <th class="border-top-0">Hình ảnh</th>
-                                    <th class="border-top-0">Giá</th>
+                                    <th class="border-top-0">Giá Gốc</th>
+                                    <th class="border-top-0">Giá Bán</th>
                                     <th class="border-top-0">Màu Sắc</th>
                                     <th class="border-top-0">Thương hiệu</th>
                                     <th class="border-top-0">Trạng thái</th>
@@ -34,16 +35,6 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $products = product();
-                                    if (isset($_POST['search']) && $_POST['search']) {
-                                        $search = $_POST['search'];
-                                        $query = "select * from product where productName like '%$search%' or productName = '$search'";
-                                        $products = getAll($query);
-                                    } else {
-                                        $query = "select * from product where 1";
-                                        $products = getAll($query);
-                                    }
-                                ?>
                                 <?php foreach ($products as $product) : ?>
                                     <tr>
                                         <td>
@@ -66,7 +57,10 @@
                                                                 echo $arr[0];
                                                                 ?>" alt="" width="50" height="50">
                                         </td>
-                                        <td><?php echo number_format($product['productPrice'])?>đ</td>
+                                        <td>
+                                        <?php echo number_format($product['importPrice'])?>đ</td>
+                                        <td>
+                                            <?php echo number_format($product['productPrice'])?>đ</td>
                                         <td>
                                             <?php echo $product['productColor'] ?>
                                         </td>

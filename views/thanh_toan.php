@@ -9,7 +9,7 @@
                     </div>
                     <div>
                         <input type="email" name="userEmail" value="<?php echo isset($_SESSION['user'])?$emailUser:"";?>" placeholder="Email" class="py-3 border md:w-[300px] w-full my-5 pl-1 rounded outline-none shadow-sm">
-                        <input type="text" name="orderSdt" placeholder="SDT" value="<?php echo isset($_SESSION['user'])?$sdt:"";?>" class="py-3 border md:w-[196px] w-full my-5 pl-1 rounded outline-none shadow-sm">
+                        <input type="number" name="orderSdt" placeholder="SDT" value="<?php echo isset($_SESSION['user'])?$sdt:"";?>" class="py-3 border md:w-[196px] w-full my-5 pl-1 rounded outline-none shadow-sm">
                     </div>
                     <div>
                         <input type="text" name="orderLocation" placeholder="Địa Chỉ" value="<?php echo isset($_SESSION['user'])?$location:"";?>" class="py-3 border md:w-[500px] w-full my-5 pl-1 rounded outline-none shadow-sm">
@@ -23,7 +23,6 @@
             <div class="text-center mt-[250px]">
                 <hr>
                 <span class="pt-5">Code by nhóm 8</span>
-
             </div>
 
         </div>

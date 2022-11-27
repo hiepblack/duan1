@@ -16,13 +16,19 @@
     background-color: #ccc;
 }
 
-.panel {
+.panel{
 
     background-color: white;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+   
 }
+.panel span {
+    display: block;
+    padding-left: 20px;
+}
+
 .box-menu{
     width: 100%;
     margin: 0;
@@ -31,15 +37,6 @@
     padding-top:20px ;
     padding-bottom: 20px;
 }
-button{
-    border: none;
-    outline-style: none; 
-    background-color:white; 
-}
 .title{
-    padding-left: 11px;
     color: #727f90;
-}
-.i{
-    padding-right: 5px;
 }

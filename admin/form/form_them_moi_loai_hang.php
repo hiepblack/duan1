@@ -41,7 +41,7 @@
                     <div class="card-body">
                         <form class="form-horizontal form-material" method="post"  action="./index.php?act=addlh">
                             <div class="form-group mb-4">
-                                <label class="col-md-12 p-0">Tên Loại Hàng</label>
+                                <label class="col-md-12 p-0">Tên Danh Mục</label>
                                 <p <?php echo isset($error['brand'])?"":"hidden" ?> class="alert alert-warning"><?php  if(isset($error['brand'])){
                                     echo $error['brand'];
                                 } ?></p>
@@ -51,7 +51,7 @@
                             </div>
                             <div class="form-group mb-4">
                                 <div class="col-sm-12">
-                                    <button class="btn btn-success" type="submit" name="submit">Add Loại Hàng</button>
+                                    <button class="btn btn-success" type="submit" name="submit">Add Danh Mục</button>
                                 </div>
                             </div>
                         </form>

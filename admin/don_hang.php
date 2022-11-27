@@ -9,9 +9,6 @@
                 <input type="text" class="p-1" placeholder="tìm kiếm" name="search">
                 <button class="btn btn-primary">TÌm kiếm</button>
             </form>
-            <a href="">
-                <button class="btn btn-success text-white">Thêm mới+</button>
-            </a>
         </div>
         <!-- /.col-lg-12 -->
     </div>
