@@ -80,13 +80,16 @@
                 transform: translateY(0);
             }
         }
-        #giohangnho{
+
+        #giohangnho {
             color: black;
         }
-        #menu1:hover #giohangnho{
+
+        #menu1:hover #giohangnho {
             color: white;
         }
-        #giohangnho1{
+
+        #giohangnho1 {
             color: white;
         }
     </style>
@@ -150,7 +153,7 @@
                             }
                             ?>
 
-                            
+
                         </div>
                         <div class="mx-2">
                             <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=giohang">
@@ -160,19 +163,19 @@
                                     </svg>
                                     <span class="left-[-0.7rem] top-[-0.2rem] absolute bg-current w-5 h-5  border-2 border rounded-full flex flex-cols justify-center items-center">
                                         <p class="text-sm font-bold" id="<?php
-                                            if ($_GET['act'] == 'trangchu') {
-                                                echo 'giohangnho';
+                                                                            if ($_GET['act'] == 'trangchu') {
+                                                                                echo 'giohangnho';
+                                                                            } else {
+                                                                                echo 'giohangnho1';
+                                                                            }
+                                                                            ?>">
+                                            <?php
+                                            if (isset($_SESSION['gio_hang'])) {
+                                                echo count($_SESSION['gio_hang']);
                                             } else {
-                                                echo 'giohangnho1';
+                                                echo "0";
                                             }
-                                            ?>">
-<?php 
-    if(isset($_SESSION['gio_hang'])){
-        echo count($_SESSION['gio_hang']);
-    }else{
-        echo "0";
-    }
-?>
+                                            ?>
                                         </p>
                                     </span>
                                 </span>
@@ -239,7 +242,7 @@
                     </div>
                     <div class="flex items-center justify-end">
                         <div class="mx-2">
-                        <?php
+                            <?php
                             if (empty($_SESSION['user'])) {
                                 echo '<a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=dangnhap">
                                     <span class="">
@@ -262,11 +265,28 @@
                             ?>
                         </div>
                         <div class="mx-2">
-                            <a href="#">
-                                <span class="">
+                        <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=giohang">
+                                <span class="relative w-7 h-7">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
                                     </svg>
+                                    <span class="left-[-0.7rem] top-[-0.2rem] absolute bg-current w-5 h-5  border-2 border rounded-full flex flex-cols justify-center items-center">
+                                        <p class="text-sm font-bold" id="<?php
+                                                                            if ($_GET['act'] == 'trangchu') {
+                                                                                echo 'giohangnho';
+                                                                            } else {
+                                                                                echo 'giohangnho1';
+                                                                            }
+                                                                            ?>">
+                                            <?php
+                                            if (isset($_SESSION['gio_hang'])) {
+                                                echo count($_SESSION['gio_hang']);
+                                            } else {
+                                                echo "0";
+                                            }
+                                            ?>
+                                        </p>
+                                    </span>
                                 </span>
                                 <span>Giỏ Hàng</span>
                             </a>

@@ -2,7 +2,7 @@
     <!-- nav links -->
     <div class="flex px-10">
         <div class="py-2">
-            <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=trangchu" class="text-sm px-1 text-slate-600">Trang chủ</a> / <a class="text-sm px-1 text-slate-400" href="http://localhost/WEB17301/Du_an_1/views/index.php?act=blog">Blog</a>
+            <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=trangchu" class="text-base px-1">Trang chủ</a> / <a class=" px-1 text-base" href="http://localhost/WEB17301/Du_an_1/views/index.php?act=blog">Blog</a>
         </div>
     </div>
     <!-- main -->
