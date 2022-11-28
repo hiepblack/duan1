@@ -9,9 +9,6 @@
                 <input type="text" class="p-1" placeholder="tìm kiếm" name="search">
                 <button class="btn btn-primary">TÌm kiếm</button>
             </form>
-            <a href="">
-                <button class="btn btn-success text-white">Thêm mới+</button>
-            </a>
         </div>
         <!-- /.col-lg-12 -->
     </div>
@@ -49,7 +46,7 @@
                                             <?php echo $order['orderDate'] ?>
                                         </td>
                                         <td>
-                                            <?php echo $order['totalMoney'] ?>
+                                            <?php echo number_format($order['totalMoney'])?> đ
                                         </td>
                                         <td><?php echo $order['orderNote'] ?></td>
                                         <td>
@@ -60,9 +57,6 @@
                                         </td>
                                         <td>
                                             <?php checkStatus($order['statusId'])  ?>
-                                        </td>
-                                        <td>
-                                        <!-- <?php echo $order['status']==0?"chưa thanh toán":"đã thanh toán";?> -->
                                         </td>
                                         <td>
                                             <a href="http://localhost/WEB17301/du_an_1/admin/index.php?act=chitietdonhang&id=<?php echo $order['orderId'] ?>">

@@ -97,22 +97,22 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav accordionPanelsStayOpenExample" class="accordion">
                         <li class="sidebar-item pt-2">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=trangchu" aria-expanded="false">
-                                <i class="far fa-clock" aria-hidden="true"></i>
-                                <span class="hide-menu">Trang Chủ</span>
+                            <a class="accordion sidebar-link waves-effect waves-dark sidebar-link" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=trangchu" aria-expanded="false">
+                                <div class="title">
+                                    <i class="far fa-clock" aria-hidden="true"></i>
+                                    <span class="hide-menu">Trang Chủ</span>
+                                </div>
                             </a>
                         </li>
-                        <!-- quản lí tài khoản -->
                         <li class="sidebar-item">
-                            <button class="accordion">
+                            <a class="accordion sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false">
                                 <div class="title">
                                     <i class="fa fa-user i" aria-hidden="true"></i>
                                     <span class="hide-menu">Tài Khoản</span>
                                 </div>
-                            </button>
+                            </a>
                             <div class="panel">
                                 <a class="sidebar-link waves-effect waves-dark sidebar-link box-menu first" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=khachhang">
-
                                     <span class="hide-menu">Quản lí Tài Khoản</span>
                                 </a>
 
@@ -122,23 +122,23 @@
                                 </a>
                             </div>
                         </li>
+
                         <!-- quản lí sản phẩm -->
                         <li class="sidebar-item">
-                            <button class="accordion">
+                            <a class="accordion sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false">
                                 <div class="title">
-                                    <i class="fa fa-table i" aria-hidden="true"></i><span class="hide-menu">Sản Phẩm</span>
+                                    <i class="fa fa-table i" aria-hidden="true"></i>
+                                    <span class="hide-menu">Sản Phẩm</span>
                                 </div>
-                            </button>
+                            </a>
                             <div class="panel">
-                                <a class="sidebar-link waves-effect waves-dark sidebar-link box-menu first " href="http://localhost/WEB17301/du_an_1/admin/index.php?act=khachhang">
-
-
-                                    <span class="hide-menu">Quản lí Sản Phẩm</span>
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link box-menu first" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=sanpham">
+                                    <span class="hide-menu">Danh Sách Sản Phẩm</span>
                                 </a>
 
                                 <a class="sidebar-link waves-effect waves-dark sidebar-link box-menu" href="http://localhost/WEB17301/Du_an_1/admin/index.php?act=addsp">
 
-                                    <span class="hide-menu">Thêm mới sản phẩm</span>
+                                    <span class="hide-menu">Thêm mới Sản Phẩm</span>
                                 </a>
                             </div>
                         </li>
@@ -146,18 +146,20 @@
                         <!-- quản lí đơn hàng -->
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=donhang" aria-expanded="false">
-                                <i class="fa-solid fa-cart-shopping "></i>
-                                <span class="hide-menu">Đơn Hàng</span>
+                                <div class="title">
+                                    <i class="fa-solid fa-cart-shopping "></i>
+                                    <span class="hide-menu">Đơn Hàng</span>
+                                </div>
                             </a>
                         </li>
                         <!-- quản lí danh mục -->
                         <li class="sidebar-item">
-                            <button class="accordion">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link accordion" href="#" aria-expanded="false">
                                 <div class="title">
                                     <i class="fa fa-font i" aria-hidden="true"></i>
                                     <span class="hide-menu">Danh Mục</span>
                                 </div>
-                            </button>
+                            </a>
                             <div class="panel">
                                 <a class="sidebar-link waves-effect waves-dark sidebar-link box-menu first" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=loaihang">
 
@@ -173,18 +175,20 @@
                             <!-- địa chỉ -->
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=diachi" aria-expanded="false">
-                                <i class="fa fa-globe" aria-hidden="true"></i>
-                                <span class="hide-menu">Địa Chỉ</span>
+                                <div class="title">
+                                    <i class="fa fa-globe" aria-hidden="true"></i>
+                                    <span class="hide-menu">Địa Chỉ</span>
+                                </div>
                             </a>
                         </li>
                         <!-- quản lí bình luận -->
                         <li class="sidebar-item">
-                            <button class="accordion">
+                            <a class="accordion sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false">
                                 <div class="title">
                                     <i class="fa fa-columns i" aria-hidden="true"></i>
                                     <span class="hide-menu">Bình Luận</span>
                                 </div>
-                            </button>
+                            </a>
                             <div class="panel">
                                 <a class="sidebar-link waves-effect waves-dark sidebar-link box-menu first" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=binhluan">
 
@@ -198,7 +202,6 @@
                                 </a>
                             </div>
                         </li>
-
 
                     </ul>
 
