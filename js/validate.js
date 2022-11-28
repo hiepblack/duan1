@@ -99,8 +99,6 @@ function validate_lienhe(){
     else{
         name.style.backgroundColor="white";
     }
-  
-
 }
 function validate_setpass(){
 
@@ -111,13 +109,14 @@ function validate_setpass(){
         return false;
     }
     var repass = document.getElementById("repass");
-    if(repass.value=""){
+    if(repass.value==""){
         alert("Nhập lại mật khẩu mới!");
         repass.style.backgroundColor="red";
         return false;
     }
-    else if(repass.value!=pass.value){
-        alert("Sai mật khẩu!");
+    if(pass.value != repass.value) {
+        alert("Mật khẩu không trùng khớp");
         return false;
     }
+   
 }

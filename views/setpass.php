@@ -4,8 +4,8 @@
         <form action="../customer/doimk_moi.php" method="POST" onsubmit="return validate_setpass()">
             <h4 class="text-xl text-left py-3">Phục hồi mật khẩu</h4>
             <input type="text" name="email" value="<?php echo $email?>" hidden>
-            <input type="password" name="" id="pass" placeholder="Nhập mật khẩu mới" class="px-5 bg-[#f5f5f5] h-[50px] w-[500px] my-3 outline-none">
-            <input type="password" name="pass" id="repass" placeholder="Nhập lại mật khẩu" class="px-5 bg-[#f5f5f5] h-[50px] w-[500px] my-3 outline-none">
+            <input type="password" name="pass" id="pass" placeholder="Nhập mật khẩu mới" class="px-5 bg-[#f5f5f5] h-[50px] w-[500px] my-3 outline-none">
+            <input type="password" id="repass" placeholder="Nhập lại mật khẩu" class="px-5 bg-[#f5f5f5] h-[50px] w-[500px] my-3 outline-none">
             <div class="text-left my-5">
                 <button class="px-5 border h-[60px] button_slide slide_right bg-black text-white mr-3" type="submit">Gửi</button>
                 <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=trangchu">Hủy</a>
@@ -13,29 +13,6 @@
         </form>
 
     </div>
-
-
-<script>
- function validate_setpass(){
-var pass = document.getElementById("pass");
-if(pass.value==""){
-    alert("Bạn chưa nhập mật khẩu mới!");
-    pass.style.backgroundColor="red";
-    return false;
-}
-var repass = document.getElementById("repass");
-if(repass.value==""){
-    alert("Nhập lại mật khẩu mới!");
-    repass.style.backgroundColor="red";
-    return false;
-}
-else if(repass.value!=pass.value){
-    alert("Sai mật khẩu!");
-    return false;
-}
-
-}
-</script>
 
 <style>
     .button_slide {
