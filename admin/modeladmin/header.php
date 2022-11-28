@@ -130,7 +130,7 @@
                                 </div>
                             </button>
                             <div class="panel">
-                                <a class="sidebar-link waves-effect waves-dark sidebar-link box-menu first " href="http://localhost/WEB17301/du_an_1/admin/index.php?act=khachhang">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link box-menu first " href="http://localhost/WEB17301/du_an_1/admin/index.php?act=sanpham">
 
 
                                     <span class="hide-menu">Quản lí Sản Phẩm</span>
