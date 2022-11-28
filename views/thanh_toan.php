@@ -20,6 +20,18 @@
                     <input rules="required" id="orderLocation" type="text" name="orderLocation" placeholder="Địa chỉ" value="<?php echo isset($_SESSION['user'])?$location:"";?>" class="py-3 border md:w-[500px] w-full my-5 pl-1 rounded outline-none shadow-sm">
                 </div>
                 <div>
+            <form action="../customer/thanhtoan.php" method="post">
+                    <div>
+                        <input required type="text" name="userName" value="<?php echo isset($_SESSION['user'])? $userName:"";?>" placeholder="Họ và tên" class="py-3 border md:w-[500px] w-full my-5 pl-1 rounded outline-none shadow-sm">
+                    </div>
+                    <div>
+                        <input required type="email" name="userEmail" value="<?php echo isset($_SESSION['user'])?$emailUser:"";?>" placeholder="Email" class="py-3 border md:w-[300px] w-full my-5 pl-1 rounded outline-none shadow-sm">
+                        <input required type="number" name="orderSdt" placeholder="SDT" value="<?php echo isset($_SESSION['user'])?$sdt:"";?>" class="py-3 border md:w-[196px] w-full my-5 pl-1 rounded outline-none shadow-sm">
+                    </div>
+                    <div>
+                        <input required type="text" name="orderLocation" placeholder="Địa Chỉ" value="<?php echo isset($_SESSION['user'])?$location:"";?>" class="py-3 border md:w-[500px] w-full my-5 pl-1 rounded outline-none shadow-sm">
+                    </div>
+                    <div>
                     <textarea class="w-[500px] bg-[#ededed] h-[130px] p-2 outline-none" cols="30" rows="10" placeholder="Ghi Chú" name="orderNote"></textarea>
                 </div>
                 <input type="hidden" name="lai" value="<?php $tongtien - $goc;?>">
@@ -27,7 +39,10 @@
             </form>
             <div class="text-center mt-[250px]">
                 <hr>
+
                 <span class="pt-5">Developed by group no. 8</span>
+
+                <span class="pt-5">Code by nhóm 8</span>
             </div>
 
         </div>

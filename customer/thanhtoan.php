@@ -4,12 +4,13 @@ include "../model/connect.php";
 // var_dump($_POST["lai"]); die;
 // var_dump($_SESSION['gio_hang']);
 // var_dump($_SESSION['user']);exit();
+date_default_timezone_set('Asia/Ho_Chi_Minh');
 $name ="";
 $email ="";
 $sdt = "";
 $location = "";
 $note = $_POST['orderNote'];
-$ngay_nhap = date("Y-m-d");
+$ngay_nhap = date("Y-m-d H:i:s",time());
 if(!empty($_SESSION['user'])){
     $name = $_SESSION['user']['userName'];
     $email = $_SESSION['user']['userEmail'];
@@ -30,7 +31,7 @@ foreach ($_SESSION['gio_hang'] as $key => $value){
     $total += $value['productPrice'] * $value['so_luong'];
     $profit += ($value['productPrice']-$value['importPrice']) * $value['so_luong'];
 }
-$query = "INSERT INTO `orders`(`orderId`, `tenkh`, `orderDate`, `totalMoney`, `orderNote`, `location`, `sdt`, `profit`) VALUES (null,'$name','$ngay_nhap','$total','$note','$location','$sdt',$profit)";
+$query = "INSERT INTO `orders`(`orderId`, `tenkh`, `orderDate`, `totalMoney`, `orderNote`, `location`, `sdt`,`statusId`,`profit`) VALUES (null,'$name','$ngay_nhap','$total','$note','$location','$sdt',1,$profit)";
 // lấy id order và thêm dữ liệu vào bảng order
 $last_id = getOrderId($query);
 $queryString="";

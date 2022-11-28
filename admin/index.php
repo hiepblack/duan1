@@ -12,8 +12,8 @@ if (isset($_GET['act'])) {
         case "sanpham":
             $products = product();
             if (isset($_POST['search']) && $_POST['search']) {
-                $search = $_POST['search'];      
-                $query = "select * from product where  productName like '%$search%' or productName = '$search'";
+                $search = $_POST['search'];
+                $query = "select * from product where productName like '%$search%' or productName = '$search'";
                 $products = getAll($query);
             }
             include "./san_pham.php";
