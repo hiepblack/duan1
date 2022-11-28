@@ -85,6 +85,8 @@
 </body>
 <script type="text/javascript" src="../js/validate.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+<script type="text/javascript" src="../js/validator.js">  
+</script>
 <script>
     window.addEventListener('scroll', ()=>{
         var scroll_Y = window.scrollY;
@@ -100,5 +102,6 @@
             menu1.classList.remove('hidden');
         }
     })
+    Validator('#checkout-form');
 </script>
 </html>

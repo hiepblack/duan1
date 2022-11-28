@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-
+    
     <script>
         tailwind.config = {
             theme: {
@@ -105,12 +105,14 @@
         <!-- slider -->
         <!-- header -->
         <div id="menu1" class="w-full h-40 <?php
-                                            if ($_GET['act'] == 'trangchu') {
-                                                echo 'bg-transparent hover:bg-[#F5F5F5] absolute inset-0 z-40 hover:text-black text-white transition ease-linear delay-150';
-                                            } else {
-                                                echo 'bg-[#F5F5F5] text-black';
-                                            }
-                                            ?> ">
+            if(isset($_GET['act'])){
+                if ($_GET['act'] == 'trangchu') {
+                    echo 'bg-transparent hover:bg-[#F5F5F5] absolute inset-0 z-40 hover:text-black text-white transition ease-linear delay-150';
+                } else {
+                    echo 'bg-[#F5F5F5] text-black';
+                }
+            }
+            ?> ">
             <!-- menu1 -->
             <div class="container mx-auto bg-transparent ">
                 <div class="grid grid-cols-3 gap-4 pt-4">
@@ -163,12 +165,14 @@
                                     </svg>
                                     <span class="left-[-0.7rem] top-[-0.2rem] absolute bg-current w-5 h-5  border-2 border rounded-full flex flex-cols justify-center items-center">
                                         <p class="text-sm font-bold" id="<?php
-                                                                            if ($_GET['act'] == 'trangchu') {
-                                                                                echo 'giohangnho';
-                                                                            } else {
-                                                                                echo 'giohangnho1';
-                                                                            }
-                                                                            ?>">
+                                                if(isset($_GET['act'])){
+                                                    if ($_GET['act'] == 'trangchu') {
+                                                        echo 'giohangnho';
+                                                    } else {
+                                                        echo 'giohangnho1';
+                                                }
+                                                }
+                                                ?>">
                                             <?php
                                             if (isset($_SESSION['gio_hang'])) {
                                                 echo count($_SESSION['gio_hang']);
@@ -272,11 +276,13 @@
                                     </svg>
                                     <span class="left-[-0.7rem] top-[-0.2rem] absolute bg-current w-5 h-5  border-2 border rounded-full flex flex-cols justify-center items-center">
                                         <p class="text-sm font-bold" id="<?php
+                                                                          if(isset($_GET['act'])){
                                                                             if ($_GET['act'] == 'trangchu') {
                                                                                 echo 'giohangnho';
                                                                             } else {
                                                                                 echo 'giohangnho1';
                                                                             }
+                                                                          }  
                                                                             ?>">
                                             <?php
                                             if (isset($_SESSION['gio_hang'])) {

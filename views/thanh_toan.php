@@ -3,27 +3,31 @@
         <div class="md:text-left text-center box_1">
             <h1 class="text-3xl mt-5">Sport Bicycle</h1>
             <p class="text-xl py-5">Thông tin giao hàng</p>
-            <form action="../customer/thanhtoan.php" method="post">
-                    <div>
-                        <input type="text" name="userName" value="<?php echo isset($_SESSION['user'])? $userName:"";?>" placeholder="Họ và tên" class="py-3 border md:w-[500px] w-full my-5 pl-1 rounded outline-none shadow-sm">
-                    </div>
-                    <div>
-                        <input type="email" name="userEmail" value="<?php echo isset($_SESSION['user'])?$emailUser:"";?>" placeholder="Email" class="py-3 border md:w-[300px] w-full my-5 pl-1 rounded outline-none shadow-sm">
-                        <input type="text" name="orderSdt" placeholder="SDT" value="<?php echo isset($_SESSION['user'])?$sdt:"";?>" class="py-3 border md:w-[196px] w-full my-5 pl-1 rounded outline-none shadow-sm">
-                    </div>
-                    <div>
-                        <input type="text" name="orderLocation" placeholder="Địa Chỉ" value="<?php echo isset($_SESSION['user'])?$location:"";?>" class="py-3 border md:w-[500px] w-full my-5 pl-1 rounded outline-none shadow-sm">
-                    </div>
-                    <div>
+            <form action="../customer/thanhtoan.php" method="post" id="checkout-form">
+                <div class="form-group">
+                    <input rules="required|min:5" id="userName" type="text" name="userName" value="<?php echo isset($_SESSION['user'])? $userName:"";?>" placeholder="Họ và tên" class="py-3 border w-full my-5 pl-1 rounded outline-none shadow-sm">
+                    <br><small class="form-message text-red-500"></small>
+                </div>
+                <div class="form-group ">
+                    <input rules="required|email" id="userEmail" type="email" name="userEmail" value="<?php echo isset($_SESSION['user'])?$emailUser:"";?>" placeholder="Email" class="w-full py-3 border pl-1 rounded outline-none shadow-sm"> <br>
+                    <br><small class="form-message text-red-500"></small>
+                </div> 
+                <div class="form-group">
+                    <input rules="required|phone|min:10" id="orderSdt" type="text" name="orderSdt" placeholder="Số điện thoại" value="<?php echo isset($_SESSION['user'])?$sdt:"";?>" class="w-full py-3 border pl-1 rounded outline-none shadow-sm"> <br>
+                    <br><small class="form-message text-red-500"></small>
+                </div>
+                <div class="form-group">
+                    <input rules="required" id="orderLocation" type="text" name="orderLocation" placeholder="Địa chỉ" value="<?php echo isset($_SESSION['user'])?$location:"";?>" class="py-3 border md:w-[500px] w-full my-5 pl-1 rounded outline-none shadow-sm">
+                </div>
+                <div>
                     <textarea class="w-[500px] bg-[#ededed] h-[130px] p-2 outline-none" cols="30" rows="10" placeholder="Ghi Chú" name="orderNote"></textarea>
-                    </div>
-                    <input type="hidden" name="lai" value="<?php $tongtien - $goc;?>">
-                    <button class="bg-blue-500 text-white hover:bg-blue-300 py-5 px-3 rounded" type="submit">Tiếp Tục Thanh Toán</button>
-                </form>
+                </div>
+                <input type="hidden" name="lai" value="<?php $tongtien - $goc;?>">
+                <button class="bg-blue-500 text-white hover:bg-blue-300 py-5 px-3 rounded w-full" type="submit">XÁC NHẬN ĐẶT HÀNG</button>
+            </form>
             <div class="text-center mt-[250px]">
                 <hr>
-                <span class="pt-5">Code by nhóm 8</span>
-
+                <span class="pt-5">Developed by group no. 8</span>
             </div>
 
         </div>
@@ -73,3 +77,6 @@
 
         }
     </style>
+<script>
+    
+</script>    
