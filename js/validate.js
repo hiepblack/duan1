@@ -102,3 +102,22 @@ function validate_lienhe(){
   
 
 }
+function validate_setpass(){
+
+    var pass = document.getElementById("pass");
+    if(pass.value==""){
+        alert("Bạn chưa nhập mật khẩu mới!");
+        pass.style.backgroundColor="red";
+        return false;
+    }
+    var repass = document.getElementById("repass");
+    if(repass.value=""){
+        alert("Nhập lại mật khẩu mới!");
+        repass.style.backgroundColor="red";
+        return false;
+    }
+    else if(repass.value!=pass.value){
+        alert("Sai mật khẩu!");
+        return false;
+    }
+}
