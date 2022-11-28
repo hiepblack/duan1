@@ -73,6 +73,12 @@ if (isset($_GET['act'])) {
             include "./dangki.php";
             break;
             case "quenmk":
+                if(isset($_GET['fall'])){
+                    echo '<script>alert("Email không tồn tại")</script>';
+                }
+                else{
+                    echo("");
+                }
                 include "./quen_mk.php";
                 break;
         case "giohang":
@@ -88,8 +94,18 @@ if (isset($_GET['act'])) {
             include "./gio_hang.php";
             break;
         case "dangnhap":
+            if(isset($_GET["successful"])){
+                echo '<script>alert("Đổi mật khẩu thành công")</script>';
+            }
+            else{
+                echo("");
+            }
             include "./dangnhap.php";
             break;
+            case "setpass":
+                $email= $_GET["success"];
+                include "./setpass.php";
+                break;
         case "chitiet_blog":
             $userid = $_GET['userid'];         
             $query2 = "SELECT * FROM user WHERE userId=$userid";
