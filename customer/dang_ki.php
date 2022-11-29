@@ -21,7 +21,7 @@ if (isset($_POST['submit1'])) {
         header("location:http://localhost/WEB17301/Du_an_1/views/index.php?act=dangki&error");
         die;
     } else {
-        $query = "INSERT INTO user( userName, userEmail, userPassword, userGender, roleId, userBirthday, userImage) VALUES ('$lastName $fristName','$email','$password',$sex,$roleId,'$date','$image')";
+        $query = "INSERT INTO user( userName, userEmail, userPassword, userGender, roleId, userBirthday, userImage,sdt,location) VALUES ('$lastName $fristName','$email','$password',$sex,$roleId,'$date','$image','','')";
         connect($query);
         header("location:http://localhost/WEB17301/Du_an_1/views/index.php?act=dangnhap");
     }

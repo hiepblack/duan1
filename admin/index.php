@@ -170,29 +170,34 @@ if (isset($_GET['act'])) {
             }
             include "./binh_luan.php";
             break;
-            case "binhluan_blog":
-                $comment_blog=comment_blog();
-                if (isset($_POST['search']) && $_POST['search']) {
-                    $search = $_POST['search'];
-                    var_dump($search);
-                    $query = "select * from (comment_blog inner join user on comment_blog.userId = user.userId) inner join blog on comment_blog.blogId = blog.blogId  where  comment_date = '$search'";
-                    $comments = getAll($query);
-                }
-                include "./binhluan_blog.php";
-                break;
+        case "binhluan_blog":
+            $comment_blog = comment_blog();
+            if (isset($_POST['search']) && $_POST['search']) {
+                $search = $_POST['search'];
+                var_dump($search);
+                $query = "select * from (comment_blog inner join user on comment_blog.userId = user.userId) inner join blog on comment_blog.blogId = blog.blogId  where  comment_date = '$search'";
+                $comments = getAll($query);
+            }
+            include "./binhluan_blog.php";
+            break;
         case "diachi":
             include "./dia_chi.php";
             break;
         case "donhang":
+            $orders = orders();
             if (isset($_POST["submit"])) {
                 $id = $_POST["id"];
                 $orderId = $_POST["orderId"];
                 $query = "UPDATE `orders` SET statusId = $id WHERE orderId = $orderId";
                 connect($query);
             }
-            $orders = orders();
-            $query = "select * from statusorder";
-            $statusOrder = getAll($query);
+            if (isset($_GET['trangThai'])) {
+                if($_GET['trangThai']){
+                    $statusOrder = $_GET["trangThai"];
+                    $query = "select * from `orders` where statusId = $statusOrder";
+                    $orders = getAll($query);
+                }
+            }
             include "./don_hang.php";
             break;
         case "capnhattrangthai":
@@ -207,7 +212,7 @@ if (isset($_GET['act'])) {
         case "chitietdonhang":
             $num = 0;
             $id = $_GET['id'];
-            $query = "select orders.tenKh,orders.location,orders.sdt,orders.orderDate, orders.orderNote, orders.totalMoney as money, orderdetail.*,product.productName as productName from orders
+            $query = "select orders.tenKh,orders.statusId,orders.location,orders.sdt,orders.orderDate, orders.orderNote, orders.totalMoney as money, orderdetail.*,product.productName as productName from orders
             inner join  orderdetail on orders.orderId = orderdetail.orderId
             inner join product on product.productId = orderdetail.productId
             where orders.orderId = $id

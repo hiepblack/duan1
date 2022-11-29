@@ -4,12 +4,6 @@
     <!-- ============================================================== -->
     <div class="page-breadcrumb bg-white d-flex justify-content-between align-items-center">
         <p class="fs-6 fw-bold">Đơn Hàng</p>
-        <div class="d-flex form-group">
-            <form action="" class="mx-2 border" method="post">
-                <input type="text" class="p-1" placeholder="tìm kiếm" name="search">
-                <button class="btn btn-primary">TÌm kiếm</button>
-            </form>
-        </div>
         <!-- /.col-lg-12 -->
     </div>
     <div class="container-fluid">
@@ -17,7 +11,21 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="white-box">
-                    <h3 class="box-title">Bảng Thống Kê Đơn Hàng</h3>
+                    <div class="d-flex justify-content-between">
+                        <p class="box-title">
+                            Bảng Thống Kê Đơn Hàng
+                        </p>
+                        <form action="http://localhost/WEB17301/du_an_1/admin/index.php?act=donhang" method="get" class="d-flex">
+                                <input type="text" name="act" value="donhang" hidden>
+                                <select class="col-8" aria-label="Default select example" name="trangThai">
+                                    <option value="0">Chọn Trạng Thái Đơn Hàng</option>
+                                    <option value="2">Đã Thanh Toán</option>
+                                    <option value="1">Chưa Thanh Toán</option>
+                                </select>
+                                <button type="submit" class="btn btn-primary  col-4">Lọc</button>
+                        </form>
+                    </div>
+
                     <div class="table-responsive">
                         <table class="table text-nowrap">
                             <thead>
@@ -34,6 +42,7 @@
                                 </tr>
                             </thead>
                             <tbody>
+
                                 <?php foreach ($orders as $order) : ?>
                                     <tr>
                                         <td>
@@ -46,7 +55,7 @@
                                             <?php echo $order['orderDate'] ?>
                                         </td>
                                         <td>
-                                            <?php echo number_format($order['totalMoney'])?> đ
+                                            <?php echo number_format($order['totalMoney']) ?> đ
                                         </td>
                                         <td><?php echo $order['orderNote'] ?></td>
                                         <td>
@@ -69,10 +78,10 @@
                                                 <button type="button" class="btn btn-danger text-white">Xoá</button>
                                             </a>
                                         </td>
-                                        
+
                                     </tr>
-                                    <?php endforeach; ?>
-                                    
+                                <?php endforeach; ?>
+
                             </tbody>
                         </table>
                     </div>

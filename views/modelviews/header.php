@@ -92,6 +92,17 @@
         #giohangnho1 {
             color: white;
         }
+        /* menuCon */
+        #menu_con{
+            display:none;
+        }
+        #menu_con a:hover{
+            color :red;
+        }
+        #menu_cha:hover #menu_con{
+            display:block;
+        }
+
     </style>
     <title>Document</title>
 </head>
@@ -190,22 +201,32 @@
                     <div id="menu3" class="col-span-3 my-2 p-2">
                         <div>
                             <ul class="flex justify-center p-2 align-center text-base uppercase font-bold tracking-wide">
-                                <li class="mx-4 hover:border-b-4 border-black">
+                                <li class="mx-4  border-black">
                                     <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=trangchu">Trang Chủ</a>
                                 </li>
-                                <li class="mx-4 hover:border-b-4 border-black">
+                                <li class="mx-4 relative" id="menu_cha">
                                     <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=sanpham">Bộ Sưu Tập</a>
+                                    <ul class="absolute  w-44 min-h-min" id="menu_con">
+                                        <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=sanpham&brandId=1" class="block w-full border p-2 text-sm bg-[#f5f5f5]">
+                                            <li>Xe đạp địa Hình</li>
+                                        </a>
+                                        <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=sanpham&brandId=2" class="block w-full border p-2 text-sm bg-[#f5f5f5]">
+                                            <li>Xe đạp Thời Trang</li>
+                                        </a>
+                                        <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=sanpham&brandId=3" class="block w-full border p-2 text-sm bg-[#f5f5f5]">
+                                            <li>Xe đạp thể thao</li>
+                                        </a>
+                                    </ul>
                                 </li>
-                                <li class="mx-4 hover:border-b-4 border-black">
+                                <li class="mx-4  border-black">
                                     <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=blog">Blog</a>
                                 </li>
-                                <li class="mx-4 hover:border-b-4 border-black">
+                                <li class="mx-4  border-black">
                                     <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=gioithieu">Giới Thiệu</a>
                                 </li>
-                                <li class="mx-4 hover:border-b-4 border-black">
+                                <li class="mx-4  border-black">
                                     <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=lienhe">Liên Hệ</a>
                                 </li>
-
                             </ul>
                         </div>
                     </div>
@@ -229,8 +250,19 @@
                                 <li class="mx-4 hover:border-b-4 border-black">
                                     <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=trangchu">Trang Chủ</a>
                                 </li>
-                                <li class="mx-4 hover:border-b-4 border-black">
+                                <li class="mx-4 relative" id="menu_cha">
                                     <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=sanpham">Bộ Sưu Tập</a>
+                                    <ul class="absolute  w-44 min-h-min" id="menu_con">
+                                        <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=sanpham&brandId=1" class="block w-full border p-2 text-sm bg-[#f5f5f5]">
+                                            <li>Xe đạp địa Hình</li>
+                                        </a>
+                                        <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=sanpham&brandId=2" class="block w-full border p-2 text-sm bg-[#f5f5f5]">
+                                            <li>Xe đạp Thời Trang</li>
+                                        </a>
+                                        <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=sanpham&brandId=3" class="block w-full border p-2 text-sm bg-[#f5f5f5]">
+                                            <li>Xe đạp thể thao</li>
+                                        </a>
+                                    </ul>
                                 </li>
                                 <li class="mx-4 hover:border-b-4 border-black">
                                     <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=blog">Blog</a>

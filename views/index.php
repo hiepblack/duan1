@@ -15,6 +15,11 @@ if (isset($_GET['act'])) {
             break;
         case "sanpham":
             $products = top10();
+            if(isset($_GET['brandId'])){
+                $brandId = $_GET['brandId'];
+                $query = "SELECT * FROM product where productStatus = 1 and brandId = $brandId";
+                $products = getAll($query);
+            }
             if (isset($_POST['search'])) {
                 $cate = $_POST['danhmuc'];
                 $price = $_POST['gia'];

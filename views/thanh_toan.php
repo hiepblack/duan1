@@ -20,9 +20,12 @@
                     <input rules="required" id="orderLocation" type="text" name="orderLocation" placeholder="Địa chỉ" value="<?php echo isset($_SESSION['user']) ? $location : ""; ?>" class="py-3 border md:w-[500px] w-full my-5 pl-1 rounded outline-none shadow-sm">
                 </div>
                 <div>
+                    <textarea class="w-[500px] bg-[#ededed] h-[130px] p-2 outline-none" cols="30" rows="10" placeholder="Ghi Chú" name="orderNote"></textarea>
+                </div>
+                <div>
                     <input type="hidden" name="lai" value="<?php $tongtien - $goc; ?>">
                     <button class="bg-blue-500 text-white hover:bg-blue-300 py-5 px-3 rounded w-full" type="submit">XÁC NHẬN ĐẶT HÀNG</button>
-                </div>    
+                </div>
             </form>
             <div class="text-center mt-[250px]">
                 <hr>

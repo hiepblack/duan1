@@ -40,7 +40,7 @@
                                     <th class="border-top-0">Số Lượng</th>
                                     <th class="border-top-0">Thành Tiền</th>
                                     <th class="border-top-0">Ghi chú</th>
-
+                                    <th class="border-top-0">Trạng Thái</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -63,6 +63,9 @@
                                         </td>
                                         <td>
                                             <?php echo $result['orderNote'] ?>
+                                        </td>
+                                        <td>
+                                            <?php checkStatus($result['statusId']) ?>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>

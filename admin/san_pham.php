@@ -78,7 +78,7 @@
                                             ?>
                                         </td>
                                         <td>
-                                            <?php echo $product['productStatus'] ?>
+                                        <?php echo $product['productStatus']==1?"Còn Hàng":"Hết Hàng"?>
                                         </td>
 
                                     </tr>
