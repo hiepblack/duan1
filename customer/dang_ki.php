@@ -31,9 +31,10 @@ if (isset($_POST['submit'])) {
     $sdt = $_POST["sdt"];
     $location = $_POST["location"];
     var_dump($_POST);
+  
     if (!empty($user)) {
         header("location:http://localhost/WEB17301/Du_an_1/admin/index.php?act=addkh&error");
-        die;
+      
     } else {
         $query = "INSERT INTO user( userName, userEmail, userPassword, userGender, roleId, userBirthday, userImage,sdt,location) VALUES ('$userName','$email','$password',$sex,$roleId,'$date','$image','$sdt','$location')";
         connect($query);
