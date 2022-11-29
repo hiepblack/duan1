@@ -131,3 +131,8 @@ function checkStatus($number){
         echo "Chưa xác đinh";
     }
 }
+function delete($table,$tableId,$id,$case){
+    $query="DELETE FROM $table WHERE $tableId=$id";
+    connect($query);
+    header("location:http://localhost/WEB17301/du_an_1/admin/index.php?act=$case");
+}

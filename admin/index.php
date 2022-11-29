@@ -80,13 +80,6 @@ if (isset($_GET['act'])) {
             }
             include "./form/form_sua_san_pham.php";
             break;
-        case "deletesp":
-            if (isset($_GET["id"]) && $_GET["id"]) {
-                $id = $_GET["id"];
-                deleteProduct($id);
-            }
-            include "./san_pham.php";
-            break;
             // chức năng Loại Hàng
         case "loaihang":
             include "./loai_hang.php";
