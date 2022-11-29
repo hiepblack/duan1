@@ -33,7 +33,7 @@ function Validator(formSelector) {
                 : "Vui lòng nhập số";
         },
         phone(value) {
-            var regex = /^[-+]?[0-9]+$/;
+            var regex = /(84|0[3|5|7|8|9])+([0-9]{8})\b/;
             return regex.test(value)
                 ? undefined
                 : "Vui lòng nhập đúng định dạng";
