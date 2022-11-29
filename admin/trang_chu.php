@@ -1,20 +1,4 @@
 <?php
-    $result =top10();
-    $result1 = getCategory();
-    $dataPoints = [];
-    $dataPoints1 = [];
-   foreach($result as $row){
-       array_push($dataPoints,array(
-           "label"=>$row['productName'],
-           "y"=>$row['productPrice']
-        ));
-    }
-    foreach($result1 as $row){
-        array_push($dataPoints1,array(
-            "label"=>$row['brandName'],
-            "y"=>25
-         ));
-     }
     //dem so don hang
     $sql = "select count(orderId) from orders ";//where Month(orderDate)=Month(getDate());?
     $qty = getOne($sql);
@@ -23,6 +7,38 @@
     $sql2 = "select sum(profit) from orders";
     $profit = getOne($sql2);
     // var_dump( $qty, $total,$profit);
+    //đếm số tk
+    $sql3 = "select count(userId) from user";
+    $userQty = getOne($sql3);
+    $sql4 = "select count(userId) from user where roleId = 4";
+    $adminQty = getOne($sql4);
+    //  var_dump($userQty,$adminQty);die;
+    $sql5 = "select count(productId) from product";
+    $productQty = getOne($sql5);
+    $undefineQty = getOne("select count(productId) from product where brandId = 0");
+    $result =top10();
+    $result1 = getCategory();
+    $dataPoints = [];
+    $dataPoints1 = [];
+    function countProInBrand($id){
+        $sql = "select count(productId) from product where brandId = $id ";
+        $result2 = connect($sql);
+        return $result2;
+    }
+
+   foreach($result as $row){
+       array_push($dataPoints,array(
+           "label"=>$row['productName'],
+           "y"=>$row['productPrice']
+        ));
+    }
+    foreach($result1 as $row){
+        array_push($dataPoints1,array(
+            "label" => $row['brandName'],
+            "y" => 25
+         ));
+     }
+
 
 
 ?>
@@ -35,11 +51,35 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                <div class="white-box ">
-                    <h3 class="box-title">Thống kê doanh thu </h3>
-                    Có tổng <b><?php echo $qty[0]; ?></b> đơn hàng
-                    <br> Tổng doanh thu đạt <b><?php echo number_format($total[0]);?>đ</b>  
-                    <br> Lợi nhuận đạt <b><?php echo number_format($profit[0]); ?>đ</b>
+                <div class="white-box row">
+                    <div class="col card border" style="padding:1rem 0.5rem; border-radius: 0.5rem; margin: 0 0.5rem;">
+                        <h3 class="box-title card-title alert alert-success">Thống kê doanh thu </h3>
+                        <p class="card-body">
+                            Tổng <b><?php echo $qty[0]; ?></b> đơn hàng <br>
+                            - Tổng doanh thu đạt <b><?php echo number_format($total[0]);?>đ</b>   <br>
+                            - Lợi nhuận đạt <b><?php echo number_format($profit[0]); ?>đ</b> <br>
+                        </p>
+                        <a href="http://localhost/WEB17301/du_an_1/admin/index.php?act=donhang" class="btn btn-primary">Quản lí đơn hàng</a>      
+                    </div>
+                    <div class="col card border" style="padding:1rem 0.5rem; border-radius: 0.5rem; margin: 0 0.5rem;">
+                        <h3 class="box-title card-title alert alert-success">Thống kê tài khoản </h3>
+                        <p class="card-body">
+                            Tổng <b><?php echo $userQty[0]; ?></b> tài khoản <br>
+                            - <b><?php echo $adminQty[0];?></b> tài khoản quản trị   <br>
+                            - <b><?php echo $userQty[0] - $adminQty[0]; ?></b> tài khoản khách hàng <br>
+                        </p>
+                        <a href="http://localhost/WEB17301/du_an_1/admin/index.php?act=khachhang" class="btn btn-primary">Quản lí tài khoản</a>       
+                    </div>
+                    <div class="col card border" style="padding:1rem 0.5rem; border-radius: 0.5rem; margin: 0 0.5rem;">
+                        <h3 class="box-title card-title alert alert-success">Thống kê sản phẩm </h3>
+                        <p class="card-body">
+                            Tổng <b><?php echo $productQty[0]; ?></b> mặt hàng <br>
+                            - Có <b><?php echo $undefineQty[0];?></b> mặt hàng cần phân loại  <br>
+                            
+                        </p>
+                        <a href="http://localhost/WEB17301/du_an_1/admin/index.php?act=sanpham" class="btn btn-primary">Quản lí sản phẩm</a>       
+                    </div>
+                    
                 </div>
             </div>
         </div>

@@ -65,7 +65,7 @@
                                             <a href="http://localhost/WEB17301/du_an_1/admin/index.php?act=capnhattrangthai&id=<?php echo $order['statusId'] ?>&orderId=<?php echo $order['orderId'] ?>">
                                                 <button type="button" class="btn btn-primary text-white">Cập nhật Trạng Thái </button>
                                             </a>
-                                            <a onclick="return confirm_product('<?php echo $order['orderId'] ?>')" href="../customer/delete_don_hang.php?id=<?php echo $order['orderId'] ?>">
+                                            <a onclick="return confirm('Bạn muốn xóa đơn hàng <?php echo $order['orderId'] ?> chứ?')" href="../customer/delete_don_hang.php?id=<?php echo $order['orderId'] ?>">
                                                 <button type="button" class="btn btn-danger text-white">Xoá</button>
                                             </a>
                                         </td>

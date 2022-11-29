@@ -17,10 +17,10 @@ if(!empty($_SESSION['user'])){
     $sdt = $_POST['orderSdt'];
     $location = $_POST['orderLocation'];
 }else{
-$name =$_POST['userName'];
-$email =$_POST['userEmail'];
-$sdt = $_POST['orderSdt'];
-$location = $_POST['orderLocation'];
+    $name =$_POST['userName'];
+    $email =$_POST['userEmail'];
+    $sdt = $_POST['orderSdt'];
+    $location = $_POST['orderLocation'];
 }
 //tính tổng tiền
 $total = 0;

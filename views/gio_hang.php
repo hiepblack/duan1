@@ -64,7 +64,7 @@
                     </a>
                     <button class="border p-5 button_slide slide_right outline-none bg-black text-white" type="submit" name="update">Cập nhật</button>
                 </div>
-                <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=thanhtoan" class="w-full">
+                <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=thanhtoan" class="w-full" <?php echo count($result)==0?"hidden":"" ?>>
                     <p class="border p-5 bg-red-500 text-white button_slide slide_right1 w-full">Thanh toán</p>
                 </a>
             </div>
