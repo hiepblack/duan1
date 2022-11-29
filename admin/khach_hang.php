@@ -6,9 +6,6 @@
                 <input type="text" class="p-1" placeholder="tìm kiếm" name="search">
                 <button class="btn btn-primary" type="submit">Tìm kiếm</button>
             </form>
-            <a href="http://localhost/WEB17301/Du_an_1/admin/index.php?act=addkh">
-                <button class="btn btn-primary">Thêm mới+</button>
-            </a>
         </div>
         <!-- /.col-lg-12 -->
     </div>

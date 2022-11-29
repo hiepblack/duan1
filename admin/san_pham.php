@@ -41,7 +41,7 @@
                                             <a href="http://localhost/WEB17301/du_an_1/admin/index.php?act=updatesp&id=<?php echo $product['productId'] ?>">
                                                 <button type="button" class="btn btn-primary">Sửa sp</button>
                                             </a>
-                                            <a onclick="return confirm_product('<?php echo $product['productName']; ?>')" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=deletesp&id=<?php echo $product['productId'] ?>">
+                                            <a onclick="return confirm_product('<?php echo $product['productName']; ?>')" href="../customer/delete_sanpham.php?id=<?php echo $product['productId'] ?>">
                                                 <button type="button" class="btn btn-danger text-white">Xoá sp</button>
                                             </a>
                                         </td>

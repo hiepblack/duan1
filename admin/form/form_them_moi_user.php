@@ -40,36 +40,37 @@
             <div class="col-lg-8 col-xlg-9 col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <form class="form-horizontal form-material" method="post" action="../customer/dang_ki.php" enctype="multipart/form-data">
+
+                        <form class="form-horizontal form-material" method="post" action="../customer/dang_ki.php" enctype="multipart/form-data" onsubmit="return validate_adduser()">
                             <div class="form-group mb-4">
                                 <label class="col-md-12 p-0">Tên User</label>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <input type="text" class="form-control p-0 border-0" name="userName">
+                                    <input type="text" class="form-control p-0 border-0" name="userName" id="userName">
                                 </div>
                             </div>
                             <div class="form-group mb-4">
                                 <label class="col-md-12 p-0">Email</label><span><?php echo isset($_GET['error']) ? "Email đã tồn tại" : ""; ?></span>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <input type="text" class="form-control p-0 border-0" name="email">
+                                    <input type="text" class="form-control p-0 border-0" name="email" id="email">
                                 </div>
                             </div>
                             <div class="form-group mb-4">
                                 <label class="col-md-12 p-0">Mật Khẩu</label>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <input type="text" class="form-control p-0 border-0" name="password">
+                                    <input type="text" class="form-control p-0 border-0" name="password" id="pass">
                                 </div>
                             </div>
                             <div class="form-group mb-4">
                                 <label class="col-md-12 p-0">Giới Tính</label>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <input type="radio" class="" name="sex" value="1"><span>Nam</span>
-                                    <input type="radio" class="" name="sex" value="0"><span>Nữ</span>
+                                    <input type="radio" class="sex" name="sex" value="1"><span>Nam</span>
+                                    <input type="radio" class="sex" name="sex" value="0"><span>Nữ</span>
                                 </div>
                             </div>
                             <div class="form-group mb-4">
                                 <label class="col-md-12 p-0">Ngày tháng năm sinh</label>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <input type="date" class="form-control p-0 border-0" name="date">
+                                    <input type="date" class="form-control p-0 border-0" name="date" id="date">
                                 </div>
                             </div>
                             <div class="form-group mb-4">
@@ -81,13 +82,13 @@
                             <div class="form-group mb-4">
                                 <label class="col-md-12 p-0">SDT</label>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <input type="number" class="form-control p-0 border-0" name="sdt">
+                                    <input type="number" class="form-control p-0 border-0" name="sdt" id="sdt">
                                 </div>
                             </div>
                             <div class="form-group mb-4">
                                 <label class="col-md-12 p-0">Địa chỉ</label>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <input type="text" class="form-control p-0 border-0" name="location">
+                                    <input type="text" class="form-control p-0 border-0" name="location" id="address">
                                 </div>
                             </div>
                             <div class="form-group mb-4">
