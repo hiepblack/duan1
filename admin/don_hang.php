@@ -68,10 +68,10 @@
                                             <?php checkStatus($order['statusId'])  ?>
                                         </td>
                                         <td>
-                                            <a href="http://localhost/WEB17301/du_an_1/admin/index.php?act=chitietdonhang&id=<?php echo $order['orderId'] ?>">
+                                            <a href="http://localhost/WEB17301/Du_an_1/admin/index.php?act=chitietdonhang&id=<?php echo $order['orderId'] ?>">
                                                 <button type="button" class="btn btn-primary text-white">Chi tiết</button>
                                             </a>
-                                            <a href="http://localhost/WEB17301/du_an_1/admin/index.php?act=capnhattrangthai&id=<?php echo $order['statusId'] ?>&orderId=<?php echo $order['orderId'] ?>">
+                                            <a href="http://localhost/WEB17301/Du_an_1/admin/index.php?act=capnhattrangthai&id=<?php echo $order['statusId'] ?>&orderId=<?php echo $order['orderId'] ?>">
                                                 <button type="button" class="btn btn-primary text-white">Cập nhật Trạng Thái </button>
                                             </a>
                                             <a onclick="return confirm('Bạn muốn xóa đơn hàng <?php echo $order['orderId'] ?> chứ?')" href="../customer/delete_don_hang.php?id=<?php echo $order['orderId'] ?>">

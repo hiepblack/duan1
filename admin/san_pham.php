@@ -7,7 +7,7 @@
         <div class="d-flex form-group">
             <form action="" class="mx-2 border" method="post">
                 <input type="text" class="p-1" placeholder="tìm kiếm" name="search">
-                <button class="btn btn-primary">Tìm kiếm</button>
+                <button class="btn btn-primary" type="submit">Tìm kiếm</button>
             </form>
         </div>
         <!-- /.col-lg-12 -->

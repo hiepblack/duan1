@@ -121,7 +121,6 @@ function validate_setpass(){
    
 }
 function validate_adduser(){
-    alert("cc");
     var useName = document.getElementById("userName");
     if(useName.value==""){
         alert("Mời bạn nhập tên");

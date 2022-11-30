@@ -13,7 +13,7 @@ if (isset($_GET['act'])) {
             $products = product();
             if (isset($_POST['search']) && $_POST['search']) {
                 $search = $_POST['search'];
-                $query = "select * from product where productName like '%$search%' or productName = '$search'";
+                $query = "select * from product where  productName like '%$search%' or productName = '$search'";
                 $products = getAll($query);
             }
             include "./san_pham.php";
@@ -126,7 +126,7 @@ if (isset($_GET['act'])) {
             $users = users();
             if (isset($_POST['search']) && $_POST['search']) {
                 $search = $_POST['search'];
-                $query = "select * from khach_hang where  email like '%$search%' or email = '$search'";
+                $query = "select * from user where  userName like '%$search%' or userName = '$search'";
                 $users = getAll($query);
             }
             include "./khach_hang.php";
@@ -184,13 +184,13 @@ if (isset($_GET['act'])) {
             include "./dia_chi.php";
             break;
         case "donhang":
-            $orders = orders();
             if (isset($_POST["submit"])) {
                 $id = $_POST["id"];
                 $orderId = $_POST["orderId"];
                 $query = "UPDATE `orders` SET statusId = $id WHERE orderId = $orderId";
                 connect($query);
             }
+            $orders = orders();
             if (isset($_GET['trangThai'])) {
                 if($_GET['trangThai']){
                     $statusOrder = $_GET["trangThai"];

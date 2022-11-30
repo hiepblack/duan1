@@ -96,7 +96,7 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav accordionPanelsStayOpenExample" class="accordion">
                         <li class="sidebar-item pt-2">
-                            <a class="accordion sidebar-link waves-effect waves-dark sidebar-link" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=trangchu" aria-expanded="false">
+                            <a class="accordion sidebar-link waves-effect waves-dark sidebar-link" href="http://localhost/WEB17301/Du_an_1/admin/index.php?act=trangchu" aria-expanded="false">
                                 <div class="title">
                                     <i class="far fa-clock" aria-hidden="true"></i>
                                     <span class="hide-menu">Trang Chủ</span>
@@ -111,7 +111,7 @@
                                 </div>
                             </a>
                             <div class="panel">
-                                <a class="sidebar-link waves-effect waves-dark sidebar-link box-menu first" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=khachhang">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link box-menu first" href="http://localhost/WEB17301/Du_an_1/admin/index.php?act=khachhang">
                                     <span class="hide-menu">Quản lí Tài Khoản</span>
                                 </a>
 
@@ -131,7 +131,7 @@
                                 </div>
                             </a>
                             <div class="panel">
-                                <a class="sidebar-link waves-effect waves-dark sidebar-link box-menu first" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=sanpham">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link box-menu first" href="http://localhost/WEB17301/Du_an_1/admin/index.php?act=sanpham">
                                     <span class="hide-menu">Danh Sách Sản Phẩm</span>
                                 </a>
 
@@ -144,7 +144,7 @@
 
                         <!-- quản lí đơn hàng -->
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=donhang" aria-expanded="false">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="http://localhost/WEB17301/Du_an_1/admin/index.php?act=donhang" aria-expanded="false">
                                 <div class="title">
                                     <i class="fa-solid fa-cart-shopping "></i>
                                     <span class="hide-menu">Đơn Hàng</span>
@@ -160,7 +160,7 @@
                                 </div>
                             </a>
                             <div class="panel">
-                                <a class="sidebar-link waves-effect waves-dark sidebar-link box-menu first" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=loaihang">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link box-menu first" href="http://localhost/WEB17301/Du_an_1/admin/index.php?act=loaihang">
 
 
                                     <span class="hide-menu">Quản lí danh mục</span>
@@ -173,7 +173,7 @@
                             </div>
                             <!-- địa chỉ -->
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=diachi" aria-expanded="false">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="http://localhost/WEB17301/Du_an_1/admin/index.php?act=diachi" aria-expanded="false">
                                 <div class="title">
                                     <i class="fa fa-globe" aria-hidden="true"></i>
                                     <span class="hide-menu">Địa Chỉ</span>
@@ -189,7 +189,7 @@
                                 </div>
                             </a>
                             <div class="panel">
-                                <a class="sidebar-link waves-effect waves-dark sidebar-link box-menu first" href="http://localhost/WEB17301/du_an_1/admin/index.php?act=binhluan">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link box-menu first" href="http://localhost/WEB17301/Du_an_1/admin/index.php?act=binhluan">
 
 
                                     <span class="hide-menu">Quản lí bình luật sản phẩm</span>
