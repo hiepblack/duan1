@@ -184,10 +184,10 @@ if (isset($_GET['act'])) {
             include "./dia_chi.php";
             break;
         case "donhang":
-            if (isset($_POST["submit"])) {
-                $id = $_POST["id"];
-                $orderId = $_POST["orderId"];
-                $query = "UPDATE `orders` SET statusId = $id WHERE orderId = $orderId";
+            if(isset($_POST['updateStatus'])){
+                $statusId = $_POST['brandId'];
+                $orderId = $_POST['updateStatus'];
+                $query = "UPDATE `orders` SET statusId = $statusId WHERE orderId = $orderId";
                 connect($query);
             }
             $orders = orders();
@@ -198,6 +198,8 @@ if (isset($_GET['act'])) {
                     $orders = getAll($query);
                 }
             }
+            $query1 = "SELECT * FROM `statusorder`";
+            $categorys = getAll($query1);
             include "./don_hang.php";
             break;
         case "capnhattrangthai":
