@@ -19,6 +19,9 @@
                 <div class="form-group">
                     <input rules="required" id="orderLocation" type="text" name="orderLocation" placeholder="Địa chỉ" value="<?php echo isset($_SESSION['user']) ? $location : ""; ?>" class="py-3 border md:w-[500px] w-full my-5 pl-1 rounded outline-none shadow-sm">
                 </div>
+                <div class="form-group">
+                    <textarea class="w-full py-3 px-2 rounded-md bg-slate-200" name="orderNote" id="" cols="30" rows="10">Nếu có ghi chú, vui lòng điền vào đây!</textarea>
+                </div>
                 <div>
                     <textarea class="w-[500px] bg-[#ededed] h-[130px] p-2 outline-none" cols="30" rows="10" placeholder="Ghi Chú" name="orderNote"></textarea>
                 </div>
