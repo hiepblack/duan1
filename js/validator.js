@@ -13,13 +13,13 @@ function Validator(formSelector) {
     var formRules = {};
     var validatorRules = {
         required(value) {
-            return value.trim() ? undefined : "Không được để trống !!!";
+            return value.trim() ? undefined : "Không được để trống !";
         },
         email(value) {
             var regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
             return regex.test(value)
                 ? undefined
-                : "Vui lòng nhập chính xác email của bạn";
+                : "Vui lòng nhập chính xác email của bạn!";
         },
         min(min) {
             return function(value) {
@@ -30,13 +30,13 @@ function Validator(formSelector) {
             var regex = /^[-+]?[0-9]+$/;
             return regex.test(value)
                 ? undefined
-                : "Vui lòng nhập số";
+                : "Vui lòng nhập số!";
         },
         phone(value) {
             var regex = /(84|0[3|5|7|8|9])+([0-9]{8})\b/;
             return regex.test(value)
                 ? undefined
-                : "Vui lòng nhập đúng định dạng";
+                : "Vui lòng nhập đúng định dạng số điện thoại!";
         },
         checked(elementChecked) {
             return elementChecked ? undefined : "Vui lòng chọn trường này";
