@@ -184,10 +184,11 @@ if (isset($_GET['act'])) {
             include "./dia_chi.php";
             break;
         case "donhang":
-            if(isset($_POST['updateStatus'])){
-                $statusId = $_POST['brandId'];
-                $orderId = $_POST['updateStatus'];
-                $query = "UPDATE `orders` SET statusId = $statusId WHERE orderId = $orderId";
+            if(isset($_GET['updateStatus'])){
+                $statusId = $_GET['brandId'];
+                $orderId = $_GET['updateStatus'];
+                $statusIdCount = $statusId[0];
+                $query = "UPDATE `orders` SET statusId = $statusIdCount WHERE orderId = $orderId";
                 connect($query);
             }
             $orders = orders();
