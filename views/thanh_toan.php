@@ -19,6 +19,9 @@
                 <div class="form-group">
                     <input rules="required" id="orderLocation" type="text" name="orderLocation" placeholder="Địa chỉ" value="<?php echo isset($_SESSION['user']) ? $location : ""; ?>" class="py-3 border md:w-[500px] w-full my-5 pl-1 rounded outline-none shadow-sm">
                 </div>
+                <div class="form-group">
+                    <textarea class="w-full py-3 px-2 rounded-md bg-slate-200" name="orderNote" id="" cols="30" rows="10">Nếu có ghi chú, vui lòng điền vào đây!</textarea>
+                </div>
                 <div>
                     <input type="hidden" name="lai" value="<?php $tongtien - $goc; ?>">
                     <button class="bg-blue-500 text-white hover:bg-blue-300 py-5 px-3 rounded w-full" type="submit">XÁC NHẬN ĐẶT HÀNG</button>
