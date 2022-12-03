@@ -22,6 +22,7 @@ if (isset($_POST['submit'])) {
     } else {
         $_SESSION['gio_hang'][$productId]['so_luong'] += $sl;
     }
+    header("Location:http://localhost/WEB17301/Du_an_1/views/index.php?act=sanpham&success=$productName");die;
 }
 if (isset($_GET['update'])) {
     $productId = $_POST['productId'];
