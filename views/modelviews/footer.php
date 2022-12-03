@@ -84,6 +84,7 @@
     </footer>
 </body>
 <script type="text/javascript" src="../js/validate.js"></script>
+<script src="https://unpkg.com/flowbite@1.5.4/dist/flowbite.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
 <script type="text/javascript" src="../js/validator.js">  
 </script>
