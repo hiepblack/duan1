@@ -8,4 +8,4 @@
     echo "<pre>";
     var_dump($_SESSION['gio_hang']);
     
-header("Location:http://localhost/WEB17301/Du_an_1/views/index.php?act=giohang");
+header("Location:http://localhost/WEB17301/Du_an_1/views/index.php?act=giohang&delete");

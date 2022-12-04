@@ -48,13 +48,17 @@ if (isset($_POST['submit'])) {
     } else {
         $_SESSION['gio_hang'][$productId]['so_luong'] += $sl;
     }
-    
+    header("Location:http://localhost/WEB17301/Du_an_1/views/index.php?act=sanpham&success");
 }
 if (isset($_GET['update'])) {
-    $productId = $_POST['productId'];
-    $sl = $_POST['productSlUpdate'];
-    foreach ($productId as $index => $id) {
-        $_SESSION['gio_hang'][$id]['so_luong'] = $sl[$index];
+    if (!empty($_SESSION['gio_hang'])) {
+        $productId = $_POST['productId'];
+        $sl = $_POST['productSlUpdate'];
+        foreach ($productId as $index => $id) {
+            $_SESSION['gio_hang'][$id]['so_luong'] = $sl[$index];
+        }
+        header("Location:http://localhost/WEB17301/Du_an_1/views/index.php?act=giohang&update");
+    }else{
+        header("Location:http://localhost/WEB17301/Du_an_1/views/index.php?act=giohang");
     }
 }
-header("Location:http://localhost/WEB17301/Du_an_1/views/index.php?act=giohang");
