@@ -1,5 +1,6 @@
 <?php
 include "../model/connect.php";
+require "../mail/sendemail.php";
 // echo "<pre>";
 // var_dump($_POST["lai"]); die;
 // var_dump($_SESSION['gio_hang']);
@@ -48,6 +49,21 @@ var_dump($queryString);
 $queryDetail = "INSERT INTO `orderdetail`(`orderDetailId`, `orderId`, `productId`, `quantity`, `totalMoney`) VALUES ".$queryString.";";
 
 connect($queryDetail);
+// mail
+$title = "THÔNG TIN ĐƠN HÀNG CỦA BẠN TẠI SPORT BICYCLE";
+$content ="";
+foreach ($_SESSION['gio_hang'] as $key => $value){
+    $namesp .= 
+    "<p>".$value['productName']."</p>";
+}
+
+$content .= "<p>Họ tên khách hàng: ".$name."</p>";
+$content .= "<p>Số điện thoại: ".$sdt."</p>";
+$content .= "<p>Địa chỉ: ".$location."</p>";
+$content .= "<p>Sản phẩm đã đặt: </p>";
+$content .= $namesp;
+$content .= "<p>Tổng tiền: ".number_format($total)." VNĐ</p>";
+Mailer($email,$title,$content);
 foreach ($_SESSION['gio_hang'] as $key => $value){
     unset($_SESSION['gio_hang'][$key]);
 }
