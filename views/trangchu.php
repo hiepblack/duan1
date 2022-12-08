@@ -19,7 +19,7 @@
         <div class="carousel-item active relative float-left w-full">
             <img src="https://theme.hstatic.net/1000406173/1000655524/14/slideshow_1.jpg?v=133" class="block w-full" alt="Motorbike Smoke" />
             <div class="element text-center">
-                <h5 class="text-4xl uppercase my-4">Xe đạp gấp performance</h5>
+                <h5 class="text-4xl uppercase my-4 md:block hidden">Xe đạp gấp performance</h5>
                 <p class="text-xl  my-4">Thiết kế cho tốc độ và sự mạnh mẽ</p>
                 <a href=" http://localhost/WEB17301/Du_an_1/views/index.php?act=sanpham">
                     <button class=" border-white py-2 px-3 bg-white text-black hover:bg-transparent hover:text-white">
@@ -35,7 +35,7 @@
         <div class="carousel-item relative float-left w-full">
             <img src="https://theme.hstatic.net/1000406173/1000655524/14/slideshow_2.jpg?v=133" class="block w-full" alt="Woman Reading a Book" />
             <div class="element2">
-                <h5 class="text-4xl uppercase my-4">sport bicycle</h5>
+                <h5 class="text-4xl uppercase my-4 md:block hidden">sport bicycle</h5>
                 <p class="text-xl  my-4">Đồng hành trên mọi hành trình</p>
                 <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=sanpham">
                     <button class="border border-white py-2 px-3 bg-white text-black hover:bg-transparent hover:text-white">
@@ -50,7 +50,7 @@
         <div class="carousel-item relative float-left w-full ">
             <img src="https://theme.hstatic.net/1000406173/1000655524/14/slideshow_3.jpg?v=133" class="block w-full" alt="Mountaintop" />
             <div class="element3">
-                <h5 class="text-4xl uppercase my-4">Xe gấp cực nhanh</h5>
+                <h5 class="text-4xl uppercase my-4 md:block hidden">Xe gấp cực nhanh</h5>
                 <p class="text-xl  my-4">Gấp gọn một cách nhanh chóng chỉ trong 3 bước</p>
                 <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=sanpham">
                     <button class="border border-white py-2 px-3 bg-white text-black hover:bg-transparent hover:text-white">
@@ -116,7 +116,7 @@
 
     </div>
     <!-- banner -->
-    <div class="bg-[url('../img/content_banner.webp')] py-60 px-[300px] text-center text-white bg-no-repeat bg-cover">
+    <div class="bg-[url('../img/content_banner.webp')] py-60 px-[300px] text-center text-white bg-no-repeat bg-cover md:block hidden">
         <h3 class="font-semibold text-2xl my-4">CỬA HÀNG MUA BÁN UY TÍN TRÊN THẾ GIỚI</h3>
         <p class="font-semibold text-xl my-6">Tại Sport Bicycle, những chiếc xe gấp được thiết kế vượt xa mong đợi những
             gì bạn nghĩ. Đa dạng về loại xe, phù hợp với tất cả người thích đạp xe.
