@@ -133,7 +133,7 @@ if (isset($_GET['act'])) {
             break;
     }
 } else {
-    
+
             $blog = blog();
             $query = "SELECT * FROM product WHERE brandId=1";
             $products = getAll($query);
@@ -141,5 +141,6 @@ if (isset($_GET['act'])) {
             $product = getAll($query1);
     include "./trangchu.php";
 }
+
 
 include '../views/modelviews/footer.php';
