@@ -34,7 +34,7 @@ if (isset($_GET['success'])) {
                 </span>
                 <p class="text-xl font-bold uppercase">Bộ Lọc</p>
             </div>
-            <form class="grid grid-cols-4 w-4/5 gap-4 h-10" action="http://localhost/WEB17301/Du_an_1/views/index.php?act=sanpham" method="post">
+            <form class="md:grid grid grid-cols-1 md:grid-cols-4 md:w-4/5 w-2/5 gap-4 h-10  my-10" action="http://localhost/WEB17301/Du_an_1/views/index.php?act=sanpham" method="post">
                 <select class="form-control" name="danhmuc">
                     <option value="0">Danh Mục</option>
                     <option value="1" <?php echo isset($_POST['danhmuc']) && $_POST['danhmuc'] == 1 ? "selected" : ""; ?>>Xe đạp địa hình</option>
@@ -60,7 +60,7 @@ if (isset($_GET['success'])) {
             </form>
         </div>
         <!-- sản phẩm -->
-        <div class="grid grid-cols-4 gap-4 my-8 ">
+        <div class="grid md:grid-cols-4 gap-4 md:my-8 grid-cols-2 my-20">
             <?php foreach ($products as $product) : ?>
                 <div class="relative">
                     <a href="http://localhost/WEB17301/Du_an_1/views/index.php?act=chitietsanpham&id=<?php echo $product['productId'] ?>" class="">

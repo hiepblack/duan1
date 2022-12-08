@@ -5,9 +5,9 @@
         </ul>
 
     </div>
-    <div class="container mx-auto mt-8 flex ">
+    <div class="container mx-auto mt-8 md:flex block">
         <div class=" mr-8 text-center w-[300px]">
-            <div class="p-5 border">
+            <div class="p-5 border md:block hidden">
                 <h3 class="text-lg">DANH MỤC TRANG</h3>
                 <hr class="text-bold">
                 <a class="block text-left pt-2 pb-2" href=""><span>Trang Chủ</span></a>
